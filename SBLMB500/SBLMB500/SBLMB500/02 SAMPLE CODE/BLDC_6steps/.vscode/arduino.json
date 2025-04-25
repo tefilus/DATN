@@ -1,0 +1,7 @@
+{
+    "board": "arduino:avr:nano",
+    "programmer": "ArduinoISP",
+    "sketch": "ESC_BEMF_v3_3.ino",
+    "port": "COM19",
+    "configuration": "cpu=atmega328old"
+}

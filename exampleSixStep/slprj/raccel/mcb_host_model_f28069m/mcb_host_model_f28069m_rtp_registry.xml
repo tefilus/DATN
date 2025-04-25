@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/slsa_mm_rtp_registry/R2023a">
+  <slsa.mm.rtpregistry.ModelMetadata type="slsa.mm.rtpregistry.ModelMetadata" uuid="c350fc1a-86db-45d1-80ea-9bbaf9c4ce23">
+    <modelName>mcb_host_model_f28069m</modelName>
+  </slsa.mm.rtpregistry.ModelMetadata>
+  <slsa.mm.rtpregistry.BlockParameterId type="slsa.mm.rtpregistry.BlockParameterId" uuid="b5c0672e-0286-44fe-87d6-e084ecd1859e">
+    <blockPath>mcb_host_model_f28069m/Serial Communication/Gain2</blockPath>
+    <name>Gain</name>
+    <parameter type="slsa.mm.rtpregistry.Parameter" uuid="b5e9e155-8451-4ba8-8a91-ff07444b6929"/>
+  </slsa.mm.rtpregistry.BlockParameterId>
+  <slsa.mm.rtpregistry.Parameter type="slsa.mm.rtpregistry.Parameter" uuid="b5e9e155-8451-4ba8-8a91-ff07444b6929">
+    <id type="slsa.mm.rtpregistry.BlockParameterId" uuid="b5c0672e-0286-44fe-87d6-e084ecd1859e"/>
+    <rtpLocation type="slsa.mm.rtpregistry.RtpLocation" uuid="9fcb1e4f-e99f-43d2-9d7a-4d7be31a92c4"/>
+  </slsa.mm.rtpregistry.Parameter>
+  <slsa.mm.rtpregistry.Parameter type="slsa.mm.rtpregistry.Parameter" uuid="17cdf2e2-f032-40fa-8ab2-38874452f556">
+    <id type="slsa.mm.rtpregistry.BlockParameterId" uuid="4241717a-89b3-4f6a-9714-90daadb9b7e8"/>
+    <rtpLocation type="slsa.mm.rtpregistry.RtpLocation" uuid="f9b42751-28f6-4ba6-ada7-e4746757fe14"/>
+  </slsa.mm.rtpregistry.Parameter>
+  <slsa.mm.rtpregistry.RtpLocation type="slsa.mm.rtpregistry.RtpLocation" uuid="9fcb1e4f-e99f-43d2-9d7a-4d7be31a92c4">
+    <parameter type="slsa.mm.rtpregistry.Parameter" uuid="b5e9e155-8451-4ba8-8a91-ff07444b6929"/>
+    <valueIndices>0</valueIndices>
+    <valueIndices>0</valueIndices>
+  </slsa.mm.rtpregistry.RtpLocation>
+  <slsa.mm.rtpregistry.BlockParameterId type="slsa.mm.rtpregistry.BlockParameterId" uuid="4241717a-89b3-4f6a-9714-90daadb9b7e8">
+    <blockPath>mcb_host_model_f28069m/Serial Communication/Gain</blockPath>
+    <name>Gain</name>
+    <parameter type="slsa.mm.rtpregistry.Parameter" uuid="17cdf2e2-f032-40fa-8ab2-38874452f556"/>
+  </slsa.mm.rtpregistry.BlockParameterId>
+  <slsa.mm.rtpregistry.RtpLocation type="slsa.mm.rtpregistry.RtpLocation" uuid="f9b42751-28f6-4ba6-ada7-e4746757fe14">
+    <parameter type="slsa.mm.rtpregistry.Parameter" uuid="17cdf2e2-f032-40fa-8ab2-38874452f556"/>
+    <valueIndices>3</valueIndices>
+    <valueIndices>3</valueIndices>
+  </slsa.mm.rtpregistry.RtpLocation>
+</MF0>

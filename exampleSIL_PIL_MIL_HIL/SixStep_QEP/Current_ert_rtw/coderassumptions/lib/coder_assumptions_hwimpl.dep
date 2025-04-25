@@ -1,0 +1,8 @@
+coder_assumptions_hwimpl.obj: C:/Program\\ Files/MATLAB/R2023b/toolbox/rtw/targets/pil/c/coder_assumptions_hwimpl.c
+coder_assumptions_hwimpl.obj: C:\Program\\ Files\MATLAB\R2023b\toolbox\rtw\targets\pil\c\coder_assumptions_hwimpl.h
+coder_assumptions_hwimpl.obj: C:\Program\\ Files\MATLAB\R2023b\toolbox\rtw\targets\pil\c\coder_assumptions_shared_enums.h
+coder_assumptions_hwimpl.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h
+coder_assumptions_hwimpl.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/_ti_config.h
+coder_assumptions_hwimpl.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/linkage.h
+coder_assumptions_hwimpl.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/limits.h
+coder_assumptions_hwimpl.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/float.h

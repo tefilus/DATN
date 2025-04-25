@@ -1,0 +1,5 @@
+#ifndef RTW_HEADER_Copy_of_mcb_host_model_f28069m_capi_h_
+#define RTW_HEADER_Copy_of_mcb_host_model_f28069m_capi_h_
+#include "Copy_of_mcb_host_model_f28069m.h"
+extern void Copy_of_mcb_host_model_f28069m_InitializeDataMapInfo ( void ) ;
+#endif

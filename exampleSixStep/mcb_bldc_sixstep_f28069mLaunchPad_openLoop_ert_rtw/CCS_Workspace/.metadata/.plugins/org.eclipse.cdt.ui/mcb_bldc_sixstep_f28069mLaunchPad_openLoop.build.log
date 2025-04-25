@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project mcb_bldc_sixstep_f28069mLaunchPad_openLoop ****
+
+"D:\\TiC2000_Install\\CCS\\ccs\\utils\\bin\\gmake" -k all 
+ 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****
