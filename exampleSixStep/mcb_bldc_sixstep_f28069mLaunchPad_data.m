@@ -46,9 +46,9 @@ bldc.HallSequence = [4,6,2,3,1,5]; % Teknic Motor
 %% Calibration section
 % Parameters below are not mandatory for offset computation
 % position offset needed if position is sensed using QEP
-bldc.PositionOffset = 0.1995;  %QEP offset (motor 1)
+bldc.PositionOffset = 0.1995;       % QEP offset (motor 1)
 
-inverter.ADCOffsetCalibEnable = 1; % Enable: 1, Disable: 0
+inverter.ADCOffsetCalibEnable = 1;  % Enable: 1, Disable: 0
 % 
 % % Default ADC offset for 069 launchpad with DRV8305
 % inverter.CtSensCOffset = 2135;
@@ -78,8 +78,8 @@ inverter.ISenseVoltPerAmp = inverter.ISenseVoltPerAmp * inverter.ADCGain;
 inverter.ISenseMax = inverter.ISenseMax /inverter.ADCGain;
 
 % Max and min ADC counts for current sense offsets
-inverter.CtSensOffsetMax = 3400; % Maximum permitted ADC counts for current sense offset
-inverter.CtSensOffsetMin = 1500; % Minimum permitted ADC counts for current sense offset
+inverter.CtSensOffsetMax = 3500; % Maximum permitted ADC counts for current sense offset
+inverter.CtSensOffsetMin = 2500; % Minimum permitted ADC counts for current sense offset
 
 %% Derive Characteristics
 bldc.N_base = mcb_getBaseSpeed(bldc,inverter); %rpm // Base speed of motor at given Vdc

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.39
+ * Model version                  : 7.48
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri Apr 25 16:42:21 2025
+ * C/C++ source code generated on : Mon Apr 28 14:18:36 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000

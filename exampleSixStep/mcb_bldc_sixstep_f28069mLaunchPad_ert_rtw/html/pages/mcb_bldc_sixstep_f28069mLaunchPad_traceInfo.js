@@ -615,8 +615,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mcb_bldc_sixstep_f28069mLaunchPad:5238"] = {rtwname: "<S1>/Idc_ref_PU"};
 	this.rtwnameHashMap["<S1>/Feedback_sim"] = {sid: "mcb_bldc_sixstep_f28069mLaunchPad:5673"};
 	this.sidHashMap["mcb_bldc_sixstep_f28069mLaunchPad:5673"] = {rtwname: "<S1>/Feedback_sim"};
-	this.rtwnameHashMap["<S1>/Trigger"] = {sid: "mcb_bldc_sixstep_f28069mLaunchPad:5218"};
-	this.sidHashMap["mcb_bldc_sixstep_f28069mLaunchPad:5218"] = {rtwname: "<S1>/Trigger"};
+	this.rtwnameHashMap["<S1>/ADCINT1"] = {sid: "mcb_bldc_sixstep_f28069mLaunchPad:5218"};
+	this.sidHashMap["mcb_bldc_sixstep_f28069mLaunchPad:5218"] = {rtwname: "<S1>/ADCINT1"};
 	this.rtwnameHashMap["<S1>/Control_System"] = {sid: "mcb_bldc_sixstep_f28069mLaunchPad:9195"};
 	this.sidHashMap["mcb_bldc_sixstep_f28069mLaunchPad:9195"] = {rtwname: "<S1>/Control_System"};
 	this.rtwnameHashMap["<S1>/Data_Logging"] = {sid: "mcb_bldc_sixstep_f28069mLaunchPad:7595"};

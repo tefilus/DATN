@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.39
+ * Model version                  : 7.48
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri Apr 25 16:42:21 2025
+ * C/C++ source code generated on : Mon Apr 28 14:18:36 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -2564,8 +2564,8 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
      *  Constant: '<S215>/Constant1'
      *  Constant: '<S215>/Constant2'
      */
-    if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide_j > 1500U) &&
-        (mcb_bldc_sixstep_f28069mLaunc_B.Divide_j < 3400U)) {
+    if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide_j > 2500U) &&
+        (mcb_bldc_sixstep_f28069mLaunc_B.Divide_j < 3500U)) {
       /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem' incorporates:
        *  ActionPort: '<S219>/Action Port'
        */
@@ -2598,8 +2598,8 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
      *  Constant: '<S215>/Constant1'
      *  Constant: '<S215>/Constant2'
      */
-    if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m > 1500U) &&
-        (mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m < 3400U)) {
+    if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m > 2500U) &&
+        (mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m < 3500U)) {
       /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem2' incorporates:
        *  ActionPort: '<S221>/Action Port'
        */
@@ -2632,8 +2632,8 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
      *  Constant: '<S215>/Constant1'
      *  Constant: '<S215>/Constant2'
      */
-    if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide2 > 1500U) &&
-        (mcb_bldc_sixstep_f28069mLaunc_B.Divide2 < 3400U)) {
+    if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide2 > 2500U) &&
+        (mcb_bldc_sixstep_f28069mLaunc_B.Divide2 < 3500U)) {
       /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem4' incorporates:
        *  ActionPort: '<S223>/Action Port'
        */

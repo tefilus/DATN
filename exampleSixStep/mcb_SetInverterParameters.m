@@ -99,7 +99,7 @@ switch inverter_type
         inverter.EnableLogic   = 1;    				    	% 		// Active high for enable pin (EN_GATE)
         inverter.invertingAmp  = 1;   			    		% 		// Currents entering motor phases are read as positive values in this hardware
         inverter.ISenseVref    = 5; 		    	        %V 		// Voltage ref of inverter current sense circuit
-        inverter.ISenseVoltPerAmp = 0.06; 	    		%V/Amps at Vref 5.0V // Current sense voltage output per 1 A current (Rshunt * iSense op-amp gain)
+        inverter.ISenseVoltPerAmp = 0.06; 	    		    %V/Amps at Vref 5.0V // Current sense voltage output per 1 A current (Rshunt * iSense op-amp gain)
         % inverter.ISenseVoltPerAmp = 0.0503; 		        %V/Amps at Vref 3.3V // Current sense voltage output per 1 A current (Rshunt * iSense op-amp gain)
         inverter.ISenseMax     = inverter.ISenseVref/(2*inverter.ISenseVoltPerAmp); %Amps // Maximum Peak-Neutral current that can be measured by inverter current sense    
         % inverter.ISenseMax     = 25;                        %Amps // Maximum Peak-Neutral current that can be measured by inverter current sense
