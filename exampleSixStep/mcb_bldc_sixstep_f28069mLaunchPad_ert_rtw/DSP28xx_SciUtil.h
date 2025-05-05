@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.48
+ * Model version                  : 7.60
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Mon Apr 28 14:18:36 2025
+ * C/C++ source code generated on : Mon May  5 15:18:49 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -31,10 +31,14 @@
 extern uint16_T checkSCITransmitInProgressA;
 extern uint32_T frameA1Count;
 extern uint16_T frameA1Transmitted;
+extern uint16_T checkSCITransmitInProgressB;
+extern uint32_T frameB1Count;
+extern uint16_T frameB1Transmitted;
 int16_T scia_xmit(unsigned char* pmsg, int16_T msglen, int16_T typeLen);
 int16_T scia_rcv(uint16_T *rcvBuff, int16_T buffLen, int16_T typeLen);
 int16_T scia_rcv_varsize(uint16_T *rcvBuff, int16_T buffLen, int16_T typeLen,
   unsigned char *expTail, int16_T tailsize, int16_T *rcvBufferLen);
+int16_T scib_xmit(unsigned char* pmsg, int16_T msglen, int16_T typeLen);
 void init_SCIFrame(void);
 
 #endif                                 /* RTW_HEADER_DSP28xx_SciUtil_h_ */

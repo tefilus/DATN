@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.48
+ * Model version                  : 7.60
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Mon Apr 28 14:18:36 2025
+ * C/C++ source code generated on : Mon May  5 15:18:49 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -18,7 +18,7 @@
 #include "rtwtypes.h"
 #include "MW_c2000SPI.h"
 
-/* Custom Type definition for MATLABSystem: '<S216>/SPI Master Transfer' */
+/* Custom Type definition for MATLABSystem: '<S217>/SPI Master Transfer' */
 #include "MW_c2000SPI.h"
 #ifndef struct_tag_RL3bf5VyBoZJTCiPpDuhAE
 #define struct_tag_RL3bf5VyBoZJTCiPpDuhAE

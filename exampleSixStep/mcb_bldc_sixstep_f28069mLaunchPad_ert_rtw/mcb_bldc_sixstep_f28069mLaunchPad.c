@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.48
+ * Model version                  : 7.60
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Mon Apr 28 14:18:36 2025
+ * C/C++ source code generated on : Mon May  5 15:18:49 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -69,217 +69,217 @@ static void rate_monotonic_scheduler(void)
    * counter is reset when it reaches its limit (zero means run).
    */
   (mcb_bldc_sixstep_f28069mLaun_M->Timing.TaskCounters.TID[1])++;
-  if ((mcb_bldc_sixstep_f28069mLaun_M->Timing.TaskCounters.TID[1]) > 199) {/* Sample time: [0.1s, 0.0s] */
+  if ((mcb_bldc_sixstep_f28069mLaun_M->Timing.TaskCounters.TID[1]) > 999) {/* Sample time: [0.5s, 0.0s] */
     mcb_bldc_sixstep_f28069mLaun_M->Timing.TaskCounters.TID[1] = 0;
   }
 }
 
 /*
  * Output and update for action system:
- *    '<S17>/Position'
- *    '<S87>/Position'
+ *    '<S18>/Position'
+ *    '<S88>/Position'
  */
 void mcb_bldc_sixstep_f_Position(real32_T rtu_Position, uint16_T *rty_Sector)
 {
-  /* If: '<S23>/If' */
+  /* If: '<S24>/If' */
   if ((rtu_Position > 0.0833F) && (rtu_Position <= 0.25F)) {
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem' incorporates:
-     *  ActionPort: '<S24>/Action Port'
-     */
-    /* SignalConversion generated from: '<S24>/Out1' incorporates:
-     *  Constant: '<S24>/Constant'
-     */
-    *rty_Sector = 2U;
-
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem' */
-  } else if ((rtu_Position > 0.25F) && (rtu_Position <= 0.4167F)) {
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem1' incorporates:
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem' incorporates:
      *  ActionPort: '<S25>/Action Port'
      */
     /* SignalConversion generated from: '<S25>/Out1' incorporates:
      *  Constant: '<S25>/Constant'
      */
-    *rty_Sector = 3U;
+    *rty_Sector = 2U;
 
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem1' */
-  } else if ((rtu_Position > 0.4167F) && (rtu_Position <= 0.5833F)) {
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem2' incorporates:
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem' */
+  } else if ((rtu_Position > 0.25F) && (rtu_Position <= 0.4167F)) {
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem1' incorporates:
      *  ActionPort: '<S26>/Action Port'
      */
     /* SignalConversion generated from: '<S26>/Out1' incorporates:
      *  Constant: '<S26>/Constant'
      */
-    *rty_Sector = 4U;
+    *rty_Sector = 3U;
 
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem2' */
-  } else if ((rtu_Position > 0.5833F) && (rtu_Position <= 0.75F)) {
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem3' incorporates:
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem1' */
+  } else if ((rtu_Position > 0.4167F) && (rtu_Position <= 0.5833F)) {
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem2' incorporates:
      *  ActionPort: '<S27>/Action Port'
      */
     /* SignalConversion generated from: '<S27>/Out1' incorporates:
      *  Constant: '<S27>/Constant'
      */
-    *rty_Sector = 5U;
+    *rty_Sector = 4U;
 
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem3' */
-  } else if ((rtu_Position > 0.75F) && (rtu_Position <= 0.9167F)) {
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem4' incorporates:
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem2' */
+  } else if ((rtu_Position > 0.5833F) && (rtu_Position <= 0.75F)) {
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem3' incorporates:
      *  ActionPort: '<S28>/Action Port'
      */
     /* SignalConversion generated from: '<S28>/Out1' incorporates:
      *  Constant: '<S28>/Constant'
      */
-    *rty_Sector = 6U;
+    *rty_Sector = 5U;
 
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem4' */
-  } else {
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem6' incorporates:
-     *  ActionPort: '<S30>/Action Port'
-     */
-    /* Outputs for IfAction SubSystem: '<S23>/Enabled Subsystem5' incorporates:
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem3' */
+  } else if ((rtu_Position > 0.75F) && (rtu_Position <= 0.9167F)) {
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem4' incorporates:
      *  ActionPort: '<S29>/Action Port'
      */
     /* SignalConversion generated from: '<S29>/Out1' incorporates:
-     *  SignalConversion generated from: '<S30>/Out1'
+     *  Constant: '<S29>/Constant'
+     */
+    *rty_Sector = 6U;
+
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem4' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem6' incorporates:
+     *  ActionPort: '<S31>/Action Port'
+     */
+    /* Outputs for IfAction SubSystem: '<S24>/Enabled Subsystem5' incorporates:
+     *  ActionPort: '<S30>/Action Port'
+     */
+    /* SignalConversion generated from: '<S30>/Out1' incorporates:
+     *  SignalConversion generated from: '<S31>/Out1'
      */
     *rty_Sector = (uint16_T)((rtu_Position > 0.9167F) || (rtu_Position <=
       0.0833F));
 
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem5' */
-    /* End of Outputs for SubSystem: '<S23>/Enabled Subsystem6' */
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem5' */
+    /* End of Outputs for SubSystem: '<S24>/Enabled Subsystem6' */
   }
 
-  /* End of If: '<S23>/If' */
+  /* End of If: '<S24>/If' */
 }
 
 /*
  * Output and update for action system:
- *    '<S20>/Bit Extract'
- *    '<S90>/Bit Extract'
+ *    '<S21>/Bit Extract'
+ *    '<S91>/Bit Extract'
  */
 void mcb_bldc_sixstep_BitExtract(uint16_T rtu_Sector, boolean_T rty_HallVector[3],
   rtB_BitExtract_mcb_bldc_sixstep *localB)
 {
-  /* ArithShift: '<S33>/Shift Arithmetic' */
+  /* ArithShift: '<S34>/Shift Arithmetic' */
   localB->ShiftArithmetic = rtu_Sector >> 2U;
 
-  /* S-Function (sfix_bitop): '<S33>/Bitwise AND1' incorporates:
-   *  ArithShift: '<S33>/Shift Arithmetic'
+  /* S-Function (sfix_bitop): '<S34>/Bitwise AND1' incorporates:
+   *  ArithShift: '<S34>/Shift Arithmetic'
    */
   localB->A = localB->ShiftArithmetic & 1U;
 
-  /* DataTypeConversion: '<S33>/Data Type Conversion' incorporates:
-   *  S-Function (sfix_bitop): '<S33>/Bitwise AND1'
+  /* DataTypeConversion: '<S34>/Data Type Conversion' incorporates:
+   *  S-Function (sfix_bitop): '<S34>/Bitwise AND1'
    */
   localB->DataTypeConversion = (localB->A != 0U);
 
-  /* Logic: '<S33>/AND' */
+  /* Logic: '<S34>/AND' */
   rty_HallVector[0] = localB->DataTypeConversion;
 
-  /* ArithShift: '<S33>/Shift Arithmetic1' */
+  /* ArithShift: '<S34>/Shift Arithmetic1' */
   localB->ShiftArithmetic1 = rtu_Sector >> 1U;
 
-  /* S-Function (sfix_bitop): '<S33>/Bitwise AND2' incorporates:
-   *  ArithShift: '<S33>/Shift Arithmetic1'
+  /* S-Function (sfix_bitop): '<S34>/Bitwise AND2' incorporates:
+   *  ArithShift: '<S34>/Shift Arithmetic1'
    */
   localB->B = localB->ShiftArithmetic1 & 1U;
 
-  /* DataTypeConversion: '<S33>/Data Type Conversion1' incorporates:
-   *  S-Function (sfix_bitop): '<S33>/Bitwise AND2'
+  /* DataTypeConversion: '<S34>/Data Type Conversion1' incorporates:
+   *  S-Function (sfix_bitop): '<S34>/Bitwise AND2'
    */
   localB->DataTypeConversion1 = (localB->B != 0U);
 
-  /* Logic: '<S33>/AND1' */
+  /* Logic: '<S34>/AND1' */
   rty_HallVector[1] = localB->DataTypeConversion1;
 
-  /* S-Function (sfix_bitop): '<S33>/Bitwise AND3' */
+  /* S-Function (sfix_bitop): '<S34>/Bitwise AND3' */
   localB->C = rtu_Sector & 1U;
 
-  /* DataTypeConversion: '<S33>/Data Type Conversion2' incorporates:
-   *  S-Function (sfix_bitop): '<S33>/Bitwise AND3'
+  /* DataTypeConversion: '<S34>/Data Type Conversion2' incorporates:
+   *  S-Function (sfix_bitop): '<S34>/Bitwise AND3'
    */
   localB->DataTypeConversion2 = (localB->C != 0U);
 
-  /* Logic: '<S33>/AND2' */
+  /* Logic: '<S34>/AND2' */
   rty_HallVector[2] = localB->DataTypeConversion2;
 }
 
 /*
  * Output and update for action system:
- *    '<S140>/Hall Value of 1'
- *    '<S139>/Hall Value of 2'
+ *    '<S141>/Hall Value of 1'
+ *    '<S140>/Hall Value of 2'
  */
 void mcb_bldc_sixst_HallValueof1(real32_T *rty_position)
 {
-  /* SignalConversion generated from: '<S150>/position' incorporates:
-   *  Constant: '<S150>/Constant'
+  /* SignalConversion generated from: '<S151>/position' incorporates:
+   *  Constant: '<S151>/Constant'
    */
   *rty_position = 0.16667F;
 }
 
 /*
  * Output and update for action system:
- *    '<S140>/Hall Value of 2'
- *    '<S139>/Hall Value of 3'
+ *    '<S141>/Hall Value of 2'
+ *    '<S140>/Hall Value of 3'
  */
 void mcb_bldc_sixst_HallValueof2(real32_T *rty_position)
 {
-  /* SignalConversion generated from: '<S151>/position' incorporates:
-   *  Constant: '<S151>/Constant'
+  /* SignalConversion generated from: '<S152>/position' incorporates:
+   *  Constant: '<S152>/Constant'
    */
   *rty_position = 0.33333F;
 }
 
 /*
  * Output and update for action system:
- *    '<S140>/Hall Value of 3'
- *    '<S139>/Hall Value of 4'
+ *    '<S141>/Hall Value of 3'
+ *    '<S140>/Hall Value of 4'
  */
 void mcb_bldc_sixst_HallValueof3(real32_T *rty_position)
 {
-  /* SignalConversion generated from: '<S152>/position' incorporates:
-   *  Constant: '<S152>/Constant'
+  /* SignalConversion generated from: '<S153>/position' incorporates:
+   *  Constant: '<S153>/Constant'
    */
   *rty_position = 0.5F;
 }
 
 /*
  * Output and update for action system:
- *    '<S140>/Hall Value of 4'
- *    '<S139>/Hall Value of 5'
+ *    '<S141>/Hall Value of 4'
+ *    '<S140>/Hall Value of 5'
  */
 void mcb_bldc_sixst_HallValueof4(real32_T *rty_position)
 {
-  /* SignalConversion generated from: '<S153>/position' incorporates:
-   *  Constant: '<S153>/Constant'
+  /* SignalConversion generated from: '<S154>/position' incorporates:
+   *  Constant: '<S154>/Constant'
    */
   *rty_position = 0.66667F;
 }
 
 /*
  * Output and update for action system:
- *    '<S140>/Hall Value of 5'
- *    '<S139>/Hall Value of 6'
+ *    '<S141>/Hall Value of 5'
+ *    '<S140>/Hall Value of 6'
  */
 void mcb_bldc_sixst_HallValueof5(real32_T *rty_position)
 {
-  /* SignalConversion generated from: '<S154>/position' incorporates:
-   *  Constant: '<S154>/Constant'
+  /* SignalConversion generated from: '<S155>/position' incorporates:
+   *  Constant: '<S155>/Constant'
    */
   *rty_position = 0.83333F;
 }
 
 /*
  * Output and update for action system:
+ *    '<S141>/Hall Value of 7'
+ *    '<S140>/Hall Value of 1'
  *    '<S140>/Hall Value of 7'
- *    '<S139>/Hall Value of 1'
- *    '<S139>/Hall Value of 7'
- *    '<S128>/Hall Value of 7'
+ *    '<S129>/Hall Value of 7'
  */
 void mcb_bldc_sixst_HallValueof7(real32_T *rty_position)
 {
-  /* SignalConversion generated from: '<S156>/position' incorporates:
-   *  Constant: '<S156>/Constant'
+  /* SignalConversion generated from: '<S157>/position' incorporates:
+   *  Constant: '<S157>/Constant'
    */
   *rty_position = 0.0F;
 }
@@ -287,24 +287,24 @@ void mcb_bldc_sixst_HallValueof7(real32_T *rty_position)
 /* System initialize for function-call system: '<Root>/Current Control' */
 void mcb_bld_CurrentControl_Init(void)
 {
-  /* Start for S-Function (c280xqep): '<S204>/eQEP' */
+  /* Start for S-Function (c280xqep): '<S205>/eQEP' */
   config_QEP_eQEP1((uint32_T)65535U,(uint32_T)0, (uint32_T)0, (uint32_T)0,
                    (uint16_T)0, (uint16_T)448, (uint16_T)8232, (uint16_T)32768,
                    (uint16_T)119,(uint16_T)0);
 
-  /* Start for S-Function (c280xgpio_di): '<S205>/Digital Input2' */
+  /* Start for S-Function (c280xgpio_di): '<S206>/Digital Input2' */
   EALLOW;
   GpioCtrlRegs.GPBMUX2.all &= 0xFFFF0FFFU;
   GpioCtrlRegs.GPBDIR.all &= 0xFF3FFFFFU;
   EDIS;
 
-  /* Start for S-Function (c280xgpio_di): '<S205>/Digital Input3' */
+  /* Start for S-Function (c280xgpio_di): '<S206>/Digital Input3' */
   EALLOW;
   GpioCtrlRegs.GPBMUX2.all &= 0xFFFCFFFFU;
   GpioCtrlRegs.GPBDIR.all &= 0xFEFFFFFFU;
   EDIS;
 
-  /* Start for S-Function (c2802xadc): '<S204>/IA//IB Measurement' */
+  /* Start for S-Function (c2802xadc): '<S205>/IA//IB Measurement' */
   if (MW_adcInitFlag == 0U) {
     InitAdc();
     MW_adcInitFlag = 1U;
@@ -312,7 +312,7 @@ void mcb_bld_CurrentControl_Init(void)
 
   config_ADC_SOC0_SOC1 ();
 
-  /* Start for S-Function (c2802xadc): '<S204>/IC Measurement' */
+  /* Start for S-Function (c2802xadc): '<S205>/IC Measurement' */
   if (MW_adcInitFlag == 0U) {
     InitAdc();
     MW_adcInitFlag = 1U;
@@ -320,16 +320,16 @@ void mcb_bld_CurrentControl_Init(void)
 
   config_ADC_SOC2 ();
 
-  /* Start for Constant: '<S15>/Kp1' */
+  /* Start for Constant: '<S16>/Kp1' */
   mcb_bldc_sixstep_f28069mLaunc_B.Kp1 = 0.0F;
 
-  /* Start for S-Function (c280xgpio_do): '<S201>/Digital Output' */
+  /* Start for S-Function (c280xgpio_do): '<S202>/Digital Output' */
   EALLOW;
   GpioCtrlRegs.GPBMUX2.all &= 0xFFFFFFCFU;
   GpioCtrlRegs.GPBDIR.all |= 0x40000U;
   EDIS;
 
-  /* Start for S-Function (c2802xpwm): '<S201>/ePWM4' */
+  /* Start for S-Function (c2802xpwm): '<S202>/ePWM4' */
 
   /*** Initialize ePWM1 modules ***/
   {
@@ -506,7 +506,7 @@ void mcb_bld_CurrentControl_Init(void)
     EDIS;
   }
 
-  /* Start for S-Function (c2802xpwm): '<S201>/ePWM5' */
+  /* Start for S-Function (c2802xpwm): '<S202>/ePWM5' */
 
   /*** Initialize ePWM2 modules ***/
   {
@@ -683,7 +683,7 @@ void mcb_bld_CurrentControl_Init(void)
     EDIS;
   }
 
-  /* Start for S-Function (c2802xpwm): '<S201>/ePWM6' */
+  /* Start for S-Function (c2802xpwm): '<S202>/ePWM6' */
 
   /*** Initialize ePWM3 modules ***/
   {
@@ -860,76 +860,76 @@ void mcb_bld_CurrentControl_Init(void)
     EDIS;
   }
 
-  /* InitializeConditions for DiscreteIntegrator: '<S70>/Integrator' */
+  /* InitializeConditions for DiscreteIntegrator: '<S71>/Integrator' */
   mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE = 0.0F;
   mcb_bldc_sixstep_f28069mL_DWork.Integrator_PrevResetState = 0;
 
-  /* SystemInitialize for IfAction SubSystem: '<S10>/Hall Feedback' */
-  /* Start for Delay: '<S122>/validityDelay' */
+  /* SystemInitialize for IfAction SubSystem: '<S11>/Hall Feedback' */
+  /* Start for Delay: '<S123>/validityDelay' */
   mcb_bldc_sixstep_f28069mLaunc_B.validityDelay = false;
 
-  /* Start for Delay: '<S122>/speedCountDelay' */
+  /* Start for Delay: '<S123>/speedCountDelay' */
   mcb_bldc_sixstep_f28069mLaunc_B.speedCountDelay = 0UL;
 
-  /* Start for Delay: '<S123>/Delay One Step' */
+  /* Start for Delay: '<S124>/Delay One Step' */
   mcb_bldc_sixstep_f28069mLaunc_B.DelayOneStep = 0U;
 
-  /* InitializeConditions for UnitDelay: '<S120>/Unit Delay' */
+  /* InitializeConditions for UnitDelay: '<S121>/Unit Delay' */
   mcb_bldc_sixstep_f28069mL_DWork.UnitDelay_DSTATE_l = 1UL;
 
-  /* InitializeConditions for UnitDelay: '<S114>/Unit Delay' */
+  /* InitializeConditions for UnitDelay: '<S115>/Unit Delay' */
   mcb_bldc_sixstep_f28069mL_DWork.UnitDelay_DSTATE_dg = 1;
 
-  /* InitializeConditions for Delay: '<S123>/Delay One Step1' */
+  /* InitializeConditions for Delay: '<S124>/Delay One Step1' */
   mcb_bldc_sixstep_f28069mL_DWork.DelayOneStep1_DSTATE = true;
 
-  /* InitializeConditions for Delay: '<S123>/Delay One Step' */
+  /* InitializeConditions for Delay: '<S124>/Delay One Step' */
   mcb_bldc_sixstep_f28069mL_DWork.DelayOneStep_DSTATE = 2000U;
 
-  /* InitializeConditions for Delay: '<S120>/Delay' */
+  /* InitializeConditions for Delay: '<S121>/Delay' */
   mcb_bldc_sixstep_f28069mL_DWork.Delay_DSTATE_l = 1UL;
 
-  /* SystemInitialize for IfAction SubSystem: '<S117>/Speed and direction are valid Use speed to extrapolate position' */
-  /* SystemInitialize for Enabled SubSystem: '<S125>/Subsystem1' */
-  /* SystemInitialize for Merge: '<S138>/Merge' */
+  /* SystemInitialize for IfAction SubSystem: '<S118>/Speed and direction are valid Use speed to extrapolate position' */
+  /* SystemInitialize for Enabled SubSystem: '<S126>/Subsystem1' */
+  /* SystemInitialize for Merge: '<S139>/Merge' */
   mcb_bldc_sixstep_f28069mLaunc_B.Merge_aa = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S125>/Subsystem1' */
-  /* End of SystemInitialize for SubSystem: '<S117>/Speed and direction are valid Use speed to extrapolate position' */
+  /* End of SystemInitialize for SubSystem: '<S126>/Subsystem1' */
+  /* End of SystemInitialize for SubSystem: '<S118>/Speed and direction are valid Use speed to extrapolate position' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S157>/Valid Halls' */
-  /* SystemInitialize for Merge: '<S159>/Merge' */
+  /* SystemInitialize for IfAction SubSystem: '<S158>/Valid Halls' */
+  /* SystemInitialize for Merge: '<S160>/Merge' */
   mcb_bldc_sixstep_f28069mLaunc_B.Merge_n = 0U;
 
-  /* SystemInitialize for Merge: '<S159>/Merge1' */
+  /* SystemInitialize for Merge: '<S160>/Merge1' */
   mcb_bldc_sixstep_f28069mLaunc_B.Merge1_n = 0U;
 
-  /* SystemInitialize for Merge: '<S159>/Merge2' */
+  /* SystemInitialize for Merge: '<S160>/Merge2' */
   mcb_bldc_sixstep_f28069mLaunc_B.Merge2 = 0;
 
-  /* SystemInitialize for Merge: '<S159>/Merge3' */
+  /* SystemInitialize for Merge: '<S160>/Merge3' */
   mcb_bldc_sixstep_f28069mLaunc_B.Merge3 = 0U;
 
-  /* End of SystemInitialize for SubSystem: '<S157>/Valid Halls' */
+  /* End of SystemInitialize for SubSystem: '<S158>/Valid Halls' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S120>/Enabled Subsystem' */
-  /* InitializeConditions for UnitDelay: '<S174>/Unit Delay1' */
+  /* SystemInitialize for Enabled SubSystem: '<S121>/Enabled Subsystem' */
+  /* InitializeConditions for UnitDelay: '<S175>/Unit Delay1' */
   mcb_bldc_sixstep_f28069mL_DWork.UnitDelay1_DSTATE = 1UL;
 
-  /* End of SystemInitialize for SubSystem: '<S120>/Enabled Subsystem' */
-  /* End of SystemInitialize for SubSystem: '<S10>/Hall Feedback' */
+  /* End of SystemInitialize for SubSystem: '<S121>/Enabled Subsystem' */
+  /* End of SystemInitialize for SubSystem: '<S11>/Hall Feedback' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S10>/QEP Feedback' */
-  /* InitializeConditions for Delay: '<S179>/Delay' */
+  /* SystemInitialize for IfAction SubSystem: '<S11>/QEP Feedback' */
+  /* InitializeConditions for Delay: '<S180>/Delay' */
   mcb_bldc_sixstep_f28069mL_DWork.CircBufIdx = 0U;
 
-  /* End of SystemInitialize for SubSystem: '<S10>/QEP Feedback' */
+  /* End of SystemInitialize for SubSystem: '<S11>/QEP Feedback' */
 }
 
 /* System reset for function-call system: '<Root>/Current Control' */
 void mcb_bl_CurrentControl_Reset(void)
 {
-  /* InitializeConditions for DiscreteIntegrator: '<S70>/Integrator' */
+  /* InitializeConditions for DiscreteIntegrator: '<S71>/Integrator' */
   mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE =
     mcb_bldc_sixstep_f28069mLaunc_B.Kp1;
   mcb_bldc_sixstep_f28069mL_DWork.Integrator_PrevResetState = 0;
@@ -942,24 +942,39 @@ void mcb_bldc_six_CurrentControl(void)
 {
   real_T cu;
   int32_T Q17perunitconversion;
-  real32_T DataTypeConversion1_n;
+  real32_T u;
   int16_T DataTypeConversion1_o;
   int16_T i;
   uint16_T u0;
   uint16_T u1;
 
-  /* UnitDelay: '<S106>/Output' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Output =
-    mcb_bldc_sixstep_f28069mL_DWork.Output_DSTATE;
+  /* Abs: '<S9>/Abs' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Idc_ref = fabsf
+    (mcb_bldc_sixstep_f28069mLaunc_B.RT2);
 
-  /* S-Function (c280xqep): '<S204>/eQEP' */
+  /* Signum: '<S9>/Sign' */
+  u = mcb_bldc_sixstep_f28069mLaunc_B.RT2;
+  if (rtIsNaNF(u)) {
+    /* Signum: '<S9>/Sign' */
+    mcb_bldc_sixstep_f28069mLaunc_B.Sign = (rtNaNF);
+  } else if (u < 0.0F) {
+    /* Signum: '<S9>/Sign' */
+    mcb_bldc_sixstep_f28069mLaunc_B.Sign = -1.0F;
+  } else {
+    /* Signum: '<S9>/Sign' */
+    mcb_bldc_sixstep_f28069mLaunc_B.Sign = (u > 0.0F);
+  }
+
+  /* End of Signum: '<S9>/Sign' */
+
+  /* S-Function (c280xqep): '<S205>/eQEP' */
   {
     mcb_bldc_sixstep_f28069mLaunc_B.eQEP_o1 = EQep1Regs.QPOSCNT;/*eQEP Position Counter*/
     mcb_bldc_sixstep_f28069mLaunc_B.eQEP_o2 = EQep1Regs.QPOSILAT;
          /* The position-counter value is latched into this register on an IEL*/
   }
 
-  /* S-Function (c280xgpio_di): '<S205>/Digital Input2' */
+  /* S-Function (c280xgpio_di): '<S206>/Digital Input2' */
   {
     mcb_bldc_sixstep_f28069mLaunc_B.DigitalInput2[0] =
       GpioDataRegs.GPBDAT.bit.GPIO54;
@@ -967,47 +982,47 @@ void mcb_bldc_six_CurrentControl(void)
       GpioDataRegs.GPBDAT.bit.GPIO55;
   }
 
-  /* S-Function (c280xgpio_di): '<S205>/Digital Input3' */
+  /* S-Function (c280xgpio_di): '<S206>/Digital Input3' */
   {
     mcb_bldc_sixstep_f28069mLaunc_B.DigitalInput3 =
       GpioDataRegs.GPBDAT.bit.GPIO56;
   }
 
-  /* Outputs for IfAction SubSystem: '<S10>/QEP Feedback' incorporates:
-   *  ActionPort: '<S115>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S11>/QEP Feedback' incorporates:
+   *  ActionPort: '<S116>/Action Port'
    */
-  /* Outputs for IfAction SubSystem: '<S178>/PositionNoReset' incorporates:
-   *  ActionPort: '<S192>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S179>/PositionNoReset' incorporates:
+   *  ActionPort: '<S193>/Action Port'
    */
-  /* If: '<S10>/If' incorporates:
-   *  Constant: '<S115>/IndexOffset'
-   *  Constant: '<S182>/Filter_Constant'
-   *  Constant: '<S182>/One'
-   *  Constant: '<S197>/Constant'
+  /* If: '<S11>/If' incorporates:
+   *  Constant: '<S116>/IndexOffset'
+   *  Constant: '<S183>/Filter_Constant'
+   *  Constant: '<S183>/One'
    *  Constant: '<S198>/Constant'
-   *  DataTypeConversion: '<S195>/DTC'
-   *  DataTypeConversion: '<S200>/DTC'
-   *  Delay: '<S179>/Delay'
-   *  Gain: '<S179>/PositionToCount'
-   *  Gain: '<S179>/SpeedGain'
-   *  Gain: '<S190>/Number of pole pairs'
-   *  If: '<S178>/If1'
-   *  If: '<S185>/If'
-   *  Merge: '<S10>/Merge1'
-   *  Merge: '<S178>/Merge'
-   *  MinMax: '<S192>/MinMax'
-   *  Product: '<S178>/Product'
-   *  Product: '<S182>/Product'
-   *  Product: '<S182>/Product1'
-   *  Rounding: '<S186>/Floor'
-   *  SignalConversion generated from: '<S115>/speed'
-   *  Sum: '<S179>/SpeedCount'
-   *  Sum: '<S182>/Add1'
-   *  Sum: '<S186>/Add'
-   *  Sum: '<S192>/Sum3'
-   *  Sum: '<S192>/Sum7'
-   *  Switch: '<S184>/Switch'
-   *  UnitDelay: '<S182>/Unit Delay'
+   *  Constant: '<S199>/Constant'
+   *  DataTypeConversion: '<S196>/DTC'
+   *  DataTypeConversion: '<S201>/DTC'
+   *  Delay: '<S180>/Delay'
+   *  Gain: '<S180>/PositionToCount'
+   *  Gain: '<S180>/SpeedGain'
+   *  Gain: '<S191>/Number of pole pairs'
+   *  If: '<S179>/If1'
+   *  If: '<S186>/If'
+   *  Merge: '<S11>/Merge1'
+   *  Merge: '<S179>/Merge'
+   *  MinMax: '<S193>/MinMax'
+   *  Product: '<S179>/Product'
+   *  Product: '<S183>/Product'
+   *  Product: '<S183>/Product1'
+   *  Rounding: '<S187>/Floor'
+   *  SignalConversion generated from: '<S116>/speed'
+   *  Sum: '<S180>/SpeedCount'
+   *  Sum: '<S183>/Add1'
+   *  Sum: '<S187>/Add'
+   *  Sum: '<S193>/Sum3'
+   *  Sum: '<S193>/Sum7'
+   *  Switch: '<S185>/Switch'
+   *  UnitDelay: '<S183>/Unit Delay'
    * */
   mcb_bldc_sixstep_f28069mLaunc_B.Sum3 = mcb_bldc_sixstep_f28069mLaunc_B.eQEP_o1
     - mcb_bldc_sixstep_f28069mLaunc_B.eQEP_o2;
@@ -1021,7 +1036,7 @@ void mcb_bldc_six_CurrentControl(void)
 
   mcb_bldc_sixstep_f28069mLaunc_B.Merge_g = u1;
 
-  /* End of Outputs for SubSystem: '<S178>/PositionNoReset' */
+  /* End of Outputs for SubSystem: '<S179>/PositionNoReset' */
   mcb_bldc_sixstep_f28069mLaunc_B.DTC = mcb_bldc_sixstep_f28069mLaunc_B.Merge_g;
   mcb_bldc_sixstep_f28069mLaunc_B.Product = mcb_bldc_sixstep_f28069mLaunc_B.DTC *
     0.0001F;
@@ -1047,28 +1062,28 @@ void mcb_bldc_six_CurrentControl(void)
     mcb_bldc_sixstep_f28069mLaunc_B.Product1;
   mcb_bldc_sixstep_f28069mLaunc_B.Switch_f = 0.1995F;
   if (mcb_bldc_sixstep_f28069mLaunc_B.Product <= 0.1995F) {
-    /* Outputs for IfAction SubSystem: '<S185>/If Action Subsystem' incorporates:
-     *  ActionPort: '<S187>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S186>/If Action Subsystem' incorporates:
+     *  ActionPort: '<S188>/Action Port'
      */
-    /* Merge: '<S185>/Merge' incorporates:
-     *  Constant: '<S187>/Constant'
-     *  Sum: '<S187>/Add'
+    /* Merge: '<S186>/Merge' incorporates:
+     *  Constant: '<S188>/Constant'
+     *  Sum: '<S188>/Add'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.Merge =
       (mcb_bldc_sixstep_f28069mLaunc_B.Product + 1.0F) - 0.1995F;
 
-    /* End of Outputs for SubSystem: '<S185>/If Action Subsystem' */
+    /* End of Outputs for SubSystem: '<S186>/If Action Subsystem' */
   } else {
-    /* Outputs for IfAction SubSystem: '<S185>/If Action Subsystem1' incorporates:
-     *  ActionPort: '<S188>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S186>/If Action Subsystem1' incorporates:
+     *  ActionPort: '<S189>/Action Port'
      */
-    /* Merge: '<S185>/Merge' incorporates:
-     *  Sum: '<S188>/Add'
+    /* Merge: '<S186>/Merge' incorporates:
+     *  Sum: '<S189>/Add'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.Merge =
       mcb_bldc_sixstep_f28069mLaunc_B.Product - 0.1995F;
 
-    /* End of Outputs for SubSystem: '<S185>/If Action Subsystem1' */
+    /* End of Outputs for SubSystem: '<S186>/If Action Subsystem1' */
   }
 
   mcb_bldc_sixstep_f28069mLaunc_B.Numberofpolepairs = 5.0F *
@@ -1090,22 +1105,188 @@ void mcb_bldc_six_CurrentControl(void)
   mcb_bldc_sixstep_f28069mL_DWork.UnitDelay_DSTATE =
     mcb_bldc_sixstep_f28069mLaunc_B.Add1;
 
-  /* End of If: '<S10>/If' */
-  /* End of Outputs for SubSystem: '<S10>/QEP Feedback' */
+  /* End of If: '<S11>/If' */
+  /* End of Outputs for SubSystem: '<S11>/QEP Feedback' */
 
-  /* DataStoreRead: '<S113>/Data Store Read' */
+  /* Outputs for IfAction SubSystem: '<S9>/Pos_Commutation' incorporates:
+   *  ActionPort: '<S17>/Action Port'
+   */
+  /* Outputs for IfAction SubSystem: '<S88>/Position' incorporates:
+   *  ActionPort: '<S90>/Action Port'
+   */
+  /* If: '<S9>/If' incorporates:
+   *  If: '<S88>/If'
+   *  If: '<S91>/Range Check'
+   *  If: '<S92>/If'
+   *  Merge: '<S88>/Merge'
+   */
+  mcb_bldc_sixstep_f_Position(mcb_bldc_sixstep_f28069mLaunc_B.Add,
+    &mcb_bldc_sixstep_f28069mLaunc_B.Merge_e);
+
+  /* End of Outputs for SubSystem: '<S88>/Position' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.Merge_e > 7U) {
+    /* Outputs for IfAction SubSystem: '<S91>/Default ' incorporates:
+     *  ActionPort: '<S103>/Action Port'
+     */
+    /* Merge: '<S91>/Merge' incorporates:
+     *  Constant: '<S103>/Constant'
+     */
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0] = false;
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1] = false;
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2] = false;
+
+    /* End of Outputs for SubSystem: '<S91>/Default ' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S91>/Bit Extract' incorporates:
+     *  ActionPort: '<S102>/Action Port'
+     */
+    mcb_bldc_sixstep_BitExtract(mcb_bldc_sixstep_f28069mLaunc_B.Merge_e,
+      mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng,
+      &mcb_bldc_sixstep_f28069mLaunc_B.BitExtract_i);
+
+    /* End of Outputs for SubSystem: '<S91>/Bit Extract' */
+  }
+
+  if (mcb_bldc_sixstep_f28069mLaunc_B.Sign > 0.0F) {
+    /* Outputs for IfAction SubSystem: '<S92>/positive' incorporates:
+     *  ActionPort: '<S106>/Action Port'
+     */
+    /* CombinatorialLogic: '<S106>/SA1' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[0] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled36[u1];
+
+    /* CombinatorialLogic: '<S106>/SA2' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[1] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled35[u1];
+
+    /* CombinatorialLogic: '<S106>/SB1' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[2] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled37[u1];
+
+    /* CombinatorialLogic: '<S106>/SB2' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[3] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled34[u1];
+
+    /* CombinatorialLogic: '<S106>/SC1' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[4] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled39[u1];
+
+    /* CombinatorialLogic: '<S106>/SC2' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[5] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled38[u1];
+
+    /* End of Outputs for SubSystem: '<S92>/positive' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S92>/negative' incorporates:
+     *  ActionPort: '<S105>/Action Port'
+     */
+    /* CombinatorialLogic: '<S105>/SA1' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[0] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled35[u1];
+
+    /* CombinatorialLogic: '<S105>/SA2' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[1] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled36[u1];
+
+    /* CombinatorialLogic: '<S105>/SB1' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[2] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled34[u1];
+
+    /* CombinatorialLogic: '<S105>/SB2' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[3] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled37[u1];
+
+    /* CombinatorialLogic: '<S105>/SC1' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[4] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled38[u1];
+
+    /* CombinatorialLogic: '<S105>/SC2' incorporates:
+     *  Merge: '<S9>/Merge'
+     */
+    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
+    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[5] =
+      mcb_bldc_sixstep_f28069m_ConstP.pooled39[u1];
+
+    /* End of Outputs for SubSystem: '<S92>/negative' */
+  }
+
+  /* End of If: '<S9>/If' */
+  /* End of Outputs for SubSystem: '<S9>/Pos_Commutation' */
+
+  /* DataStoreRead: '<S16>/Data Store Read1' */
+  mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead1_l =
+    mcb_bldc_sixstep_f28069mL_DWork.Enable;
+
+  /* DataStoreRead: '<S114>/Data Store Read' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead =
     mcb_bldc_sixstep_f28069mL_DWork.IaOffset;
 
-  /* DataStoreRead: '<S113>/Data Store Read1' */
+  /* DataStoreRead: '<S114>/Data Store Read1' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead1 =
     mcb_bldc_sixstep_f28069mL_DWork.IbOffset;
 
-  /* DataStoreRead: '<S113>/Data Store Read2' */
+  /* DataStoreRead: '<S114>/Data Store Read2' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead2 =
     mcb_bldc_sixstep_f28069mL_DWork.IcOffset;
 
-  /* S-Function (c2802xadc): '<S204>/IA//IB Measurement' */
+  /* S-Function (c2802xadc): '<S205>/IA//IB Measurement' */
   {
     /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
     /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
@@ -1113,14 +1294,14 @@ void mcb_bldc_six_CurrentControl(void)
     mcb_bldc_sixstep_f28069mLaunc_B.IAIBMeasurement_p[1] = (AdcResult.ADCRESULT1);
   }
 
-  /* S-Function (c2802xadc): '<S204>/IC Measurement' */
+  /* S-Function (c2802xadc): '<S205>/IC Measurement' */
   {
     /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
     /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
     mcb_bldc_sixstep_f28069mLaunc_B.ICMeasurement_l = (AdcResult.ADCRESULT2);
   }
 
-  /* DataTypeConversion: '<S113>/Data Type Conversion' */
+  /* DataTypeConversion: '<S114>/Data Type Conversion' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_b[0] =
     mcb_bldc_sixstep_f28069mLaunc_B.IAIBMeasurement_p[0];
   mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_b[1] =
@@ -1128,7 +1309,7 @@ void mcb_bldc_six_CurrentControl(void)
   mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_b[2] =
     mcb_bldc_sixstep_f28069mLaunc_B.ICMeasurement_l;
 
-  /* Sum: '<S113>/Add' */
+  /* Sum: '<S114>/Add' */
   mcb_bldc_sixstep_f28069mLaunc_B.Add_g[0] =
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_b[0] -
     mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead;
@@ -1139,293 +1320,530 @@ void mcb_bldc_six_CurrentControl(void)
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_b[2] -
     mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead2;
 
-  /* ArithShift: '<S113>/Q17 per unit conversion' incorporates:
-   *  Sum: '<S113>/Add'
+  /* ArithShift: '<S114>/Q17 per unit conversion' incorporates:
+   *  Sum: '<S114>/Add'
    */
   Q17perunitconversion = mcb_bldc_sixstep_f28069mLaunc_B.Add_g[0] << 6U;
   mcb_bldc_sixstep_f28069mLaunc_B.Q17perunitconversion[0] = Q17perunitconversion;
 
-  /* DataTypeConversion: '<S113>/Data Type Conversion1' incorporates:
-   *  ArithShift: '<S113>/Q17 per unit conversion'
+  /* DataTypeConversion: '<S114>/Data Type Conversion1' incorporates:
+   *  ArithShift: '<S114>/Q17 per unit conversion'
    */
-  DataTypeConversion1_n = (real32_T)Q17perunitconversion * 7.62939453E-6F;
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[0] =
-    DataTypeConversion1_n;
+  u = (real32_T)Q17perunitconversion * 7.62939453E-6F;
+  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[0] = u;
 
-  /* Switch: '<S116>/Switch' incorporates:
-   *  Constant: '<S116>/Constant'
+  /* Switch: '<S117>/Switch' incorporates:
+   *  Constant: '<S117>/Constant'
    */
-  if (DataTypeConversion1_n > 0.0F) {
+  if (u > 0.0F) {
     cu = 0.0;
   } else {
-    cu = DataTypeConversion1_n;
+    cu = u;
   }
 
-  /* Switch: '<S116>/Switch' */
+  /* Switch: '<S117>/Switch' */
   mcb_bldc_sixstep_f28069mLaunc_B.cu[0] = cu;
 
-  /* DataTypeConversion: '<S116>/Data Type Conversion' */
+  /* DataTypeConversion: '<S117>/Data Type Conversion' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[0] = (real32_T)cu;
 
-  /* ArithShift: '<S113>/Q17 per unit conversion' incorporates:
-   *  Sum: '<S113>/Add'
+  /* ArithShift: '<S114>/Q17 per unit conversion' incorporates:
+   *  Sum: '<S114>/Add'
    */
   Q17perunitconversion = mcb_bldc_sixstep_f28069mLaunc_B.Add_g[1] << 6U;
   mcb_bldc_sixstep_f28069mLaunc_B.Q17perunitconversion[1] = Q17perunitconversion;
 
-  /* DataTypeConversion: '<S113>/Data Type Conversion1' incorporates:
-   *  ArithShift: '<S113>/Q17 per unit conversion'
+  /* DataTypeConversion: '<S114>/Data Type Conversion1' incorporates:
+   *  ArithShift: '<S114>/Q17 per unit conversion'
    */
-  DataTypeConversion1_n = (real32_T)Q17perunitconversion * 7.62939453E-6F;
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[1] =
-    DataTypeConversion1_n;
+  u = (real32_T)Q17perunitconversion * 7.62939453E-6F;
+  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[1] = u;
 
-  /* Switch: '<S116>/Switch' incorporates:
-   *  Constant: '<S116>/Constant'
+  /* Switch: '<S117>/Switch' incorporates:
+   *  Constant: '<S117>/Constant'
    */
-  if (DataTypeConversion1_n > 0.0F) {
+  if (u > 0.0F) {
     cu = 0.0;
   } else {
-    cu = DataTypeConversion1_n;
+    cu = u;
   }
 
-  /* Switch: '<S116>/Switch' */
+  /* Switch: '<S117>/Switch' */
   mcb_bldc_sixstep_f28069mLaunc_B.cu[1] = cu;
 
-  /* DataTypeConversion: '<S116>/Data Type Conversion' */
+  /* DataTypeConversion: '<S117>/Data Type Conversion' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[1] = (real32_T)cu;
 
-  /* ArithShift: '<S113>/Q17 per unit conversion' incorporates:
-   *  Sum: '<S113>/Add'
+  /* ArithShift: '<S114>/Q17 per unit conversion' incorporates:
+   *  Sum: '<S114>/Add'
    */
   Q17perunitconversion = mcb_bldc_sixstep_f28069mLaunc_B.Add_g[2] << 6U;
   mcb_bldc_sixstep_f28069mLaunc_B.Q17perunitconversion[2] = Q17perunitconversion;
 
-  /* DataTypeConversion: '<S113>/Data Type Conversion1' incorporates:
-   *  ArithShift: '<S113>/Q17 per unit conversion'
+  /* DataTypeConversion: '<S114>/Data Type Conversion1' incorporates:
+   *  ArithShift: '<S114>/Q17 per unit conversion'
    */
-  DataTypeConversion1_n = (real32_T)Q17perunitconversion * 7.62939453E-6F;
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[2] =
-    DataTypeConversion1_n;
+  u = (real32_T)Q17perunitconversion * 7.62939453E-6F;
+  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[2] = u;
 
-  /* Switch: '<S116>/Switch' incorporates:
-   *  Constant: '<S116>/Constant'
+  /* Switch: '<S117>/Switch' incorporates:
+   *  Constant: '<S117>/Constant'
    */
-  if (DataTypeConversion1_n > 0.0F) {
+  if (u > 0.0F) {
     cu = 0.0;
   } else {
-    cu = DataTypeConversion1_n;
+    cu = u;
   }
 
-  /* Switch: '<S116>/Switch' */
+  /* Switch: '<S117>/Switch' */
   mcb_bldc_sixstep_f28069mLaunc_B.cu[2] = cu;
 
-  /* DataTypeConversion: '<S116>/Data Type Conversion' */
+  /* DataTypeConversion: '<S117>/Data Type Conversion' */
   mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[2] = (real32_T)cu;
 
-  /* Sum: '<S113>/Sum' */
+  /* Sum: '<S114>/Sum' */
   mcb_bldc_sixstep_f28069mLaunc_B.Sum_o5 =
     (mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[0] +
      mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[1]) +
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[2];
 
-  /* UnaryMinus: '<S113>/Unary Minus' */
+  /* UnaryMinus: '<S114>/Unary Minus' */
   mcb_bldc_sixstep_f28069mLaunc_B.IDC = -mcb_bldc_sixstep_f28069mLaunc_B.Sum_o5;
 
-  /* DataTypeConversion: '<S108>/Data Type Conversion' */
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_l[0] = (int16_T)
+  /* Sum: '<S16>/Sum' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Sum_c =
+    mcb_bldc_sixstep_f28069mLaunc_B.Idc_ref -
+    mcb_bldc_sixstep_f28069mLaunc_B.IDC;
+
+  /* Product: '<S76>/PProd Out' incorporates:
+   *  Constant: '<S16>/Kp'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.PProdOut =
+    mcb_bldc_sixstep_f28069mLaunc_B.Sum_c * 1.54862177F;
+
+  /* Logic: '<S16>/Logical Operator' */
+  mcb_bldc_sixstep_f28069mLaunc_B.LogicalOperator =
+    !mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead1_l;
+
+  /* Constant: '<S16>/Kp1' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Kp1 = 0.0F;
+
+  /* DiscreteIntegrator: '<S71>/Integrator' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.LogicalOperator ||
+      (mcb_bldc_sixstep_f28069mL_DWork.Integrator_PrevResetState != 0)) {
+    mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE = 0.0F;
+  }
+
+  /* DiscreteIntegrator: '<S71>/Integrator' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Integrator =
+    mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE;
+
+  /* Sum: '<S80>/Sum' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Sum_e =
+    mcb_bldc_sixstep_f28069mLaunc_B.PProdOut +
+    mcb_bldc_sixstep_f28069mLaunc_B.Integrator;
+
+  /* DeadZone: '<S64>/DeadZone' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.Sum_e > 1.0F) {
+    /* DeadZone: '<S64>/DeadZone' */
+    mcb_bldc_sixstep_f28069mLaunc_B.DeadZone =
+      mcb_bldc_sixstep_f28069mLaunc_B.Sum_e - 1.0F;
+  } else if (mcb_bldc_sixstep_f28069mLaunc_B.Sum_e >= 0.0F) {
+    /* DeadZone: '<S64>/DeadZone' */
+    mcb_bldc_sixstep_f28069mLaunc_B.DeadZone = 0.0F;
+  } else {
+    /* DeadZone: '<S64>/DeadZone' */
+    mcb_bldc_sixstep_f28069mLaunc_B.DeadZone =
+      mcb_bldc_sixstep_f28069mLaunc_B.Sum_e;
+  }
+
+  /* End of DeadZone: '<S64>/DeadZone' */
+
+  /* RelationalOperator: '<S62>/Relational Operator' incorporates:
+   *  Constant: '<S62>/Clamping_zero'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.RelationalOperator =
+    (mcb_bldc_sixstep_f28069mLaunc_B.DeadZone != 0.0F);
+
+  /* RelationalOperator: '<S62>/fix for DT propagation issue' incorporates:
+   *  Constant: '<S62>/Clamping_zero'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.fixforDTpropagationissue =
+    (mcb_bldc_sixstep_f28069mLaunc_B.DeadZone > 0.0F);
+
+  /* Switch: '<S62>/Switch1' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.fixforDTpropagationissue) {
+    /* Switch: '<S62>/Switch1' incorporates:
+     *  Constant: '<S62>/Constant'
+     */
+    mcb_bldc_sixstep_f28069mLaunc_B.Switch1_b = 1;
+  } else {
+    /* Switch: '<S62>/Switch1' incorporates:
+     *  Constant: '<S62>/Constant2'
+     */
+    mcb_bldc_sixstep_f28069mLaunc_B.Switch1_b = -1;
+  }
+
+  /* End of Switch: '<S62>/Switch1' */
+
+  /* Product: '<S68>/IProd Out' incorporates:
+   *  Constant: '<S16>/Ki'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.IProdOut =
+    mcb_bldc_sixstep_f28069mLaunc_B.Sum_c * 0.0F;
+
+  /* RelationalOperator: '<S62>/fix for DT propagation issue1' */
+  mcb_bldc_sixstep_f28069mLaunc_B.fixforDTpropagationissue1 = false;
+
+  /* Switch: '<S62>/Switch2' incorporates:
+   *  Constant: '<S62>/Constant4'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.Switch2 = -1;
+
+  /* RelationalOperator: '<S62>/Equal1' incorporates:
+   *  Switch: '<S62>/Switch1'
+   *  Switch: '<S62>/Switch2'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.Equal1 =
+    (mcb_bldc_sixstep_f28069mLaunc_B.Switch1_b == -1);
+
+  /* Logic: '<S62>/AND3' */
+  mcb_bldc_sixstep_f28069mLaunc_B.AND3 =
+    (mcb_bldc_sixstep_f28069mLaunc_B.RelationalOperator &&
+     mcb_bldc_sixstep_f28069mLaunc_B.Equal1);
+
+  /* Switch: '<S62>/Switch' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.AND3) {
+    /* Switch: '<S62>/Switch' incorporates:
+     *  Constant: '<S62>/Constant1'
+     */
+    mcb_bldc_sixstep_f28069mLaunc_B.Switch = 0.0F;
+  } else {
+    /* Switch: '<S62>/Switch' */
+    mcb_bldc_sixstep_f28069mLaunc_B.Switch =
+      mcb_bldc_sixstep_f28069mLaunc_B.IProdOut;
+  }
+
+  /* End of Switch: '<S62>/Switch' */
+
+  /* UnitDelay: '<S111>/Output' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Output =
+    mcb_bldc_sixstep_f28069mL_DWork.Output_DSTATE;
+
+  /* DataTypeConversion: '<S108>/convertTo_sfix16_En12' */
+  mcb_bldc_sixstep_f28069mLaunc_B.convertTo_sfix16_En12[0] = (int16_T)
     (mcb_bldc_sixstep_f28069mLaunc_B.Merge1 * 4096.0F);
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_l[1] = (int16_T)
+  mcb_bldc_sixstep_f28069mLaunc_B.convertTo_sfix16_En12[1] = (int16_T)
     (mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[0] * 4096.0F);
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_l[2] = (int16_T)
+  mcb_bldc_sixstep_f28069mLaunc_B.convertTo_sfix16_En12[2] = (int16_T)
     (mcb_bldc_sixstep_f28069mLaunc_B.IDC * 4096.0F);
 
-  /* DataTypeConversion: '<S108>/Data Type Conversion3' incorporates:
-   *  DataTypeConversion: '<S108>/Data Type Conversion'
+  /* DataTypeConversion: '<S108>/convertTo_uint16' incorporates:
+   *  DataTypeConversion: '<S108>/convertTo_sfix16_En12'
    */
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[0] = (uint16_T)
-    mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_l[0];
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[1] = (uint16_T)
-    mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_l[1];
-  mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[2] = (uint16_T)
-    mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion_l[2];
+  mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[0] = (uint16_T)
+    mcb_bldc_sixstep_f28069mLaunc_B.convertTo_sfix16_En12[0];
+  mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[1] = (uint16_T)
+    mcb_bldc_sixstep_f28069mLaunc_B.convertTo_sfix16_En12[1];
+  mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[2] = (uint16_T)
+    mcb_bldc_sixstep_f28069mLaunc_B.convertTo_sfix16_En12[2];
 
-  /* If: '<S9>/If' */
+  /* If: '<S10>/indexCondition' */
   if (mcb_bldc_sixstep_f28069mLaunc_B.Output == 0U) {
-    /* Outputs for IfAction SubSystem: '<S9>/Start' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
      *  ActionPort: '<S110>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  Constant: '<S110>/End'
      *  SignalConversion generated from: '<S110>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[0] = 21331U;
 
     /* SignalConversion generated from: '<S110>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[0];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[0];
 
-    /* End of Outputs for SubSystem: '<S9>/Start' */
+    /* End of Outputs for SubSystem: '<S10>/Start' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data_fw[0] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/Start' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
      *  ActionPort: '<S110>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S110>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[1] = u0;
 
     /* SignalConversion generated from: '<S110>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[1];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[1];
 
-    /* End of Outputs for SubSystem: '<S9>/Start' */
+    /* End of Outputs for SubSystem: '<S10>/Start' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data_fw[1] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/Start' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
      *  ActionPort: '<S110>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S110>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[2] = u0;
 
     /* SignalConversion generated from: '<S110>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[2];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[2];
 
-    /* End of Outputs for SubSystem: '<S9>/Start' */
+    /* End of Outputs for SubSystem: '<S10>/Start' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data_fw[2] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/Start' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
      *  ActionPort: '<S110>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S110>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[3] = u0;
 
-    /* Merge: '<S9>/Merge1' incorporates:
+    /* Merge: '<S10>/mergeInteration' incorporates:
      *  Bias: '<S110>/Bias'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Iteration =
-      mcb_bldc_sixstep_f28069m_ConstB.Width + 1U;
+      mcb_bldc_sixstep_f28069m_ConstB.dataWidth + 1U;
 
-    /* End of Outputs for SubSystem: '<S9>/Start' */
+    /* End of Outputs for SubSystem: '<S10>/Start' */
   } else if (mcb_bldc_sixstep_f28069mLaunc_B.Output == 599U) {
-    /* Outputs for IfAction SubSystem: '<S9>/End' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
      *  ActionPort: '<S109>/Action Port'
      */
     /* SignalConversion generated from: '<S109>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[0];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[0];
 
-    /* End of Outputs for SubSystem: '<S9>/End' */
+    /* End of Outputs for SubSystem: '<S10>/End' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data_f[0] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/End' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
      *  ActionPort: '<S109>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S109>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[0] = u0;
 
     /* SignalConversion generated from: '<S109>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[1];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[1];
 
-    /* End of Outputs for SubSystem: '<S9>/End' */
+    /* End of Outputs for SubSystem: '<S10>/End' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data_f[1] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/End' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
      *  ActionPort: '<S109>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S109>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[1] = u0;
 
     /* SignalConversion generated from: '<S109>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[2];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[2];
 
-    /* End of Outputs for SubSystem: '<S9>/End' */
+    /* End of Outputs for SubSystem: '<S10>/End' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data_f[2] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/End' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
      *  ActionPort: '<S109>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  Constant: '<S109>/Start'
      *  SignalConversion generated from: '<S109>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[2] = u0;
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[3] = 17733U;
 
-    /* Merge: '<S9>/Merge1' incorporates:
+    /* Merge: '<S10>/mergeInteration' incorporates:
      *  Bias: '<S109>/Bias'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Iteration =
-      mcb_bldc_sixstep_f28069m_ConstB.Width + 1U;
+      mcb_bldc_sixstep_f28069m_ConstB.dataWidth + 1U;
 
-    /* End of Outputs for SubSystem: '<S9>/End' */
+    /* End of Outputs for SubSystem: '<S10>/End' */
   } else {
-    /* Outputs for IfAction SubSystem: '<S9>/Data' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
      *  ActionPort: '<S107>/Action Port'
      */
     /* SignalConversion generated from: '<S107>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[0];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[0];
 
-    /* End of Outputs for SubSystem: '<S9>/Data' */
+    /* End of Outputs for SubSystem: '<S10>/Data' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data[0] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/Data' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
      *  ActionPort: '<S107>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S107>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[0] = u0;
 
     /* SignalConversion generated from: '<S107>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[1];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[1];
 
-    /* End of Outputs for SubSystem: '<S9>/Data' */
+    /* End of Outputs for SubSystem: '<S10>/Data' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data[1] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/Data' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
      *  ActionPort: '<S107>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  SignalConversion generated from: '<S107>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[1] = u0;
 
     /* SignalConversion generated from: '<S107>/Data' */
-    u0 = mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3[2];
+    u0 = mcb_bldc_sixstep_f28069mLaunc_B.convertTo_uint16[2];
 
-    /* End of Outputs for SubSystem: '<S9>/Data' */
+    /* End of Outputs for SubSystem: '<S10>/Data' */
     mcb_bldc_sixstep_f28069mLaunc_B.Data[2] = u0;
 
-    /* Outputs for IfAction SubSystem: '<S9>/Data' incorporates:
+    /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
      *  ActionPort: '<S107>/Action Port'
      */
-    /* Merge: '<S9>/Merge' incorporates:
+    /* Merge: '<S10>/mergeDataOut' incorporates:
      *  Constant: '<S107>/Start'
      *  SignalConversion generated from: '<S107>/Data_out'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[2] = u0;
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Data[3] = 0U;
 
-    /* Merge: '<S9>/Merge1' incorporates:
+    /* Merge: '<S10>/mergeInteration' incorporates:
      *  SignalConversion generated from: '<S107>/Data_width'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.SCI_Tx_Iteration =
-      mcb_bldc_sixstep_f28069m_ConstB.Width;
+      mcb_bldc_sixstep_f28069m_ConstB.dataWidth;
 
-    /* End of Outputs for SubSystem: '<S9>/Data' */
+    /* End of Outputs for SubSystem: '<S10>/Data' */
   }
 
-  /* End of If: '<S9>/If' */
+  /* End of If: '<S10>/indexCondition' */
 
-  /* Outputs for Iterator SubSystem: '<S202>/CodeGeneration' incorporates:
-   *  WhileIterator: '<S203>/While Iterator'
+  /* Sum: '<S112>/FixPt Sum1' incorporates:
+   *  Constant: '<S112>/FixPt Constant'
+   */
+  mcb_bldc_sixstep_f28069mLaunc_B.FixPtSum1 =
+    mcb_bldc_sixstep_f28069mLaunc_B.Output + 1U;
+
+  /* Switch: '<S113>/FixPt Switch' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.FixPtSum1 > 599U) {
+    /* Switch: '<S113>/FixPt Switch' incorporates:
+     *  Constant: '<S113>/Constant'
+     */
+    mcb_bldc_sixstep_f28069mLaunc_B.FixPtSwitch = 0U;
+  } else {
+    /* Switch: '<S113>/FixPt Switch' */
+    mcb_bldc_sixstep_f28069mLaunc_B.FixPtSwitch =
+      mcb_bldc_sixstep_f28069mLaunc_B.FixPtSum1;
+  }
+
+  /* End of Switch: '<S113>/FixPt Switch' */
+
+  /* DataStoreRead: '<S202>/Enable' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Enable =
+    mcb_bldc_sixstep_f28069mL_DWork.Enable;
+
+  /* S-Function (c280xgpio_do): '<S202>/Digital Output' */
+  {
+    if (mcb_bldc_sixstep_f28069mLaunc_B.Enable) {
+      GpioDataRegs.GPBSET.bit.GPIO50 = 1U;
+    } else {
+      GpioDataRegs.GPBCLEAR.bit.GPIO50 = 1U;
+    }
+  }
+
+  /* Switch: '<S202>/Switch1' */
+  if (mcb_bldc_sixstep_f28069mLaunc_B.Enable) {
+    /* Saturate: '<S78>/Saturation' */
+    u = mcb_bldc_sixstep_f28069mLaunc_B.Sum_e;
+    if (u > 1.0F) {
+      /* Saturate: '<S78>/Saturation' */
+      mcb_bldc_sixstep_f28069mLaunc_B.Saturation = 1.0F;
+    } else if (u < 0.0F) {
+      /* Saturate: '<S78>/Saturation' */
+      mcb_bldc_sixstep_f28069mLaunc_B.Saturation = 0.0F;
+    } else {
+      /* Saturate: '<S78>/Saturation' */
+      mcb_bldc_sixstep_f28069mLaunc_B.Saturation = u;
+    }
+
+    /* End of Saturate: '<S78>/Saturation' */
+    for (i = 0; i < 6; i++) {
+      /* DataTypeConversion: '<S9>/Data Type Conversion1' */
+      DataTypeConversion1_o = (int16_T)
+        mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[i];
+      mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_o[i] =
+        DataTypeConversion1_o;
+
+      /* Product: '<S9>/Product' */
+      u = mcb_bldc_sixstep_f28069mLaunc_B.Saturation * (real32_T)
+        DataTypeConversion1_o;
+      mcb_bldc_sixstep_f28069mLaunc_B.duty[i] = u;
+
+      /* Gain: '<S202>/Scale_to_PWM_Counter_PRD' */
+      u0 = (uint16_T)(2250.0F * u);
+      mcb_bldc_sixstep_f28069mLaunc_B.Scale_to_PWM_Counter_PRD[i] = u0;
+
+      /* Switch: '<S202>/Switch1' */
+      mcb_bldc_sixstep_f28069mLaunc_B.Switch1[i] = u0;
+    }
+  } else {
+    /* Switch: '<S202>/Switch1' */
+    for (i = 0; i < 6; i++) {
+      mcb_bldc_sixstep_f28069mLaunc_B.Switch1[i] = 0U;
+    }
+  }
+
+  /* End of Switch: '<S202>/Switch1' */
+
+  /* S-Function (c2802xpwm): '<S202>/ePWM4' */
+
+  /*-- Update CMPA value for ePWM1 --*/
+  {
+    EPwm1Regs.CMPA.half.CMPA = (uint16_T)
+      (mcb_bldc_sixstep_f28069mLaunc_B.Switch1[0]);
+  }
+
+  /*-- Update CMPB value for ePWM1 --*/
+  {
+    EPwm1Regs.CMPB = (uint16_T)(mcb_bldc_sixstep_f28069mLaunc_B.Switch1[1]);
+  }
+
+  /* S-Function (c2802xpwm): '<S202>/ePWM5' */
+
+  /*-- Update CMPA value for ePWM2 --*/
+  {
+    EPwm2Regs.CMPA.half.CMPA = (uint16_T)
+      (mcb_bldc_sixstep_f28069mLaunc_B.Switch1[2]);
+  }
+
+  /*-- Update CMPB value for ePWM2 --*/
+  {
+    EPwm2Regs.CMPB = (uint16_T)(mcb_bldc_sixstep_f28069mLaunc_B.Switch1[3]);
+  }
+
+  /* S-Function (c2802xpwm): '<S202>/ePWM6' */
+
+  /*-- Update CMPA value for ePWM3 --*/
+  {
+    EPwm3Regs.CMPA.half.CMPA = (uint16_T)
+      (mcb_bldc_sixstep_f28069mLaunc_B.Switch1[4]);
+  }
+
+  /*-- Update CMPB value for ePWM3 --*/
+  {
+    EPwm3Regs.CMPB = (uint16_T)(mcb_bldc_sixstep_f28069mLaunc_B.Switch1[5]);
+  }
+
+  /* SignalConversion generated from: '<S1>/Speed_fb' */
+  mcb_bldc_sixstep_f28069mLaunc_B.Speed_PU =
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge1;
+
+  /* Outputs for Iterator SubSystem: '<S203>/SCI_Tx_codegen' incorporates:
+   *  WhileIterator: '<S204>/While Iterator'
    */
   i = 1;
   do {
@@ -1452,438 +1870,17 @@ void mcb_bldc_six_CurrentControl(void)
     i++;
   } while (mcb_bldc_sixstep_f28069mLaunc_B.Add_m != 0U);
 
-  /* End of Outputs for SubSystem: '<S202>/CodeGeneration' */
+  /* End of Outputs for SubSystem: '<S203>/SCI_Tx_codegen' */
 
-  /* Abs: '<S8>/Abs' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Idc_ref = fabsf
-    (mcb_bldc_sixstep_f28069mLaunc_B.RT2);
-
-  /* Signum: '<S8>/Sign' */
-  DataTypeConversion1_n = mcb_bldc_sixstep_f28069mLaunc_B.RT2;
-  if (rtIsNaNF(DataTypeConversion1_n)) {
-    /* Signum: '<S8>/Sign' */
-    mcb_bldc_sixstep_f28069mLaunc_B.Sign = (rtNaNF);
-  } else if (DataTypeConversion1_n < 0.0F) {
-    /* Signum: '<S8>/Sign' */
-    mcb_bldc_sixstep_f28069mLaunc_B.Sign = -1.0F;
-  } else {
-    /* Signum: '<S8>/Sign' */
-    mcb_bldc_sixstep_f28069mLaunc_B.Sign = (DataTypeConversion1_n > 0.0F);
-  }
-
-  /* End of Signum: '<S8>/Sign' */
-
-  /* Outputs for IfAction SubSystem: '<S8>/Pos_Commutation' incorporates:
-   *  ActionPort: '<S16>/Action Port'
-   */
-  /* Outputs for IfAction SubSystem: '<S87>/Position' incorporates:
-   *  ActionPort: '<S89>/Action Port'
-   */
-  /* If: '<S8>/If' incorporates:
-   *  If: '<S87>/If'
-   *  If: '<S90>/Range Check'
-   *  If: '<S91>/If'
-   *  Merge: '<S87>/Merge'
-   */
-  mcb_bldc_sixstep_f_Position(mcb_bldc_sixstep_f28069mLaunc_B.Add,
-    &mcb_bldc_sixstep_f28069mLaunc_B.Merge_e);
-
-  /* End of Outputs for SubSystem: '<S87>/Position' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.Merge_e > 7U) {
-    /* Outputs for IfAction SubSystem: '<S90>/Default ' incorporates:
-     *  ActionPort: '<S102>/Action Port'
-     */
-    /* Merge: '<S90>/Merge' incorporates:
-     *  Constant: '<S102>/Constant'
-     */
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0] = false;
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1] = false;
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2] = false;
-
-    /* End of Outputs for SubSystem: '<S90>/Default ' */
-  } else {
-    /* Outputs for IfAction SubSystem: '<S90>/Bit Extract' incorporates:
-     *  ActionPort: '<S101>/Action Port'
-     */
-    mcb_bldc_sixstep_BitExtract(mcb_bldc_sixstep_f28069mLaunc_B.Merge_e,
-      mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng,
-      &mcb_bldc_sixstep_f28069mLaunc_B.BitExtract_i);
-
-    /* End of Outputs for SubSystem: '<S90>/Bit Extract' */
-  }
-
-  if (mcb_bldc_sixstep_f28069mLaunc_B.Sign > 0.0F) {
-    /* Outputs for IfAction SubSystem: '<S91>/positive' incorporates:
-     *  ActionPort: '<S105>/Action Port'
-     */
-    /* CombinatorialLogic: '<S105>/SA1' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[0] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled37[u1];
-
-    /* CombinatorialLogic: '<S105>/SA2' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[1] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled36[u1];
-
-    /* CombinatorialLogic: '<S105>/SB1' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[2] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled38[u1];
-
-    /* CombinatorialLogic: '<S105>/SB2' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[3] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled35[u1];
-
-    /* CombinatorialLogic: '<S105>/SC1' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[4] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled40[u1];
-
-    /* CombinatorialLogic: '<S105>/SC2' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[5] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled39[u1];
-
-    /* End of Outputs for SubSystem: '<S91>/positive' */
-  } else {
-    /* Outputs for IfAction SubSystem: '<S91>/negative' incorporates:
-     *  ActionPort: '<S104>/Action Port'
-     */
-    /* CombinatorialLogic: '<S104>/SA1' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[0] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled36[u1];
-
-    /* CombinatorialLogic: '<S104>/SA2' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[1] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled37[u1];
-
-    /* CombinatorialLogic: '<S104>/SB1' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[2] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled35[u1];
-
-    /* CombinatorialLogic: '<S104>/SB2' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[3] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled38[u1];
-
-    /* CombinatorialLogic: '<S104>/SC1' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[4] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled39[u1];
-
-    /* CombinatorialLogic: '<S104>/SC2' incorporates:
-     *  Merge: '<S8>/Merge'
-     */
-    u1 = mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[0U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[1U];
-    u1 = (u1 << 1) + mcb_bldc_sixstep_f28069mLaunc_B.Merge_ng[2U];
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[5] =
-      mcb_bldc_sixstep_f28069m_ConstP.pooled40[u1];
-
-    /* End of Outputs for SubSystem: '<S91>/negative' */
-  }
-
-  /* End of If: '<S8>/If' */
-  /* End of Outputs for SubSystem: '<S8>/Pos_Commutation' */
-
-  /* DataStoreRead: '<S15>/Data Store Read1' */
-  mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead1_l =
-    mcb_bldc_sixstep_f28069mL_DWork.Enable;
-
-  /* Sum: '<S15>/Sum' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Sum_c =
-    mcb_bldc_sixstep_f28069mLaunc_B.Idc_ref -
-    mcb_bldc_sixstep_f28069mLaunc_B.IDC;
-
-  /* Product: '<S75>/PProd Out' incorporates:
-   *  Constant: '<S15>/Kp'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.PProdOut =
-    mcb_bldc_sixstep_f28069mLaunc_B.Sum_c * 1.54862177F;
-
-  /* Logic: '<S15>/Logical Operator' */
-  mcb_bldc_sixstep_f28069mLaunc_B.LogicalOperator =
-    !mcb_bldc_sixstep_f28069mLaunc_B.DataStoreRead1_l;
-
-  /* Constant: '<S15>/Kp1' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Kp1 = 0.0F;
-
-  /* DiscreteIntegrator: '<S70>/Integrator' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.LogicalOperator ||
-      (mcb_bldc_sixstep_f28069mL_DWork.Integrator_PrevResetState != 0)) {
-    mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE = 0.0F;
-  }
-
-  /* DiscreteIntegrator: '<S70>/Integrator' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Integrator =
-    mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE;
-
-  /* Sum: '<S79>/Sum' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Sum_e =
-    mcb_bldc_sixstep_f28069mLaunc_B.PProdOut +
-    mcb_bldc_sixstep_f28069mLaunc_B.Integrator;
-
-  /* DeadZone: '<S63>/DeadZone' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.Sum_e > 1.0F) {
-    /* DeadZone: '<S63>/DeadZone' */
-    mcb_bldc_sixstep_f28069mLaunc_B.DeadZone =
-      mcb_bldc_sixstep_f28069mLaunc_B.Sum_e - 1.0F;
-  } else if (mcb_bldc_sixstep_f28069mLaunc_B.Sum_e >= 0.0F) {
-    /* DeadZone: '<S63>/DeadZone' */
-    mcb_bldc_sixstep_f28069mLaunc_B.DeadZone = 0.0F;
-  } else {
-    /* DeadZone: '<S63>/DeadZone' */
-    mcb_bldc_sixstep_f28069mLaunc_B.DeadZone =
-      mcb_bldc_sixstep_f28069mLaunc_B.Sum_e;
-  }
-
-  /* End of DeadZone: '<S63>/DeadZone' */
-
-  /* RelationalOperator: '<S61>/Relational Operator' incorporates:
-   *  Constant: '<S61>/Clamping_zero'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.RelationalOperator =
-    (mcb_bldc_sixstep_f28069mLaunc_B.DeadZone != 0.0F);
-
-  /* RelationalOperator: '<S61>/fix for DT propagation issue' incorporates:
-   *  Constant: '<S61>/Clamping_zero'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.fixforDTpropagationissue =
-    (mcb_bldc_sixstep_f28069mLaunc_B.DeadZone > 0.0F);
-
-  /* Switch: '<S61>/Switch1' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.fixforDTpropagationissue) {
-    /* Switch: '<S61>/Switch1' incorporates:
-     *  Constant: '<S61>/Constant'
-     */
-    mcb_bldc_sixstep_f28069mLaunc_B.Switch1_b = 1;
-  } else {
-    /* Switch: '<S61>/Switch1' incorporates:
-     *  Constant: '<S61>/Constant2'
-     */
-    mcb_bldc_sixstep_f28069mLaunc_B.Switch1_b = -1;
-  }
-
-  /* End of Switch: '<S61>/Switch1' */
-
-  /* Product: '<S67>/IProd Out' incorporates:
-   *  Constant: '<S15>/Ki'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.IProdOut =
-    mcb_bldc_sixstep_f28069mLaunc_B.Sum_c * 0.0F;
-
-  /* RelationalOperator: '<S61>/fix for DT propagation issue1' */
-  mcb_bldc_sixstep_f28069mLaunc_B.fixforDTpropagationissue1 = false;
-
-  /* Switch: '<S61>/Switch2' incorporates:
-   *  Constant: '<S61>/Constant4'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.Switch2 = -1;
-
-  /* RelationalOperator: '<S61>/Equal1' incorporates:
-   *  Switch: '<S61>/Switch1'
-   *  Switch: '<S61>/Switch2'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.Equal1 =
-    (mcb_bldc_sixstep_f28069mLaunc_B.Switch1_b == -1);
-
-  /* Logic: '<S61>/AND3' */
-  mcb_bldc_sixstep_f28069mLaunc_B.AND3 =
-    (mcb_bldc_sixstep_f28069mLaunc_B.RelationalOperator &&
-     mcb_bldc_sixstep_f28069mLaunc_B.Equal1);
-
-  /* Switch: '<S61>/Switch' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.AND3) {
-    /* Switch: '<S61>/Switch' incorporates:
-     *  Constant: '<S61>/Constant1'
-     */
-    mcb_bldc_sixstep_f28069mLaunc_B.Switch = 0.0F;
-  } else {
-    /* Switch: '<S61>/Switch' */
-    mcb_bldc_sixstep_f28069mLaunc_B.Switch =
-      mcb_bldc_sixstep_f28069mLaunc_B.IProdOut;
-  }
-
-  /* End of Switch: '<S61>/Switch' */
-
-  /* Sum: '<S111>/FixPt Sum1' incorporates:
-   *  Constant: '<S111>/FixPt Constant'
-   */
-  mcb_bldc_sixstep_f28069mLaunc_B.FixPtSum1 =
-    mcb_bldc_sixstep_f28069mLaunc_B.Output + 1U;
-
-  /* Switch: '<S112>/FixPt Switch' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.FixPtSum1 > 599U) {
-    /* Switch: '<S112>/FixPt Switch' incorporates:
-     *  Constant: '<S112>/Constant'
-     */
-    mcb_bldc_sixstep_f28069mLaunc_B.FixPtSwitch = 0U;
-  } else {
-    /* Switch: '<S112>/FixPt Switch' */
-    mcb_bldc_sixstep_f28069mLaunc_B.FixPtSwitch =
-      mcb_bldc_sixstep_f28069mLaunc_B.FixPtSum1;
-  }
-
-  /* End of Switch: '<S112>/FixPt Switch' */
-
-  /* DataStoreRead: '<S201>/Enable' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Enable =
-    mcb_bldc_sixstep_f28069mL_DWork.Enable;
-
-  /* S-Function (c280xgpio_do): '<S201>/Digital Output' */
-  {
-    if (mcb_bldc_sixstep_f28069mLaunc_B.Enable) {
-      GpioDataRegs.GPBSET.bit.GPIO50 = 1U;
-    } else {
-      GpioDataRegs.GPBCLEAR.bit.GPIO50 = 1U;
-    }
-  }
-
-  /* Switch: '<S201>/Switch1' */
-  if (mcb_bldc_sixstep_f28069mLaunc_B.Enable) {
-    /* Saturate: '<S77>/Saturation' */
-    DataTypeConversion1_n = mcb_bldc_sixstep_f28069mLaunc_B.Sum_e;
-    if (DataTypeConversion1_n > 1.0F) {
-      /* Saturate: '<S77>/Saturation' */
-      mcb_bldc_sixstep_f28069mLaunc_B.Saturation = 1.0F;
-    } else if (DataTypeConversion1_n < 0.0F) {
-      /* Saturate: '<S77>/Saturation' */
-      mcb_bldc_sixstep_f28069mLaunc_B.Saturation = 0.0F;
-    } else {
-      /* Saturate: '<S77>/Saturation' */
-      mcb_bldc_sixstep_f28069mLaunc_B.Saturation = DataTypeConversion1_n;
-    }
-
-    /* End of Saturate: '<S77>/Saturation' */
-    for (i = 0; i < 6; i++) {
-      /* DataTypeConversion: '<S8>/Data Type Conversion1' */
-      DataTypeConversion1_o = (int16_T)
-        mcb_bldc_sixstep_f28069mLaunc_B.Merge_fv[i];
-      mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_o[i] =
-        DataTypeConversion1_o;
-
-      /* Product: '<S8>/Product' */
-      DataTypeConversion1_n = mcb_bldc_sixstep_f28069mLaunc_B.Saturation *
-        (real32_T)DataTypeConversion1_o;
-      mcb_bldc_sixstep_f28069mLaunc_B.duty[i] = DataTypeConversion1_n;
-
-      /* Gain: '<S201>/Scale_to_PWM_Counter_PRD' */
-      u0 = (uint16_T)(2250.0F * DataTypeConversion1_n);
-      mcb_bldc_sixstep_f28069mLaunc_B.Scale_to_PWM_Counter_PRD[i] = u0;
-
-      /* Switch: '<S201>/Switch1' */
-      mcb_bldc_sixstep_f28069mLaunc_B.Switch1[i] = u0;
-    }
-  } else {
-    /* Switch: '<S201>/Switch1' */
-    for (i = 0; i < 6; i++) {
-      mcb_bldc_sixstep_f28069mLaunc_B.Switch1[i] = 0U;
-    }
-  }
-
-  /* End of Switch: '<S201>/Switch1' */
-
-  /* S-Function (c2802xpwm): '<S201>/ePWM4' */
-
-  /*-- Update CMPA value for ePWM1 --*/
-  {
-    EPwm1Regs.CMPA.half.CMPA = (uint16_T)
-      (mcb_bldc_sixstep_f28069mLaunc_B.Switch1[0]);
-  }
-
-  /*-- Update CMPB value for ePWM1 --*/
-  {
-    EPwm1Regs.CMPB = (uint16_T)(mcb_bldc_sixstep_f28069mLaunc_B.Switch1[1]);
-  }
-
-  /* S-Function (c2802xpwm): '<S201>/ePWM5' */
-
-  /*-- Update CMPA value for ePWM2 --*/
-  {
-    EPwm2Regs.CMPA.half.CMPA = (uint16_T)
-      (mcb_bldc_sixstep_f28069mLaunc_B.Switch1[2]);
-  }
-
-  /*-- Update CMPB value for ePWM2 --*/
-  {
-    EPwm2Regs.CMPB = (uint16_T)(mcb_bldc_sixstep_f28069mLaunc_B.Switch1[3]);
-  }
-
-  /* S-Function (c2802xpwm): '<S201>/ePWM6' */
-
-  /*-- Update CMPA value for ePWM3 --*/
-  {
-    EPwm3Regs.CMPA.half.CMPA = (uint16_T)
-      (mcb_bldc_sixstep_f28069mLaunc_B.Switch1[4]);
-  }
-
-  /*-- Update CMPB value for ePWM3 --*/
-  {
-    EPwm3Regs.CMPB = (uint16_T)(mcb_bldc_sixstep_f28069mLaunc_B.Switch1[5]);
-  }
-
-  /* SignalConversion generated from: '<S1>/Speed_fb' */
-  mcb_bldc_sixstep_f28069mLaunc_B.Speed_PU =
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge1;
-
-  /* Update for UnitDelay: '<S106>/Output' */
-  mcb_bldc_sixstep_f28069mL_DWork.Output_DSTATE =
-    mcb_bldc_sixstep_f28069mLaunc_B.FixPtSwitch;
-
-  /* Update for DiscreteIntegrator: '<S70>/Integrator' */
+  /* Update for DiscreteIntegrator: '<S71>/Integrator' */
   mcb_bldc_sixstep_f28069mL_DWork.Integrator_DSTATE +=
     mcb_bldc_sixstep_f28069mLaunc_B.Switch;
   mcb_bldc_sixstep_f28069mL_DWork.Integrator_PrevResetState = (int16_T)
     mcb_bldc_sixstep_f28069mLaunc_B.LogicalOperator;
+
+  /* Update for UnitDelay: '<S111>/Output' */
+  mcb_bldc_sixstep_f28069mL_DWork.Output_DSTATE =
+    mcb_bldc_sixstep_f28069mLaunc_B.FixPtSwitch;
 }
 
 /* System initialize for atomic system: */
@@ -1891,7 +1888,7 @@ void mcb__SPIMasterTransfer_Init(rtDW_SPIMasterTransfer_mcb_bldc *localDW)
 {
   uint32_T SPIPinsLoc;
 
-  /* Start for MATLABSystem: '<S216>/SPI Master Transfer' */
+  /* Start for MATLABSystem: '<S217>/SPI Master Transfer' */
   localDW->obj.matlabCodegenIsDeleted = false;
   localDW->objisempty = true;
   localDW->obj.isInitialized = 1L;
@@ -1910,7 +1907,7 @@ void mcb_bldc__SPIMasterTransfer(uint16_T rtu_0, rtB_SPIMasterTransfer_mcb_bldc_
   uint16_T rdDataRaw;
   uint16_T status;
 
-  /* MATLABSystem: '<S216>/SPI Master Transfer' */
+  /* MATLABSystem: '<S217>/SPI Master Transfer' */
   MW_SPI_SetSlaveSelect(localDW->obj.MW_SPI_HANDLE, 0U, true);
   status = MW_SPI_SetFormat(localDW->obj.MW_SPI_HANDLE, 16U, MW_SPI_MODE_0,
     MW_SPI_MOST_SIGNIFICANT_BIT_FIRST);
@@ -1919,7 +1916,7 @@ void mcb_bldc__SPIMasterTransfer(uint16_T rtu_0, rtB_SPIMasterTransfer_mcb_bldc_
       1UL);
   }
 
-  /* MATLABSystem: '<S216>/SPI Master Transfer' */
+  /* MATLABSystem: '<S217>/SPI Master Transfer' */
   localB->SPIMasterTransfer = rdDataRaw;
 }
 
@@ -1928,7 +1925,7 @@ void mcb__SPIMasterTransfer_Term(rtDW_SPIMasterTransfer_mcb_bldc *localDW)
 {
   uint32_T SPIPinsLoc;
 
-  /* Terminate for MATLABSystem: '<S216>/SPI Master Transfer' */
+  /* Terminate for MATLABSystem: '<S217>/SPI Master Transfer' */
   if (!localDW->obj.matlabCodegenIsDeleted) {
     localDW->obj.matlabCodegenIsDeleted = true;
     if ((localDW->obj.isInitialized == 1L) && localDW->obj.isSetupComplete) {
@@ -1938,17 +1935,17 @@ void mcb__SPIMasterTransfer_Term(rtDW_SPIMasterTransfer_mcb_bldc *localDW)
     }
   }
 
-  /* End of Terminate for MATLABSystem: '<S216>/SPI Master Transfer' */
+  /* End of Terminate for MATLABSystem: '<S217>/SPI Master Transfer' */
 }
 
 /* System initialize for atomic system: '<Root>/Speed Control' */
 void mcb_bldc__SpeedControl_Init(rtB_SpeedControl_mcb_bldc_sixst *localB,
   rtDW_SpeedControl_mcb_bldc_sixs *localDW)
 {
-  /* Start for Constant: '<S230>/Ki2' */
+  /* Start for Constant: '<S231>/Ki2' */
   localB->Ki2 = 0.0F;
 
-  /* InitializeConditions for DiscreteIntegrator: '<S267>/Integrator' */
+  /* InitializeConditions for DiscreteIntegrator: '<S268>/Integrator' */
   localDW->Integrator_DSTATE = 0.0F;
   localDW->Integrator_PrevResetState = 0;
 }
@@ -1961,169 +1958,169 @@ void mcb_bldc_sixst_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
 {
   real32_T u0;
 
-  /* DataStoreRead: '<S230>/Data Store Read2' */
+  /* DataStoreRead: '<S231>/Data Store Read2' */
   localB->DataStoreRead2 = *rtd_Enable;
 
-  /* DataStoreRead: '<S231>/Data Store Read1' */
+  /* DataStoreRead: '<S232>/Data Store Read1' */
   localB->DataStoreRead1 = *rtd_Enable;
 
-  /* Switch: '<S231>/Switch' */
+  /* Switch: '<S232>/Switch' */
   if (localB->DataStoreRead1) {
-    /* Switch: '<S231>/Switch' */
+    /* Switch: '<S232>/Switch' */
     localB->Switch = rtu_Speed_Ref_PU;
   } else {
-    /* Switch: '<S231>/Switch' */
+    /* Switch: '<S232>/Switch' */
     localB->Switch = rtu_Speed_Meas_PU;
   }
 
-  /* End of Switch: '<S231>/Switch' */
+  /* End of Switch: '<S232>/Switch' */
 
-  /* Product: '<S286>/Product' incorporates:
-   *  Constant: '<S286>/Filter_Constant'
+  /* Product: '<S287>/Product' incorporates:
+   *  Constant: '<S287>/Filter_Constant'
    */
   localB->Product = localB->Switch * 0.1F;
 
-  /* UnitDelay: '<S286>/Unit Delay' */
+  /* UnitDelay: '<S287>/Unit Delay' */
   localB->UnitDelay = localDW->UnitDelay_DSTATE;
 
-  /* Product: '<S286>/Product1' incorporates:
-   *  Constant: '<S286>/One'
+  /* Product: '<S287>/Product1' incorporates:
+   *  Constant: '<S287>/One'
    */
   localB->Product1 = 0.9F * localB->UnitDelay;
 
-  /* Sum: '<S286>/Add1' */
+  /* Sum: '<S287>/Add1' */
   localB->Add1 = localB->Product + localB->Product1;
 
-  /* Sum: '<S230>/Sum' */
+  /* Sum: '<S231>/Sum' */
   localB->Sum = localB->Add1 - rtu_Speed_Meas_PU;
 
-  /* Product: '<S272>/PProd Out' incorporates:
-   *  Constant: '<S230>/Kp1'
+  /* Product: '<S273>/PProd Out' incorporates:
+   *  Constant: '<S231>/Kp1'
    */
   localB->PProdOut = localB->Sum * 2.70955873F;
 
-  /* Logic: '<S230>/Logical Operator' */
+  /* Logic: '<S231>/Logical Operator' */
   localB->LogicalOperator = !localB->DataStoreRead2;
 
-  /* Constant: '<S230>/Ki2' */
+  /* Constant: '<S231>/Ki2' */
   localB->Ki2 = 0.0F;
 
-  /* DiscreteIntegrator: '<S267>/Integrator' */
+  /* DiscreteIntegrator: '<S268>/Integrator' */
   if (localB->LogicalOperator || (localDW->Integrator_PrevResetState != 0)) {
     localDW->Integrator_DSTATE = 0.0F;
   }
 
-  /* DiscreteIntegrator: '<S267>/Integrator' */
+  /* DiscreteIntegrator: '<S268>/Integrator' */
   localB->Integrator = localDW->Integrator_DSTATE;
 
-  /* Sum: '<S276>/Sum' */
+  /* Sum: '<S277>/Sum' */
   localB->Sum_j = localB->PProdOut + localB->Integrator;
 
-  /* DeadZone: '<S260>/DeadZone' */
+  /* DeadZone: '<S261>/DeadZone' */
   if (localB->Sum_j > 1.0F) {
-    /* DeadZone: '<S260>/DeadZone' */
+    /* DeadZone: '<S261>/DeadZone' */
     localB->DeadZone = localB->Sum_j - 1.0F;
   } else if (localB->Sum_j >= -1.0F) {
-    /* DeadZone: '<S260>/DeadZone' */
+    /* DeadZone: '<S261>/DeadZone' */
     localB->DeadZone = 0.0F;
   } else {
-    /* DeadZone: '<S260>/DeadZone' */
+    /* DeadZone: '<S261>/DeadZone' */
     localB->DeadZone = localB->Sum_j - -1.0F;
   }
 
-  /* End of DeadZone: '<S260>/DeadZone' */
+  /* End of DeadZone: '<S261>/DeadZone' */
 
-  /* RelationalOperator: '<S258>/Relational Operator' incorporates:
-   *  Constant: '<S258>/Clamping_zero'
+  /* RelationalOperator: '<S259>/Relational Operator' incorporates:
+   *  Constant: '<S259>/Clamping_zero'
    */
   localB->RelationalOperator = (localB->DeadZone != 0.0F);
 
-  /* RelationalOperator: '<S258>/fix for DT propagation issue' incorporates:
-   *  Constant: '<S258>/Clamping_zero'
+  /* RelationalOperator: '<S259>/fix for DT propagation issue' incorporates:
+   *  Constant: '<S259>/Clamping_zero'
    */
   localB->fixforDTpropagationissue = (localB->DeadZone > 0.0F);
 
-  /* Switch: '<S258>/Switch1' */
+  /* Switch: '<S259>/Switch1' */
   if (localB->fixforDTpropagationissue) {
-    /* Switch: '<S258>/Switch1' incorporates:
-     *  Constant: '<S258>/Constant'
+    /* Switch: '<S259>/Switch1' incorporates:
+     *  Constant: '<S259>/Constant'
      */
     localB->Switch1 = 1;
   } else {
-    /* Switch: '<S258>/Switch1' incorporates:
-     *  Constant: '<S258>/Constant2'
+    /* Switch: '<S259>/Switch1' incorporates:
+     *  Constant: '<S259>/Constant2'
      */
     localB->Switch1 = -1;
   }
 
-  /* End of Switch: '<S258>/Switch1' */
+  /* End of Switch: '<S259>/Switch1' */
 
-  /* Product: '<S264>/IProd Out' incorporates:
-   *  Constant: '<S230>/Ki1'
+  /* Product: '<S265>/IProd Out' incorporates:
+   *  Constant: '<S231>/Ki1'
    */
   localB->IProdOut = localB->Sum * 0.0197651051F;
 
-  /* RelationalOperator: '<S258>/fix for DT propagation issue1' incorporates:
-   *  Constant: '<S258>/Clamping_zero'
+  /* RelationalOperator: '<S259>/fix for DT propagation issue1' incorporates:
+   *  Constant: '<S259>/Clamping_zero'
    */
   localB->fixforDTpropagationissue1 = (localB->IProdOut > 0.0F);
 
-  /* Switch: '<S258>/Switch2' */
+  /* Switch: '<S259>/Switch2' */
   if (localB->fixforDTpropagationissue1) {
-    /* Switch: '<S258>/Switch2' incorporates:
-     *  Constant: '<S258>/Constant3'
+    /* Switch: '<S259>/Switch2' incorporates:
+     *  Constant: '<S259>/Constant3'
      */
     localB->Switch2 = 1;
   } else {
-    /* Switch: '<S258>/Switch2' incorporates:
-     *  Constant: '<S258>/Constant4'
+    /* Switch: '<S259>/Switch2' incorporates:
+     *  Constant: '<S259>/Constant4'
      */
     localB->Switch2 = -1;
   }
 
-  /* End of Switch: '<S258>/Switch2' */
+  /* End of Switch: '<S259>/Switch2' */
 
-  /* RelationalOperator: '<S258>/Equal1' incorporates:
-   *  Switch: '<S258>/Switch1'
-   *  Switch: '<S258>/Switch2'
+  /* RelationalOperator: '<S259>/Equal1' incorporates:
+   *  Switch: '<S259>/Switch1'
+   *  Switch: '<S259>/Switch2'
    */
   localB->Equal1 = (localB->Switch1 == localB->Switch2);
 
-  /* Logic: '<S258>/AND3' */
+  /* Logic: '<S259>/AND3' */
   localB->AND3 = (localB->RelationalOperator && localB->Equal1);
 
-  /* Switch: '<S258>/Switch' */
+  /* Switch: '<S259>/Switch' */
   if (localB->AND3) {
-    /* Switch: '<S258>/Switch' incorporates:
-     *  Constant: '<S258>/Constant1'
+    /* Switch: '<S259>/Switch' incorporates:
+     *  Constant: '<S259>/Constant1'
      */
     localB->Switch_a = 0.0F;
   } else {
-    /* Switch: '<S258>/Switch' */
+    /* Switch: '<S259>/Switch' */
     localB->Switch_a = localB->IProdOut;
   }
 
-  /* End of Switch: '<S258>/Switch' */
+  /* End of Switch: '<S259>/Switch' */
 
-  /* Saturate: '<S274>/Saturation' */
+  /* Saturate: '<S275>/Saturation' */
   u0 = localB->Sum_j;
   if (u0 > 1.0F) {
-    /* Saturate: '<S274>/Saturation' */
+    /* Saturate: '<S275>/Saturation' */
     localB->Saturation = 1.0F;
   } else if (u0 < -1.0F) {
-    /* Saturate: '<S274>/Saturation' */
+    /* Saturate: '<S275>/Saturation' */
     localB->Saturation = -1.0F;
   } else {
-    /* Saturate: '<S274>/Saturation' */
+    /* Saturate: '<S275>/Saturation' */
     localB->Saturation = u0;
   }
 
-  /* End of Saturate: '<S274>/Saturation' */
+  /* End of Saturate: '<S275>/Saturation' */
 
-  /* Update for UnitDelay: '<S286>/Unit Delay' */
+  /* Update for UnitDelay: '<S287>/Unit Delay' */
   localDW->UnitDelay_DSTATE = localB->Add1;
 
-  /* Update for DiscreteIntegrator: '<S267>/Integrator' */
+  /* Update for DiscreteIntegrator: '<S268>/Integrator' */
   localDW->Integrator_DSTATE += localB->Switch_a;
   localDW->Integrator_PrevResetState = (int16_T)localB->LogicalOperator;
 }
@@ -2133,6 +2130,23 @@ void mcb_bldc_sixstep_f28069mLaunchPad_step0(void) /* Sample time: [0.0005s, 0.0
 {
   {                                    /* Sample time: [0.0005s, 0.0s] */
     rate_monotonic_scheduler();
+  }
+
+  /* RateTransition: '<Root>/RT5' */
+  mcb_bldc_sixstep_f28069mLaunc_B.RT5 =
+    mcb_bldc_sixstep_f28069mLaunc_B.IndexVector;
+
+  /* S-Function (c28xsci_tx): '<S7>/SCI Transmit1' */
+  {
+    if (checkSCITransmitInProgressB != 1U) {
+      checkSCITransmitInProgressB = 1U;
+      int16_T errFlgHeader = NOERROR;
+      int16_T errFlgData = NOERROR;
+      int16_T errFlgTail = NOERROR;
+      errFlgData = scib_xmit((unsigned char*)
+        &mcb_bldc_sixstep_f28069mLaunc_B.RT5, 2, 2);
+      checkSCITransmitInProgressB = 0U;
+    }
   }
 
   /* RateTransition: '<Root>/RT1' */
@@ -2163,34 +2177,13 @@ void mcb_bldc_sixstep_f28069mLaunchPad_step0(void) /* Sample time: [0.0005s, 0.0
 }
 
 /* Model step function for TID1 */
-void mcb_bldc_sixstep_f28069mLaunchPad_step1(void) /* Sample time: [0.1s, 0.0s] */
+void mcb_bldc_sixstep_f28069mLaunchPad_step1(void) /* Sample time: [0.5s, 0.0s] */
 {
-  /* DiscretePulseGenerator: '<S7>/Pulse Generator' */
-  mcb_bldc_sixstep_f28069mLaunc_B.PulseGenerator =
-    ((mcb_bldc_sixstep_f28069mL_DWork.clockTickCounter < 1L) &&
-     (mcb_bldc_sixstep_f28069mL_DWork.clockTickCounter >= 0L));
-
-  /* DiscretePulseGenerator: '<S7>/Pulse Generator' */
-  if (mcb_bldc_sixstep_f28069mL_DWork.clockTickCounter >= 1L) {
-    mcb_bldc_sixstep_f28069mL_DWork.clockTickCounter = 0L;
-  } else {
-    mcb_bldc_sixstep_f28069mL_DWork.clockTickCounter++;
-  }
-
-  /* S-Function (c280xgpio_do): '<S7>/Digital Output' */
+  /* S-Function (c280xgpio_do): '<S8>/Digital Output1' incorporates:
+   *  Constant: '<S8>/Constant'
+   */
   {
-    GpioDataRegs.GPBTOGGLE.bit.GPIO34 = (uint16_T)
-      (mcb_bldc_sixstep_f28069mLaunc_B.PulseGenerator != 0);
-  }
-
-  /* Logic: '<S7>/NOT' */
-  mcb_bldc_sixstep_f28069mLaunc_B.NOT =
-    !(mcb_bldc_sixstep_f28069mLaunc_B.PulseGenerator != 0.0);
-
-  /* S-Function (c280xgpio_do): '<S7>/Digital Output1' */
-  {
-    GpioDataRegs.GPBTOGGLE.bit.GPIO39 = (uint16_T)
-      (mcb_bldc_sixstep_f28069mLaunc_B.NOT != 0);
+    GpioDataRegs.GPBTOGGLE.bit.GPIO39 = (uint16_T)((1.0) != 0);
   }
 }
 
@@ -2220,7 +2213,6 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
       mcb_bldc_sixstep_f28069mLaunc_B.duty[i] = 0.0F;
     }
 
-    mcb_bldc_sixstep_f28069mLaunc_B.PulseGenerator = 0.0;
     mcb_bldc_sixstep_f28069mLaunc_B.cu[0] = 0.0;
     mcb_bldc_sixstep_f28069mLaunc_B.cu[1] = 0.0;
     mcb_bldc_sixstep_f28069mLaunc_B.cu[2] = 0.0;
@@ -2230,7 +2222,8 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[0] = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[1] = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_l = 0.0F;
-    mcb_bldc_sixstep_f28069mLaunc_B.Merge1 = 0.0F;
+    mcb_bldc_sixstep_f28069mLaunc_B.Idc_ref = 0.0F;
+    mcb_bldc_sixstep_f28069mLaunc_B.Sign = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[0] = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[1] = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_n[2] = 0.0F;
@@ -2239,8 +2232,6 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion[2] = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Sum_o5 = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.IDC = 0.0F;
-    mcb_bldc_sixstep_f28069mLaunc_B.Idc_ref = 0.0F;
-    mcb_bldc_sixstep_f28069mLaunc_B.Sign = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Sum_c = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.PProdOut = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Kp1 = 0.0F;
@@ -2249,6 +2240,7 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     mcb_bldc_sixstep_f28069mLaunc_B.DeadZone = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.IProdOut = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Switch = 0.0F;
+    mcb_bldc_sixstep_f28069mLaunc_B.Merge1 = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Speed_PU = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Saturation = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.DTC = 0.0F;
@@ -2321,15 +2313,9 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
   mcb_bldc_sixstep_f28069mL_DWork.SpeedControl.Integrator_DSTATE = 0.0F;
 
   {
-    uint16_T s218_iter;
+    uint16_T s219_iter;
 
-    /* Start for S-Function (c280xgpio_do): '<S7>/Digital Output' */
-    EALLOW;
-    GpioCtrlRegs.GPBMUX1.all &= 0xFFFFFFCFU;
-    GpioCtrlRegs.GPBDIR.all |= 0x4U;
-    EDIS;
-
-    /* Start for S-Function (c280xgpio_do): '<S7>/Digital Output1' */
+    /* Start for S-Function (c280xgpio_do): '<S8>/Digital Output1' */
     EALLOW;
     GpioCtrlRegs.GPBMUX1.all &= 0xFFFF3FFFU;
     GpioCtrlRegs.GPBDIR.all |= 0x80U;
@@ -2345,20 +2331,17 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     mcb_bldc_sixstep_f28069mL_DWork.IcOffset = 3003U;
     mcb_bldc_sixstep_PrevZCSigState.Delay_Reset_ZCE = UNINITIALIZED_ZCSIG;
 
-    /* InitializeConditions for DiscretePulseGenerator: '<S7>/Pulse Generator' */
-    mcb_bldc_sixstep_f28069mL_DWork.clockTickCounter = 0L;
-
-    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S210>/Hardware Interrupt' incorporates:
+    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S211>/Hardware Interrupt' incorporates:
      *  SubSystem: '<Root>/Current Control'
      */
     mcb_bld_CurrentControl_Init();
 
-    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S212>/Hardware Interrupt' incorporates:
+    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S213>/Hardware Interrupt' incorporates:
      *  SubSystem: '<Root>/Serial Receive'
      */
     /* System initialize for function-call system: '<Root>/Serial Receive' */
 
-    /* Start for S-Function (c28xsci_rx): '<S229>/SCI Receive' */
+    /* Start for S-Function (c28xsci_rx): '<S230>/SCI Receive' */
 
     /* Initialize out port */
     {
@@ -2384,15 +2367,15 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     /* End of SystemInitialize for SubSystem: '<Root>/Speed Control' */
 
     /* SystemInitialize for Atomic SubSystem: '<Root>/Hardware Init' */
-    /* Start for S-Function (c280xgpio_do): '<S216>/Digital Output' */
+    /* Start for S-Function (c280xgpio_do): '<S217>/Digital Output' */
     EALLOW;
     GpioCtrlRegs.GPBMUX2.all &= 0xFFFFFFCFU;
     GpioCtrlRegs.GPBDIR.all |= 0x40000U;
     EDIS;
 
-    /* SystemInitialize for Enabled SubSystem: '<S214>/Calculate ADC Offset ' */
-    /* SystemInitialize for Iterator SubSystem: '<S215>/For Iterator Subsystem' */
-    /* Start for S-Function (c2802xadc): '<S218>/IA//IB Measurement' */
+    /* SystemInitialize for Enabled SubSystem: '<S215>/Calculate ADC Offset ' */
+    /* SystemInitialize for Iterator SubSystem: '<S216>/For Iterator Subsystem' */
+    /* Start for S-Function (c2802xadc): '<S219>/IA//IB Measurement' */
     if (MW_adcInitFlag == 0U) {
       InitAdc();
       MW_adcInitFlag = 1U;
@@ -2400,7 +2383,7 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
 
     config_ADC_SOC4_SOC5 ();
 
-    /* Start for S-Function (c2802xadc): '<S218>/IC Measurement' */
+    /* Start for S-Function (c2802xadc): '<S219>/IC Measurement' */
     if (MW_adcInitFlag == 0U) {
       InitAdc();
       MW_adcInitFlag = 1U;
@@ -2408,8 +2391,8 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
 
     config_ADC_SOC3 ();
 
-    /* End of SystemInitialize for SubSystem: '<S215>/For Iterator Subsystem' */
-    /* End of SystemInitialize for SubSystem: '<S214>/Calculate ADC Offset ' */
+    /* End of SystemInitialize for SubSystem: '<S216>/For Iterator Subsystem' */
+    /* End of SystemInitialize for SubSystem: '<S215>/Calculate ADC Offset ' */
     mcb__SPIMasterTransfer_Init
       (&mcb_bldc_sixstep_f28069mL_DWork.SPIMasterTransfer);
     mcb__SPIMasterTransfer_Init
@@ -2428,8 +2411,8 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
       &mcb_bldc_sixstep_f28069mLaunc_B.SPIMasterTransfer1,
       &mcb_bldc_sixstep_f28069mL_DWork.SPIMasterTransfer1);
 
-    /* S-Function (c280xgpio_do): '<S216>/Digital Output' incorporates:
-     *  Constant: '<S216>/DRV830x_Enable'
+    /* S-Function (c280xgpio_do): '<S217>/Digital Output' incorporates:
+     *  Constant: '<S217>/DRV830x_Enable'
      */
     {
       if ((1U)) {
@@ -2439,19 +2422,19 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
       }
     }
 
-    /* Outputs for Enabled SubSystem: '<S214>/Calculate ADC Offset ' incorporates:
-     *  EnablePort: '<S215>/Enable'
+    /* Outputs for Enabled SubSystem: '<S215>/Calculate ADC Offset ' incorporates:
+     *  EnablePort: '<S216>/Enable'
      */
-    /* Outputs for Iterator SubSystem: '<S215>/For Iterator Subsystem' incorporates:
-     *  ForIterator: '<S218>/For Iterator'
+    /* Outputs for Iterator SubSystem: '<S216>/For Iterator Subsystem' incorporates:
+     *  ForIterator: '<S219>/For Iterator'
      */
-    for (s218_iter = 1U; s218_iter < 17U; s218_iter++) {
-      /* Outputs for Iterator SubSystem: '<S215>/For Iterator Subsystem' incorporates:
-       *  ForIterator: '<S218>/For Iterator'
+    for (s219_iter = 1U; s219_iter < 17U; s219_iter++) {
+      /* Outputs for Iterator SubSystem: '<S216>/For Iterator Subsystem' incorporates:
+       *  ForIterator: '<S219>/For Iterator'
        */
-      mcb_bldc_sixstep_f28069mLaunc_B.ForIterator = s218_iter;
+      mcb_bldc_sixstep_f28069mLaunc_B.ForIterator = s219_iter;
 
-      /* S-Function (c2802xadc): '<S218>/IA//IB Measurement' */
+      /* S-Function (c2802xadc): '<S219>/IA//IB Measurement' */
       {
         /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
         /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
@@ -2478,7 +2461,7 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
           (AdcResult.ADCRESULT5);
       }
 
-      /* S-Function (c2802xadc): '<S218>/IC Measurement' */
+      /* S-Function (c2802xadc): '<S219>/IC Measurement' */
       {
         /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
         /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
@@ -2502,185 +2485,185 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
         mcb_bldc_sixstep_f28069mLaunc_B.ICMeasurement = (AdcResult.ADCRESULT3);
       }
 
-      /* If: '<S218>/If' */
+      /* If: '<S219>/If' */
       if (mcb_bldc_sixstep_f28069mLaunc_B.ForIterator > 8U) {
-        /* Outputs for IfAction SubSystem: '<S218>/If Action Subsystem' incorporates:
-         *  ActionPort: '<S225>/Action Port'
+        /* Outputs for IfAction SubSystem: '<S219>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S226>/Action Port'
          */
-        /* Memory: '<S225>/Memory' */
+        /* Memory: '<S226>/Memory' */
         mcb_bldc_sixstep_f28069mLaunc_B.Memory =
           mcb_bldc_sixstep_f28069mL_DWork.Memory_PreviousInput;
 
-        /* Sum: '<S225>/Sum' */
+        /* Sum: '<S226>/Sum' */
         mcb_bldc_sixstep_f28069mLaunc_B.Sum_eu =
           mcb_bldc_sixstep_f28069mLaunc_B.IAIBMeasurement[0] +
           mcb_bldc_sixstep_f28069mLaunc_B.Memory;
 
-        /* Memory: '<S225>/Memory1' */
+        /* Memory: '<S226>/Memory1' */
         mcb_bldc_sixstep_f28069mLaunc_B.Memory1 =
           mcb_bldc_sixstep_f28069mL_DWork.Memory1_PreviousInput;
 
-        /* Sum: '<S225>/Sum1' */
+        /* Sum: '<S226>/Sum1' */
         mcb_bldc_sixstep_f28069mLaunc_B.Sum1_n =
           mcb_bldc_sixstep_f28069mLaunc_B.IAIBMeasurement[1] +
           mcb_bldc_sixstep_f28069mLaunc_B.Memory1;
 
-        /* Memory: '<S225>/Memory2' */
+        /* Memory: '<S226>/Memory2' */
         mcb_bldc_sixstep_f28069mLaunc_B.Memory2 =
           mcb_bldc_sixstep_f28069mL_DWork.Memory2_PreviousInput;
 
-        /* Sum: '<S225>/Sum2' */
+        /* Sum: '<S226>/Sum2' */
         mcb_bldc_sixstep_f28069mLaunc_B.Sum2 =
           mcb_bldc_sixstep_f28069mLaunc_B.ICMeasurement +
           mcb_bldc_sixstep_f28069mLaunc_B.Memory2;
 
-        /* Update for Memory: '<S225>/Memory' */
+        /* Update for Memory: '<S226>/Memory' */
         mcb_bldc_sixstep_f28069mL_DWork.Memory_PreviousInput =
           mcb_bldc_sixstep_f28069mLaunc_B.Sum_eu;
 
-        /* Update for Memory: '<S225>/Memory1' */
+        /* Update for Memory: '<S226>/Memory1' */
         mcb_bldc_sixstep_f28069mL_DWork.Memory1_PreviousInput =
           mcb_bldc_sixstep_f28069mLaunc_B.Sum1_n;
 
-        /* Update for Memory: '<S225>/Memory2' */
+        /* Update for Memory: '<S226>/Memory2' */
         mcb_bldc_sixstep_f28069mL_DWork.Memory2_PreviousInput =
           mcb_bldc_sixstep_f28069mLaunc_B.Sum2;
 
-        /* End of Outputs for SubSystem: '<S218>/If Action Subsystem' */
+        /* End of Outputs for SubSystem: '<S219>/If Action Subsystem' */
       }
 
-      /* End of If: '<S218>/If' */
+      /* End of If: '<S219>/If' */
     }
 
-    /* End of Outputs for SubSystem: '<S215>/For Iterator Subsystem' */
+    /* End of Outputs for SubSystem: '<S216>/For Iterator Subsystem' */
 
-    /* Product: '<S215>/Divide' incorporates:
-     *  Constant: '<S215>/Constant'
+    /* Product: '<S216>/Divide' incorporates:
+     *  Constant: '<S216>/Constant'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.Divide_j = (uint16_T)((real_T)
       mcb_bldc_sixstep_f28069mLaunc_B.Sum_eu / 8.0);
 
-    /* If: '<S215>/If' incorporates:
-     *  Constant: '<S215>/Constant1'
-     *  Constant: '<S215>/Constant2'
+    /* If: '<S216>/If' incorporates:
+     *  Constant: '<S216>/Constant1'
+     *  Constant: '<S216>/Constant2'
      */
     if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide_j > 2500U) &&
         (mcb_bldc_sixstep_f28069mLaunc_B.Divide_j < 3500U)) {
-      /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem' incorporates:
-       *  ActionPort: '<S219>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S216>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S220>/Action Port'
        */
-      /* DataStoreWrite: '<S219>/Data Store Write1' */
+      /* DataStoreWrite: '<S220>/Data Store Write1' */
       mcb_bldc_sixstep_f28069mL_DWork.IaOffset =
         mcb_bldc_sixstep_f28069mLaunc_B.Divide_j;
 
-      /* End of Outputs for SubSystem: '<S215>/If Action Subsystem' */
+      /* End of Outputs for SubSystem: '<S216>/If Action Subsystem' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S220>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S216>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S221>/Action Port'
        */
-      /* DataStoreWrite: '<S220>/Data Store Write1' incorporates:
-       *  Constant: '<S220>/Constant'
+      /* DataStoreWrite: '<S221>/Data Store Write1' incorporates:
+       *  Constant: '<S221>/Constant'
        */
       mcb_bldc_sixstep_f28069mL_DWork.IaOffset = 3309U;
 
-      /* End of Outputs for SubSystem: '<S215>/If Action Subsystem1' */
+      /* End of Outputs for SubSystem: '<S216>/If Action Subsystem1' */
     }
 
-    /* End of If: '<S215>/If' */
+    /* End of If: '<S216>/If' */
 
-    /* Product: '<S215>/Divide1' incorporates:
-     *  Constant: '<S215>/Constant'
+    /* Product: '<S216>/Divide1' incorporates:
+     *  Constant: '<S216>/Constant'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m = (uint16_T)((real_T)
       mcb_bldc_sixstep_f28069mLaunc_B.Sum1_n / 8.0);
 
-    /* If: '<S215>/If1' incorporates:
-     *  Constant: '<S215>/Constant1'
-     *  Constant: '<S215>/Constant2'
+    /* If: '<S216>/If1' incorporates:
+     *  Constant: '<S216>/Constant1'
+     *  Constant: '<S216>/Constant2'
      */
     if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m > 2500U) &&
         (mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m < 3500U)) {
-      /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem2' incorporates:
-       *  ActionPort: '<S221>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S216>/If Action Subsystem2' incorporates:
+       *  ActionPort: '<S222>/Action Port'
        */
-      /* DataStoreWrite: '<S221>/Data Store Write2' */
+      /* DataStoreWrite: '<S222>/Data Store Write2' */
       mcb_bldc_sixstep_f28069mL_DWork.IbOffset =
         mcb_bldc_sixstep_f28069mLaunc_B.Divide1_m;
 
-      /* End of Outputs for SubSystem: '<S215>/If Action Subsystem2' */
+      /* End of Outputs for SubSystem: '<S216>/If Action Subsystem2' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem3' incorporates:
-       *  ActionPort: '<S222>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S216>/If Action Subsystem3' incorporates:
+       *  ActionPort: '<S223>/Action Port'
        */
-      /* DataStoreWrite: '<S222>/Data Store Write2' incorporates:
-       *  Constant: '<S222>/Constant1'
+      /* DataStoreWrite: '<S223>/Data Store Write2' incorporates:
+       *  Constant: '<S223>/Constant1'
        */
       mcb_bldc_sixstep_f28069mL_DWork.IbOffset = 3003U;
 
-      /* End of Outputs for SubSystem: '<S215>/If Action Subsystem3' */
+      /* End of Outputs for SubSystem: '<S216>/If Action Subsystem3' */
     }
 
-    /* End of If: '<S215>/If1' */
+    /* End of If: '<S216>/If1' */
 
-    /* Product: '<S215>/Divide2' incorporates:
-     *  Constant: '<S215>/Constant'
+    /* Product: '<S216>/Divide2' incorporates:
+     *  Constant: '<S216>/Constant'
      */
     mcb_bldc_sixstep_f28069mLaunc_B.Divide2 = (uint16_T)((real_T)
       mcb_bldc_sixstep_f28069mLaunc_B.Sum2 / 8.0);
 
-    /* If: '<S215>/If2' incorporates:
-     *  Constant: '<S215>/Constant1'
-     *  Constant: '<S215>/Constant2'
+    /* If: '<S216>/If2' incorporates:
+     *  Constant: '<S216>/Constant1'
+     *  Constant: '<S216>/Constant2'
      */
     if ((mcb_bldc_sixstep_f28069mLaunc_B.Divide2 > 2500U) &&
         (mcb_bldc_sixstep_f28069mLaunc_B.Divide2 < 3500U)) {
-      /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem4' incorporates:
-       *  ActionPort: '<S223>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S216>/If Action Subsystem4' incorporates:
+       *  ActionPort: '<S224>/Action Port'
        */
-      /* DataStoreWrite: '<S223>/Data Store Write2' */
+      /* DataStoreWrite: '<S224>/Data Store Write2' */
       mcb_bldc_sixstep_f28069mL_DWork.IcOffset =
         mcb_bldc_sixstep_f28069mLaunc_B.Divide2;
 
-      /* End of Outputs for SubSystem: '<S215>/If Action Subsystem4' */
+      /* End of Outputs for SubSystem: '<S216>/If Action Subsystem4' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S215>/If Action Subsystem5' incorporates:
-       *  ActionPort: '<S224>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S216>/If Action Subsystem5' incorporates:
+       *  ActionPort: '<S225>/Action Port'
        */
-      /* DataStoreWrite: '<S224>/Data Store Write2' incorporates:
-       *  Constant: '<S224>/Constant1'
+      /* DataStoreWrite: '<S225>/Data Store Write2' incorporates:
+       *  Constant: '<S225>/Constant1'
        */
       mcb_bldc_sixstep_f28069mL_DWork.IcOffset = 3318U;
 
-      /* End of Outputs for SubSystem: '<S215>/If Action Subsystem5' */
+      /* End of Outputs for SubSystem: '<S216>/If Action Subsystem5' */
     }
 
-    /* End of If: '<S215>/If2' */
-    /* End of Outputs for SubSystem: '<S214>/Calculate ADC Offset ' */
+    /* End of If: '<S216>/If2' */
+    /* End of Outputs for SubSystem: '<S215>/Calculate ADC Offset ' */
 
-    /* Logic: '<S214>/NOT' */
-    mcb_bldc_sixstep_f28069mLaunc_B.NOT_d = false;
+    /* Logic: '<S215>/NOT' */
+    mcb_bldc_sixstep_f28069mLaunc_B.NOT = false;
 
-    /* Outputs for Enabled SubSystem: '<S214>/Default ADC Offset' incorporates:
-     *  EnablePort: '<S217>/Enable'
+    /* Outputs for Enabled SubSystem: '<S215>/Default ADC Offset' incorporates:
+     *  EnablePort: '<S218>/Enable'
      */
-    if (mcb_bldc_sixstep_f28069mLaunc_B.NOT_d) {
-      /* DataStoreWrite: '<S217>/Data Store Write1' incorporates:
-       *  Constant: '<S217>/Constant'
+    if (mcb_bldc_sixstep_f28069mLaunc_B.NOT) {
+      /* DataStoreWrite: '<S218>/Data Store Write1' incorporates:
+       *  Constant: '<S218>/Constant'
        */
       mcb_bldc_sixstep_f28069mL_DWork.IaOffset = 3309U;
 
-      /* DataStoreWrite: '<S217>/Data Store Write2' incorporates:
-       *  Constant: '<S217>/Constant1'
+      /* DataStoreWrite: '<S218>/Data Store Write2' incorporates:
+       *  Constant: '<S218>/Constant1'
        */
       mcb_bldc_sixstep_f28069mL_DWork.IbOffset = 3003U;
 
-      /* DataStoreWrite: '<S217>/Data Store Write3' incorporates:
-       *  Constant: '<S217>/Constant2'
+      /* DataStoreWrite: '<S218>/Data Store Write3' incorporates:
+       *  Constant: '<S218>/Constant2'
        */
       mcb_bldc_sixstep_f28069mL_DWork.IcOffset = 3318U;
     }
 
-    /* End of Outputs for SubSystem: '<S214>/Default ADC Offset' */
+    /* End of Outputs for SubSystem: '<S215>/Default ADC Offset' */
     /* End of Outputs for SubSystem: '<Root>/Hardware Init' */
   }
 }
@@ -2707,7 +2690,7 @@ void mcb_bldc_sixstep_f28069mLaunchPad_configure_interrupts(void)
   HWI_TIC28x_EnableIRQ(96);
 }
 
-/* Hardware Interrupt Block: '<S210>/Hardware Interrupt' */
+/* Hardware Interrupt Block: '<S211>/Hardware Interrupt' */
 interrupt void ADCINT1(void)
 {
   volatile unsigned int PIEIER1_stack_save = PieCtrlRegs.PIEIER1.all;
@@ -2730,10 +2713,10 @@ interrupt void ADCINT1(void)
       mcb_bldc_sixstep_f28069mLaunc_B.RT2 =
         mcb_bldc_sixstep_f28069mL_DWork.RT2_Buffer[mcb_bldc_sixstep_f28069mL_DWork.RT2_ActiveBufIdx];
 
-      /* S-Function (HardwareInterrupt_sfun): '<S210>/Hardware Interrupt' */
+      /* S-Function (HardwareInterrupt_sfun): '<S211>/Hardware Interrupt' */
       mcb_bldc_six_CurrentControl();
 
-      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S210>/Hardware Interrupt' */
+      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S211>/Hardware Interrupt' */
 
       /* RateTransition: '<Root>/RT1' */
       mcb_bldc_sixstep_f28069mL_DWork.RT1_Buffer[mcb_bldc_sixstep_f28069mL_DWork.RT1_semaphoreTaken
@@ -2757,19 +2740,19 @@ interrupt void ADCINT1(void)
   HWI_TIC28x_AcknowledgeIrq(32);
 }
 
-/* Hardware Interrupt Block: '<S212>/Hardware Interrupt' */
+/* Hardware Interrupt Block: '<S213>/Hardware Interrupt' */
 interrupt void SCIRXINTA(void)
 {
   /* Event: Default Event */
   if (1 == runModel) {
     {
-      /* S-Function (HardwareInterrupt_sfun): '<S212>/Hardware Interrupt' */
+      /* S-Function (HardwareInterrupt_sfun): '<S213>/Hardware Interrupt' */
 
       /* Output and update for function-call system: '<Root>/Serial Receive' */
       {
         int16_T DataTypeConversion2_c;
 
-        /* S-Function (c28xsci_rx): '<S229>/SCI Receive' */
+        /* S-Function (c28xsci_rx): '<S230>/SCI Receive' */
         {
           int16_T i;
           int16_T errFlg = NOERROR;
@@ -2793,44 +2776,44 @@ interrupt void SCIRXINTA(void)
           }
         }
 
-        /* DataTypeConversion: '<S227>/Data Type Conversion2' */
+        /* DataTypeConversion: '<S228>/Data Type Conversion2' */
         DataTypeConversion2_c = (int16_T)
           mcb_bldc_sixstep_f28069mLaunc_B.SCIReceive[0];
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion2_c[0] =
           DataTypeConversion2_c;
 
-        /* DataTypeConversion: '<S227>/Data Type Conversion1' incorporates:
-         *  DataTypeConversion: '<S227>/Data Type Conversion2'
+        /* DataTypeConversion: '<S228>/Data Type Conversion1' incorporates:
+         *  DataTypeConversion: '<S228>/Data Type Conversion2'
          */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[0] = (real32_T)
           DataTypeConversion2_c * 0.000244140625F;
 
-        /* DataTypeConversion: '<S227>/Data Type Conversion2' */
+        /* DataTypeConversion: '<S228>/Data Type Conversion2' */
         DataTypeConversion2_c = (int16_T)
           mcb_bldc_sixstep_f28069mLaunc_B.SCIReceive[1];
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion2_c[1] =
           DataTypeConversion2_c;
 
-        /* DataTypeConversion: '<S227>/Data Type Conversion1' incorporates:
-         *  DataTypeConversion: '<S227>/Data Type Conversion2'
+        /* DataTypeConversion: '<S228>/Data Type Conversion1' incorporates:
+         *  DataTypeConversion: '<S228>/Data Type Conversion2'
          */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[1] = (real32_T)
           DataTypeConversion2_c * 0.000244140625F;
 
         /* DataTypeConversion: '<S5>/Data Type Conversion3' */
-        mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3_m =
+        mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3 =
           (mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[1] != 0.0F);
 
         /* DataStoreWrite: '<S5>/Data Store Write' */
         mcb_bldc_sixstep_f28069mL_DWork.Enable =
-          mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3_m;
+          mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3;
 
         /* DataTypeConversion: '<S5>/Data Type Conversion1' */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_l =
           mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[0];
       }
 
-      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S212>/Hardware Interrupt' */
+      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S213>/Hardware Interrupt' */
 
       /* RateTransition: '<Root>/RT6' */
       mcb_bldc_sixstep_f28069mL_DWork.RT6_Buffer[mcb_bldc_sixstep_f28069mL_DWork.RT6_ActiveBufIdx
