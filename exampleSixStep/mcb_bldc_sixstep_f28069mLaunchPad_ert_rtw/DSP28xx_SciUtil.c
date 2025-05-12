@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.65
+ * Model version                  : 7.79
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue May  6 16:43:59 2025
+ * C/C++ source code generated on : Wed May  7 16:53:57 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -14,37 +14,6 @@
  */
 
 #include "DSP28xx_SciUtil.h"
-
-// to prevent re-entrancy in SCI transmit function
-uint16_T checkSCITransmitInProgressA;
-uint32_T frameA1Count;
-uint16_T frameA1Transmitted;
-
-/* Transmit character(s) from the SCIa*/
-int16_T scia_xmit(unsigned char* pmsg, int16_T msglen, int16_T typeLen)
-/*Blocking mode*/
-{
-  int16_T i,j;
-  if (typeLen==1) {
-    for (i = 0; i < msglen; i++) {
-      while (SciaRegs.SCIFFTX.bit.TXFFST == 4U) {
-      }                                /* The buffer is full;*/
-
-      SciaRegs.SCITXBUF= pmsg[i];
-    }
-  } else {
-    for (i = 0; i < (msglen/2); i++) {
-      for (j = 0; j<=1; j++) {
-        while (SciaRegs.SCIFFTX.bit.TXFFST == 4U) {
-        }                              /* The buffer is full;*/
-
-        SciaRegs.SCITXBUF= pmsg[i]>>(8*j);
-      }
-    }
-  }
-
-  return 0;
-}
 
 /*
  * Receive character(s) from the SCIa
@@ -268,14 +237,6 @@ int16_T scia_rcv_varsize(uint16_T *rcvBuff, int16_T buffLen, int16_T typeLen,
   }
 
   return errorVal;
-}
-
-void init_SCIFrame(void)
-{
-  // to prevent re-entrancy in SCI transmit function
-  checkSCITransmitInProgressA = 0;
-  frameA1Count = 0U;
-  frameA1Transmitted = 1;
 }
 
 /*

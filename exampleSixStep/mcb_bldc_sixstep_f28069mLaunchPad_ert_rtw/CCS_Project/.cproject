@@ -30,10 +30,6 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep">
 </listOptionValue>
-<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\target\shared\svd\common\include">
-</listOptionValue>
-<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\inc">
-</listOptionValue>
 <listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\include">
@@ -46,11 +42,35 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\rtw\c\ert">
 </listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ex\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\lang\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\mc\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pd\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pm\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pm_log\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_comp\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_core\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_ds\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_sli\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_st\include">
+</listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\src">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000_shared\src">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000_shared\inc">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\inc">
 </listOptionValue>
 <listOptionValue builtIn="false" value="D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include">
 </listOptionValue>
@@ -70,15 +90,9 @@
 </listOptionValue>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.DEFINE.1045084510" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.DEFINE" valueType="definedSymbols">
-<listOptionValue builtIn="false" value="MW_SPI_A">
-</listOptionValue>
-<listOptionValue builtIn="false" value="MW_SPISTE_SELECT_SPI_A">
-</listOptionValue>
-<listOptionValue builtIn="false" value="MW_SCHEDULER_PRIORITY=1">
-</listOptionValue>
 <listOptionValue builtIn="false" value="MODEL=mcb_bldc_sixstep_f28069mLaunchPad">
 </listOptionValue>
-<listOptionValue builtIn="false" value="NUMST=2">
+<listOptionValue builtIn="false" value="NUMST=5">
 </listOptionValue>
 <listOptionValue builtIn="false" value="NCSTATES=0">
 </listOptionValue>
@@ -146,6 +160,18 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="D:\TiC2000_Install\ControlSUITE\controlSUITE\libs\utilities\hrcap_hccal\type0\v110\lib\HCCAL_Type0_V1_fpu32.lib">
 </listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_sli\lib\ssc_sli.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_core\lib\ssc_core.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_st\lib\ssc_st.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\mc\lib\mc.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ex\lib\ex.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pm\lib\pm.lib">
+</listOptionValue>
 <listOptionValue builtIn="false" value="C:\ProgramData\MATLAB\tic2000\3P.instrset\tic28xcodegentools.instrset\ti-cgt-c2000_22.6.0.LTS\lib\rts2800_fpu32.lib">
 </listOptionValue>
 <listOptionValue builtIn="false" value="D:\TiC2000_Install\ControlSUITE\controlSUITE\libs\math\IQmath\v160\lib\IQmath_fpu32.lib">
@@ -212,10 +238,6 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep">
 </listOptionValue>
-<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\target\shared\svd\common\include">
-</listOptionValue>
-<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\inc">
-</listOptionValue>
 <listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\include">
@@ -228,11 +250,35 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\rtw\c\ert">
 </listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ex\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\lang\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\mc\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pd\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pm\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pm_log\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_comp\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_core\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_ds\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_sli\include">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_st\include">
+</listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\src">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000_shared\src">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000_shared\inc">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\inc">
 </listOptionValue>
 <listOptionValue builtIn="false" value="D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include">
 </listOptionValue>
@@ -252,15 +298,9 @@
 </listOptionValue>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.DEFINE.1616953459" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.DEFINE" valueType="definedSymbols">
-<listOptionValue builtIn="false" value="MW_SPI_A">
-</listOptionValue>
-<listOptionValue builtIn="false" value="MW_SPISTE_SELECT_SPI_A">
-</listOptionValue>
-<listOptionValue builtIn="false" value="MW_SCHEDULER_PRIORITY=1">
-</listOptionValue>
 <listOptionValue builtIn="false" value="MODEL=mcb_bldc_sixstep_f28069mLaunchPad">
 </listOptionValue>
-<listOptionValue builtIn="false" value="NUMST=2">
+<listOptionValue builtIn="false" value="NUMST=5">
 </listOptionValue>
 <listOptionValue builtIn="false" value="NCSTATES=0">
 </listOptionValue>
@@ -327,6 +367,18 @@
 <listOptionValue builtIn="false" value="D:\TiC2000_Install\ControlSUITE\controlSUITE\libs\math\FPUfastRTS\V100\lib\rts2800_fpu32_fast_supplement.lib">
 </listOptionValue>
 <listOptionValue builtIn="false" value="D:\TiC2000_Install\ControlSUITE\controlSUITE\libs\utilities\hrcap_hccal\type0\v110\lib\HCCAL_Type0_V1_fpu32.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_sli\lib\ssc_sli.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_core\lib\ssc_core.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ssc_st\lib\ssc_st.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\mc\lib\mc.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\ex\lib\ex.lib">
+</listOptionValue>
+<listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\physmod\win64\pm\lib\pm.lib">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\ProgramData\MATLAB\tic2000\3P.instrset\tic28xcodegentools.instrset\ti-cgt-c2000_22.6.0.LTS\lib\rts2800_fpu32.lib">
 </listOptionValue>

@@ -40,7 +40,7 @@ void init_SCI(void)
   SciaRegs.SCICCR.bit.SCICHAR = 7U;    /*Character length*/
   SciaRegs.SCICTL1.bit.RXERRINTENA = 0U;/*Disable receive error interrupt*/
   SciaRegs.SCICTL1.bit.SWRESET = 1U;   /*Software reset*/
-  SciaRegs.SCICTL1.bit.TXENA = 1U;     /* SCI transmitter enable*/
+  SciaRegs.SCICTL1.bit.TXENA = 0U;     /* SCI transmitter enable*/
   SciaRegs.SCICTL1.bit.RXENA = 1U;     /* SCI receiver enable*/
   SciaRegs.SCIHBAUD = 0U;
   SciaRegs.SCILBAUD = 1U;
@@ -66,7 +66,5 @@ void init_SCI_GPIO(void)
   EALLOW;
   GpioCtrlRegs.GPAPUD.bit.GPIO28 = 0U; /*Enable pull-up for GPIO28*/
   GpioCtrlRegs.GPAMUX2.bit.GPIO28 = 1U;/*Configure GPIO28 as SCIRXDA*/
-  GpioCtrlRegs.GPAPUD.bit.GPIO29 = 0U; /*Enable pull-up for GPIO29*/
-  GpioCtrlRegs.GPAMUX2.bit.GPIO29 = 1U;/*Configure GPIO29 as SCITXDA*/
   EDIS;
 }
