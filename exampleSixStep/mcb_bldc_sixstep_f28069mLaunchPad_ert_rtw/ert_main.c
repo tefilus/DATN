@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.79
+ * Model version                  : 7.70
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Wed May  7 16:53:57 2025
+ * C/C++ source code generated on : Thu May 15 17:53:01 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -18,14 +18,13 @@
 #include "MW_target_hardware_resources.h"
 
 volatile int IsrOverrun = 0;
-boolean_T isRateRunning[5] = { 0, 0, 0, 0, 0 };
+boolean_T isRateRunning[2] = { 0, 0 };
 
-boolean_T need2runFlags[5] = { 0, 0, 0, 0, 0 };
+boolean_T need2runFlags[2] = { 0, 0 };
 
 void rt_OneStep(void)
 {
-  boolean_T eventFlags[5];
-  int_T i;
+  boolean_T eventFlags[2];
 
   /* Check base rate for overrun */
   if (isRateRunning[0]++) {
@@ -46,61 +45,39 @@ void rt_OneStep(void)
   /* Get model outputs here */
   disableTimer0Interrupt();
   isRateRunning[0]--;
-  for (i = 1; i < 5; i++) {
-    if (eventFlags[i]) {
-      if (need2runFlags[i]++) {
-        IsrOverrun = 1;
-        need2runFlags[i]--;            /* allow future iterations to succeed*/
-        break;
-      }
+  if (eventFlags[1]) {
+    if (need2runFlags[1]++) {
+      IsrOverrun = 1;
+      need2runFlags[1]--;              /* allow future iterations to succeed*/
+      return;
     }
   }
 
-  for (i = 1; i < 5; i++) {
-    if (isRateRunning[i]) {
+  if (need2runFlags[1]) {
+    if (isRateRunning[1]) {
       /* Yield to higher priority*/
       return;
     }
 
-    if (need2runFlags[i]) {
-      isRateRunning[i]++;
-      enableTimer0Interrupt();
+    isRateRunning[1]++;
+    enableTimer0Interrupt();
 
-      /* Step the model for subrate "i" */
-      switch (i)
-      {
-       case 1 :
-        mcb_bldc_sixstep_f28069mLaunchPad_step1();
+    /* Step the model for subrate "1" */
+    switch (1)
+    {
+     case 1 :
+      mcb_bldc_sixstep_f28069mLaunchPad_step1();
 
-        /* Get model outputs here */
-        break;
+      /* Get model outputs here */
+      break;
 
-       case 2 :
-        mcb_bldc_sixstep_f28069mLaunchPad_step2();
-
-        /* Get model outputs here */
-        break;
-
-       case 3 :
-        mcb_bldc_sixstep_f28069mLaunchPad_step3();
-
-        /* Get model outputs here */
-        break;
-
-       case 4 :
-        mcb_bldc_sixstep_f28069mLaunchPad_step4();
-
-        /* Get model outputs here */
-        break;
-
-       default :
-        break;
-      }
-
-      disableTimer0Interrupt();
-      need2runFlags[i]--;
-      isRateRunning[i]--;
+     default :
+      break;
     }
+
+    disableTimer0Interrupt();
+    need2runFlags[1]--;
+    isRateRunning[1]--;
   }
 }
 
@@ -108,12 +85,13 @@ volatile boolean_T stopRequested;
 volatile boolean_T runModel;
 int main(void)
 {
-  float modelBaseRate = 5.0E-7;
+  float modelBaseRate = 0.0005;
   float systemClock = 90;
 
   /* Initialize variables */
   stopRequested = false;
   runModel = false;
+  HWI_TIC28x_EnablePeripheralInterrupt();
   c2000_flash_init();
   init_board();
 
@@ -126,11 +104,13 @@ int main(void)
   ;
   bootloaderInit();
   rtmSetErrorStatus(mcb_bldc_sixstep_f28069mLaun_M, 0);
+  mcb_bldc_sixstep_f28069mLaunchPad_configure_interrupts();
   mcb_bldc_sixstep_f28069mLaunchPad_initialize();
   globalInterruptDisable();
   configureTimer0(modelBaseRate, systemClock);
   runModel = rtmGetErrorStatus(mcb_bldc_sixstep_f28069mLaun_M) == (NULL);
   enableTimer0Interrupt();
+  config_ePWM_TBSync();
   globalInterruptEnable();
   while (runModel) {
     stopRequested = !(rtmGetErrorStatus(mcb_bldc_sixstep_f28069mLaun_M) == (NULL));
@@ -138,6 +118,8 @@ int main(void)
 
   /* Terminate model */
   mcb_bldc_sixstep_f28069mLaunchPad_terminate();
+  mcb_bldc_sixstep_f28069mLaunchPad_unconfigure_interrupts();
+  HWI_TIC28x_DisablePeripheralInterrupt();
   globalInterruptDisable();
   return 0;
 }

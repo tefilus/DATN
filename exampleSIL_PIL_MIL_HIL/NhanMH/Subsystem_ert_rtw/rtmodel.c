@@ -1,0 +1,44 @@
+/*
+ * File: rtmodel.c
+ *
+ * Code generated for Simulink model 'Subsystem'.
+ *
+ * Model version                  : 1.12
+ * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
+ * C/C++ source code generated on : Tue Mar 18 17:03:49 2025
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Texas Instruments->C2000
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ */
+
+#include "rtmodel.h"
+
+/* Use this function only if you need to maintain compatibility with an existing static main program. */
+void Subsystem_step(int_T tid)
+{
+  switch (tid) {
+   case 0 :
+    Subsystem_step0();
+    break;
+
+   case 1 :
+    Subsystem_step1();
+    break;
+
+   case 2 :
+    Subsystem_step2();
+    break;
+
+   default :
+    /* do nothing */
+    break;
+  }
+}
+
+/*
+ * File trailer for generated code.
+ *
+ * [EOF]
+ */

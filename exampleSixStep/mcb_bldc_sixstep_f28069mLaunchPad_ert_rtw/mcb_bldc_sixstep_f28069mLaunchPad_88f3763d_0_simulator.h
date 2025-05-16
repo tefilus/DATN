@@ -23,4 +23,5 @@ extern "C"
 
 #endif
 #endif
-      /* #ifndef __mcb_bldc_sixstep_f28069mLaunchPad_88f3763d_0_simulator_h__ */
+
+/* #ifndef __mcb_bldc_sixstep_f28069mLaunchPad_88f3763d_0_simulator_h__ */

@@ -5,7 +5,7 @@
  *
  * Model version                  : 8.11
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue May  6 17:40:25 2025
+ * C/C++ source code generated on : Thu May 15 15:49:20 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -2926,7 +2926,7 @@ void mcb_pmsm_foc_qep_f28069LaunchPad_initialize(void)
     mcb_pmsm_foc_qep_f28069La_DWork.IaOffset = 3309U;
 
     /* Start for DataStoreMemory: '<Root>/Data Store Memory2' */
-    mcb_pmsm_foc_qep_f28069La_DWork.IbOffset = 3003U;
+    mcb_pmsm_foc_qep_f28069La_DWork.IbOffset = 3304U;
 
     /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S221>/Hardware Interrupt' incorporates:
      *  SubSystem: '<Root>/Current Control'
@@ -3159,7 +3159,7 @@ void mcb_pmsm_foc_qep_f28069LaunchPad_initialize(void)
       /* DataStoreWrite: '<S233>/Data Store Write2' incorporates:
        *  Constant: '<S233>/Constant1'
        */
-      mcb_pmsm_foc_qep_f28069La_DWork.IbOffset = 3003U;
+      mcb_pmsm_foc_qep_f28069La_DWork.IbOffset = 3304U;
 
       /* End of Outputs for SubSystem: '<S226>/If Action Subsystem3' */
     }
@@ -3182,7 +3182,7 @@ void mcb_pmsm_foc_qep_f28069LaunchPad_initialize(void)
       /* DataStoreWrite: '<S228>/Data Store Write2' incorporates:
        *  Constant: '<S228>/Constant1'
        */
-      mcb_pmsm_foc_qep_f28069La_DWork.IbOffset = 3003U;
+      mcb_pmsm_foc_qep_f28069La_DWork.IbOffset = 3304U;
     }
 
     /* End of Outputs for SubSystem: '<S225>/Default ADC Offset' */

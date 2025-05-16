@@ -17,8 +17,8 @@ extern "C"
     M);
 
 #endif
-  /* #ifndef MCB_BLDC_SIXSTEP_F28069MLAUNCHPAD_88F3763D_0_INITER_IDAE_DS_OBS_ALL_H */
 
+  /* #ifndef MCB_BLDC_SIXSTEP_F28069MLAUNCHPAD_88F3763D_0_INITER_IDAE_DS_OBS_ALL_H */
 #ifdef __cplusplus
 
 }

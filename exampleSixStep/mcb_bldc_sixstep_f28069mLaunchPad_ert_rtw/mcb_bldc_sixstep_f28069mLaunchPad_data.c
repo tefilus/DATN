@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.79
+ * Model version                  : 7.70
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Wed May  7 16:53:57 2025
+ * C/C++ source code generated on : Thu May 15 17:53:01 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -15,57 +15,57 @@
 
 #include "mcb_bldc_sixstep_f28069mLaunchPad.h"
 
+/* Invariant block signals (default storage) */
+const ConstBlockIO_mcb_bldc_sixstep_f mcb_bldc_sixstep_f28069m_ConstB = {
+  2000.0F,                             /* '<S126>/SpeedConstData' */
+  3U                                   /* '<S10>/dataWidth' */
+};
+
 /* Constant parameters (default storage) */
 const ConstParam_mcb_bldc_sixstep_f28 mcb_bldc_sixstep_f28069m_ConstP = {
-  /* Expression: OutValues
-   * Referenced by: '<S25>/Lookup'
-   */
-  { 0.0, 1.0, 0.0 },
-
-  /* Expression: TimeValues
-   * Referenced by: '<S25>/Lookup'
-   */
-  { 0.0, 2.5E-5, 5.0E-5 },
-
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S124>/SA1'
-   *   '<S125>/SA2'
-   */
-  { false, false, true, true, false, false, false, false },
-
-  /* Pooled Parameter (Mixed Expressions)
-   * Referenced by:
-   *   '<S124>/SA2'
-   *   '<S125>/SA1'
-   */
-  { false, false, false, false, false, true, true, false },
-
-  /* Pooled Parameter (Mixed Expressions)
-   * Referenced by:
-   *   '<S124>/SB1'
-   *   '<S125>/SB2'
+   *   '<S35>/SC1'
+   *   '<S36>/SC2'
+   *   '<S105>/SB1'
+   *   '<S106>/SB2'
    */
   { false, false, false, false, true, true, false, false },
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S124>/SB2'
-   *   '<S125>/SB1'
+   *   '<S35>/SC2'
+   *   '<S36>/SC1'
+   *   '<S105>/SA1'
+   *   '<S106>/SA2'
+   */
+  { false, false, true, true, false, false, false, false },
+
+  /* Pooled Parameter (Mixed Expressions)
+   * Referenced by:
+   *   '<S105>/SA2'
+   *   '<S106>/SA1'
+   */
+  { false, false, false, false, false, true, true, false },
+
+  /* Pooled Parameter (Mixed Expressions)
+   * Referenced by:
+   *   '<S105>/SB2'
+   *   '<S106>/SB1'
    */
   { false, true, true, false, false, false, false, false },
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S124>/SC1'
-   *   '<S125>/SC2'
+   *   '<S105>/SC1'
+   *   '<S106>/SC2'
    */
   { false, true, false, false, false, false, true, false },
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S124>/SC2'
-   *   '<S125>/SC1'
+   *   '<S105>/SC2'
+   *   '<S106>/SC1'
    */
   { false, false, false, true, true, false, false, false }
 };

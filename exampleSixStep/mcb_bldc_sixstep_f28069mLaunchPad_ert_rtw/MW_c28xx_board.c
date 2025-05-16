@@ -39,7 +39,16 @@ void init_board (void)
   InitPieVectTable();
   init_SCI();
   init_SCI_GPIO();
+  init_SCIFrame();
   InitCpuTimers();
+
+  /* initial ePWM GPIO assignment... */
+  config_ePWM_GPIO();
+
+  /* Disable TBCLK within ePWM before module configuration */
+  EALLOW;
+  SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 0U;
+  EDIS;
 
   /* initial GPIO qualification settings.... */
   EALLOW;

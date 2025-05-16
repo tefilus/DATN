@@ -1,0 +1,14 @@
+﻿-ID:\MATLABNhan\final\Simulink
+-ID:\MATLABNhan\final\Simulink\Controller1_ert_rtw
+-IE:\MATLAB\R2023b\extern\include
+-IE:\MATLAB\R2023b\simulink\include
+-IE:\MATLAB\R2023b\rtw\c\src
+-IE:\MATLAB\R2023b\rtw\c\src\ext_mode\common
+-IE:\MATLAB\R2023b\rtw\c\ert
+-ID:\MATLABNhan\final\Simulink\Controller1_ert_rtw\sil
+-ID:\MATLABNhan\final\Simulink\Controller1_ert_rtw\coderassumptions
+-IE:\MATLAB\R2023b\toolbox\rtw\targets\pil\c
+-IE:\MATLAB\R2023b\extern\include\coder\connectivity\XILTgtAppSvc
+-IE:\MATLAB\R2023b\toolbox\coder\rtiostream\src\utils
+-IE:\MATLAB\R2023b\toolbox\coder\rtiostream\src
+-IE:\MATLAB\R2023b\extern\include\coder\connectivity\CoderAssumpTgtAppSvc
