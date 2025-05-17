@@ -37,9 +37,6 @@ MW_c28xx_board.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\
 MW_c28xx_board.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_DefaultISR.h
 MW_c28xx_board.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_openLoop.h
 MW_c28xx_board.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\DSP28xx_SciUtil.h
-MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h
-MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h
-MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 MW_c28xx_board.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/math/IQmath/v160/include/IQmathLib.h
 MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/limits.h
 MW_c28xx_board.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000/inc/MW_c2000ISR.h
@@ -47,6 +44,9 @@ MW_c28xx_board.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mL
 MW_c28xx_board.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/utilities/hrcap_hccal/type0/v110/include/HCCal_Type0_V1.h
 MW_c28xx_board.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000SchedulerTimer.h
 MW_c28xx_board.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_types.h
+MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h
+MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h
+MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 MW_c28xx_board.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h
 MW_c28xx_board.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\MW_target_hardware_resources.h
 MW_c28xx_board.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_private.h
@@ -90,9 +90,6 @@ D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_c
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_DefaultISR.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_openLoop.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\DSP28xx_SciUtil.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h:
 D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/math/IQmath/v160/include/IQmathLib.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/limits.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000/inc/MW_c2000ISR.h:
@@ -100,6 +97,9 @@ E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_openLoop_er
 D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/utilities/hrcap_hccal/type0/v110/include/HCCal_Type0_V1.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000SchedulerTimer.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_types.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\MW_target_hardware_resources.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_openLoop_private.h:

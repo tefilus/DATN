@@ -5,6 +5,8 @@
 % Copyright 2020-2022 The MathWorks, Inc.
 
 %% Simulation Parameters 
+clear;
+clc;
 
 %% Set PWM Switching frequency
 PWM_frequency 	= 20e3;    %Hz          // converter s/w freq

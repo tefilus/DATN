@@ -30,9 +30,6 @@ To_LCD.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v
 To_LCD.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_Usb.h
 To_LCD.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_XIntrupt.h
 To_LCD.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\DSP28xx_SciUtil.h
-To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h
-To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h
-To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 To_LCD.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/device_support/f2806x/v151/F2806x_common/include/F2806x_Examples.h
 To_LCD.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_GlobalPrototypes.h
 To_LCD.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_EPwm_defines.h
@@ -61,6 +58,9 @@ To_LCD.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad
 To_LCD.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rt_nonfinite.h
 To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h
 To_LCD.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rtGetNaN.h
+To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h
+To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h
+To_LCD.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 To_LCD.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\MW_target_hardware_resources.h
 
 E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw/To_LCD.c:
@@ -95,9 +95,6 @@ D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_h
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_Usb.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_XIntrupt.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\DSP28xx_SciUtil.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h:
 D:/TiC2000_Install/ControlSUITE/controlSUITE/device_support/f2806x/v151/F2806x_common/include/F2806x_Examples.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_GlobalPrototypes.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_EPwm_defines.h:
@@ -126,5 +123,8 @@ E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_button_ert_
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rt_nonfinite.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rtGetNaN.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\MW_target_hardware_resources.h:
 

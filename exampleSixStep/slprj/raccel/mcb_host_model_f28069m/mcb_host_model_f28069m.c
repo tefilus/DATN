@@ -3897,7 +3897,7 @@ raccel_set_checksum ( ) { ssSetChecksumVal ( rtS , 0 , 743607247U ) ;
 ssSetChecksumVal ( rtS , 1 , 2599999071U ) ; ssSetChecksumVal ( rtS , 2 ,
 172209083U ) ; ssSetChecksumVal ( rtS , 3 , 875051970U ) ; }
 #if defined(_MSC_VER)
-#pragma optimize( "", off )
+#pragma optimize( "", off )
 #endif
 SimStruct * raccel_register_model ( ssExecutionInfo * executionInfo ) {
 static struct _ssMdlInfo mdlInfo ; static struct _ssBlkInfo2 blkInfo2 ;
@@ -4017,6 +4017,6 @@ slsaSetWorkFcnForSimTargetOP ( rtS , mr_mcb_host_model_f28069m_SetDWork ) ;
 rt_RapidReadMatFileAndUpdateParams ( rtS ) ; if ( ssGetErrorStatus ( rtS ) )
 { return rtS ; } return rtS ; }
 #if defined(_MSC_VER)
-#pragma optimize( "", on )
+#pragma optimize( "", on )
 #endif
 void MdlOutputsParameterSampleTime ( int_T tid ) { MdlOutputsTID1 ( tid ) ; }

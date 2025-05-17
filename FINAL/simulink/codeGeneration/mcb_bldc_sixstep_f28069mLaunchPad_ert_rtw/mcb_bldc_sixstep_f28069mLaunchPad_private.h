@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.89
+ * Model version                  : 7.72
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Apr 29 19:23:16 2025
+ * C/C++ source code generated on : Fri May 16 16:56:58 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -16,6 +16,7 @@
 #ifndef RTW_HEADER_mcb_bldc_sixstep_f28069mLaunchPad_private_h_
 #define RTW_HEADER_mcb_bldc_sixstep_f28069mLaunchPad_private_h_
 #include "rtwtypes.h"
+#include "zero_crossing_types.h"
 #include "mcb_bldc_sixstep_f28069mLaunchPad.h"
 #include "mcb_bldc_sixstep_f28069mLaunchPad_types.h"
 
@@ -79,22 +80,32 @@ void config_ADC_SOC2 (void);
 void config_ADC_SOC4_SOC5 (void);
 void config_ADC_SOC3 (void);
 extern uint16_T MW_adcInitFlag;
+extern void mcb_bldc_sixstep_f_Position(real32_T rtu_Position, uint16_T
+  *rty_Sector);
+extern void mcb_bldc_sixstep_BitExtract(uint16_T rtu_Sector, boolean_T
+  rty_HallVector[3], rtB_BitExtract_mcb_bldc_sixstep *localB);
+extern void mcb_bldc_sixst_HallValueof1(real32_T *rty_position);
+extern void mcb_bldc_sixst_HallValueof2(real32_T *rty_position);
+extern void mcb_bldc_sixst_HallValueof3(real32_T *rty_position);
+extern void mcb_bldc_sixst_HallValueof4(real32_T *rty_position);
+extern void mcb_bldc_sixst_HallValueof5(real32_T *rty_position);
+extern void mcb_bldc_sixst_HallValueof7(real32_T *rty_position);
 extern void mcb__SPIMasterTransfer_Init(rtDW_SPIMasterTransfer_mcb_bldc *localDW);
 extern void mcb_bldc__SPIMasterTransfer(uint16_T rtu_0,
   rtB_SPIMasterTransfer_mcb_bldc_ *localB, rtDW_SPIMasterTransfer_mcb_bldc
   *localDW);
-extern void mcb_bldc_Speed_Control_Init(rtB_Speed_Control_mcb_bldc_sixs *localB,
-  rtDW_Speed_Control_mcb_bldc_six *localDW);
-extern void mcb_bldc_sixs_Speed_Control(real32_T rtu_Speed_Ref_PU, real32_T
+extern void mcb_bldc__SpeedControl_Init(rtB_SpeedControl_mcb_bldc_sixst *localB,
+  rtDW_SpeedControl_mcb_bldc_sixs *localDW);
+extern void mcb_bldc_sixst_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
   rtu_Speed_Meas_PU, const boolean_T *rtd_Enable,
-  rtB_Speed_Control_mcb_bldc_sixs *localB, rtDW_Speed_Control_mcb_bldc_six
+  rtB_SpeedControl_mcb_bldc_sixst *localB, rtDW_SpeedControl_mcb_bldc_sixs
   *localDW);
-extern void mcb_bl_Current_Control_Init(void);
-extern void mcb_b_Current_Control_Reset(void);
+extern void mcb_bld_CurrentControl_Init(void);
+extern void mcb_bl_CurrentControl_Reset(void);
 
-#pragma CODE_SECTION (mcb_bldc_si_Current_Control, "ramfuncs")
+#pragma CODE_SECTION (mcb_bldc_six_CurrentControl, "ramfuncs")
 
-extern void mcb_bldc_si_Current_Control(void);
+extern void mcb_bldc_six_CurrentControl(void);
 extern void mcb__SPIMasterTransfer_Term(rtDW_SPIMasterTransfer_mcb_bldc *localDW);
 
 #endif             /* RTW_HEADER_mcb_bldc_sixstep_f28069mLaunchPad_private_h_ */

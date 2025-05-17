@@ -1,10 +1,10 @@
 c2806xBoard_Realtime_Support.obj: C:/Program\ Files/MATLAB/R2023b/toolbox/c2b/tic2000/src/c2806xBoard_Realtime_Support.c
-c2806xBoard_Realtime_Support.obj: E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
+c2806xBoard_Realtime_Support.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
 c2806xBoard_Realtime_Support.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000BoardSupport.h
 c2806xBoard_Realtime_Support.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stdbool.h
 c2806xBoard_Realtime_Support.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/_ti_config.h
 c2806xBoard_Realtime_Support.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/linkage.h
-c2806xBoard_Realtime_Support.obj: E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h
+c2806xBoard_Realtime_Support.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h
 c2806xBoard_Realtime_Support.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/device_support/f2806x/v151/F2806x_headers/include/F2806x_Device.h
 c2806xBoard_Realtime_Support.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_Adc.h
 c2806xBoard_Realtime_Support.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_BootVars.h
@@ -49,12 +49,12 @@ c2806xBoard_Realtime_Support.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X
 c2806xBoard_Realtime_Support.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 
 C:/Program\ Files/MATLAB/R2023b/toolbox/c2b/tic2000/src/c2806xBoard_Realtime_Support.c:
-E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
+E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000BoardSupport.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stdbool.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/_ti_config.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/linkage.h:
-E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h:
+E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h:
 D:/TiC2000_Install/ControlSUITE/controlSUITE/device_support/f2806x/v151/F2806x_headers/include/F2806x_Device.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_Adc.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_BootVars.h:

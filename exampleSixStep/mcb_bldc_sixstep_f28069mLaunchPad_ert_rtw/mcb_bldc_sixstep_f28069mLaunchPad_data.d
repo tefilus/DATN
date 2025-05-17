@@ -55,7 +55,7 @@ mcb_bldc_sixstep_f28069mLaunchPad_data.obj: C:\PROGRA~1\MATLAB\R2023b\toolbox\c2
 mcb_bldc_sixstep_f28069mLaunchPad_data.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/inc/MW_c28xGPIO.h
 mcb_bldc_sixstep_f28069mLaunchPad_data.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
 mcb_bldc_sixstep_f28069mLaunchPad_data.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
-mcb_bldc_sixstep_f28069mLaunchPad_data.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\SCI_B.h
+mcb_bldc_sixstep_f28069mLaunchPad_data.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\To_LCD.h
 mcb_bldc_sixstep_f28069mLaunchPad_data.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\rt_nonfinite.h
 mcb_bldc_sixstep_f28069mLaunchPad_data.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h
 mcb_bldc_sixstep_f28069mLaunchPad_data.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\rtGetNaN.h
@@ -119,7 +119,7 @@ C:\PROGRA~1\MATLAB\R2023b\toolbox\c2b\tic2000\inc\MW_c28xSPI.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/inc/MW_c28xGPIO.h:
 E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
 E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
-E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\SCI_B.h:
+E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\To_LCD.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\rt_nonfinite.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw\rtGetNaN.h:

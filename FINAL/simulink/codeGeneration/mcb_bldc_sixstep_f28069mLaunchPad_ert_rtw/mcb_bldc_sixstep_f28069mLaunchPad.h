@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.89
+ * Model version                  : 7.72
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Apr 29 19:23:16 2025
+ * C/C++ source code generated on : Fri May 16 16:56:58 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -29,10 +29,12 @@
 
 #include "MW_c2000ISR.h"
 #include "mcb_bldc_sixstep_f28069mLaunchPad_types.h"
+#include "To_LCD.h"
 #include "rt_nonfinite.h"
 #include "rtGetNaN.h"
 #include <string.h>
 #include <stddef.h>
+#include "zero_crossing_types.h"
 #include "MW_target_hardware_resources.h"
 
 /* Macros for accessing real-time model data structure */
@@ -60,178 +62,262 @@ extern void config_ePWM_GPIO (void);
 extern void config_ePWM_TBSync (void);
 extern void config_ePWM_XBAR(void);
 
-/* Block signals for system '<S131>/SPI Master Transfer' */
+/* Block signals for system '<S21>/Bit Extract' */
 typedef struct {
-  uint16_T SPIMasterTransfer;          /* '<S131>/SPI Master Transfer' */
+  uint16_T ShiftArithmetic;            /* '<S34>/Shift Arithmetic' */
+  uint16_T A;                          /* '<S34>/Bitwise AND1' */
+  uint16_T ShiftArithmetic1;           /* '<S34>/Shift Arithmetic1' */
+  uint16_T B;                          /* '<S34>/Bitwise AND2' */
+  uint16_T C;                          /* '<S34>/Bitwise AND3' */
+  boolean_T DataTypeConversion;        /* '<S34>/Data Type Conversion' */
+  boolean_T DataTypeConversion1;       /* '<S34>/Data Type Conversion1' */
+  boolean_T DataTypeConversion2;       /* '<S34>/Data Type Conversion2' */
+} rtB_BitExtract_mcb_bldc_sixstep;
+
+/* Block signals for system '<S217>/SPI Master Transfer' */
+typedef struct {
+  uint16_T SPIMasterTransfer;          /* '<S217>/SPI Master Transfer' */
 } rtB_SPIMasterTransfer_mcb_bldc_;
 
-/* Block states (default storage) for system '<S131>/SPI Master Transfer' */
+/* Block states (default storage) for system '<S217>/SPI Master Transfer' */
 typedef struct {
-  codertarget_tic2000_blocks_SPIM obj; /* '<S131>/SPI Master Transfer' */
-  boolean_T objisempty;                /* '<S131>/SPI Master Transfer' */
+  codertarget_tic2000_blocks_SPIM obj; /* '<S217>/SPI Master Transfer' */
+  boolean_T objisempty;                /* '<S217>/SPI Master Transfer' */
 } rtDW_SPIMasterTransfer_mcb_bldc;
 
-/* Block signals for system '<Root>/Speed_Control' */
+/* Block signals for system '<Root>/Speed Control' */
 typedef struct {
-  real32_T Switch;                     /* '<S144>/Switch' */
-  real32_T Product;                    /* '<S199>/Product' */
-  real32_T UnitDelay;                  /* '<S199>/Unit Delay' */
-  real32_T Product1;                   /* '<S199>/Product1' */
-  real32_T Add1;                       /* '<S199>/Add1' */
-  real32_T Sum;                        /* '<S143>/Sum' */
-  real32_T PProdOut;                   /* '<S185>/PProd Out' */
-  real32_T Ki2;                        /* '<S143>/Ki2' */
-  real32_T Integrator;                 /* '<S180>/Integrator' */
-  real32_T Sum_j;                      /* '<S189>/Sum' */
-  real32_T DeadZone;                   /* '<S173>/DeadZone' */
-  real32_T IProdOut;                   /* '<S177>/IProd Out' */
-  real32_T Switch_a;                   /* '<S171>/Switch' */
-  real32_T Saturation;                 /* '<S187>/Saturation' */
-  int16_T Switch1;                     /* '<S171>/Switch1' */
-  int16_T Switch2;                     /* '<S171>/Switch2' */
-  boolean_T DataStoreRead2;            /* '<S143>/Data Store Read2' */
-  boolean_T DataStoreRead1;            /* '<S144>/Data Store Read1' */
-  boolean_T LogicalOperator;           /* '<S143>/Logical Operator' */
-  boolean_T RelationalOperator;        /* '<S171>/Relational Operator' */
-  boolean_T fixforDTpropagationissue;/* '<S171>/fix for DT propagation issue' */
+  real32_T Switch;                     /* '<S232>/Switch' */
+  real32_T Product;                    /* '<S287>/Product' */
+  real32_T UnitDelay;                  /* '<S287>/Unit Delay' */
+  real32_T Product1;                   /* '<S287>/Product1' */
+  real32_T Add1;                       /* '<S287>/Add1' */
+  real32_T Sum;                        /* '<S231>/Sum' */
+  real32_T PProdOut;                   /* '<S273>/PProd Out' */
+  real32_T Ki2;                        /* '<S231>/Ki2' */
+  real32_T Integrator;                 /* '<S268>/Integrator' */
+  real32_T Sum_j;                      /* '<S277>/Sum' */
+  real32_T DeadZone;                   /* '<S261>/DeadZone' */
+  real32_T IProdOut;                   /* '<S265>/IProd Out' */
+  real32_T Switch_a;                   /* '<S259>/Switch' */
+  real32_T Saturation;                 /* '<S275>/Saturation' */
+  int16_T Switch1;                     /* '<S259>/Switch1' */
+  int16_T Switch2;                     /* '<S259>/Switch2' */
+  boolean_T DataStoreRead2;            /* '<S231>/Data Store Read2' */
+  boolean_T DataStoreRead1;            /* '<S232>/Data Store Read1' */
+  boolean_T LogicalOperator;           /* '<S231>/Logical Operator' */
+  boolean_T RelationalOperator;        /* '<S259>/Relational Operator' */
+  boolean_T fixforDTpropagationissue;/* '<S259>/fix for DT propagation issue' */
   boolean_T fixforDTpropagationissue1;
-                                    /* '<S171>/fix for DT propagation issue1' */
-  boolean_T Equal1;                    /* '<S171>/Equal1' */
-  boolean_T AND3;                      /* '<S171>/AND3' */
-} rtB_Speed_Control_mcb_bldc_sixs;
+                                    /* '<S259>/fix for DT propagation issue1' */
+  boolean_T Equal1;                    /* '<S259>/Equal1' */
+  boolean_T AND3;                      /* '<S259>/AND3' */
+} rtB_SpeedControl_mcb_bldc_sixst;
 
-/* Block states (default storage) for system '<Root>/Speed_Control' */
+/* Block states (default storage) for system '<Root>/Speed Control' */
 typedef struct {
-  real32_T UnitDelay_DSTATE;           /* '<S199>/Unit Delay' */
-  real32_T Integrator_DSTATE;          /* '<S180>/Integrator' */
-  int16_T Integrator_PrevResetState;   /* '<S180>/Integrator' */
-} rtDW_Speed_Control_mcb_bldc_six;
+  real32_T UnitDelay_DSTATE;           /* '<S287>/Unit Delay' */
+  real32_T Integrator_DSTATE;          /* '<S268>/Integrator' */
+  int16_T Integrator_PrevResetState;   /* '<S268>/Integrator' */
+} rtDW_SpeedControl_mcb_bldc_sixs;
 
 /* Block signals (default storage) */
 typedef struct {
-  real_T cu[3];                        /* '<S94>/Switch' */
-  uint32_T PositionToCount;            /* '<S99>/PositionToCount' */
-  uint32_T Delay;                      /* '<S99>/Delay' */
+  real_T cu[3];                        /* '<S117>/Switch' */
+  uint32_T DigitalInput2[2];           /* '<S206>/Digital Input2' */
+  uint32_T DigitalInput3;              /* '<S206>/Digital Input3' */
+  uint32_T PositionToCount;            /* '<S180>/PositionToCount' */
+  uint32_T Delay;                      /* '<S180>/Delay' */
+  uint32_T ShiftArithmetic;            /* '<S122>/Shift Arithmetic' */
+  uint32_T ShiftArithmetic1;           /* '<S122>/Shift Arithmetic1' */
+  uint32_T Sum;                        /* '<S122>/Sum' */
+  uint32_T UnitDelay;                  /* '<S121>/Unit Delay' */
+  uint32_T Uk1;                        /* '<S174>/Delay Input1' */
+  uint32_T speedCountDelay;            /* '<S123>/speedCountDelay' */
+  uint32_T Delay_c;                    /* '<S121>/Delay' */
+  uint32_T Sum_o;                      /* '<S121>/Sum' */
+  uint32_T Sum_o0;                     /* '<S175>/Sum' */
+  uint32_T UnitDelay1;                 /* '<S175>/Unit Delay1' */
+  uint32_T Max;                        /* '<S127>/Max' */
   real32_T RT1;                        /* '<Root>/RT1' */
   real32_T RT6;                        /* '<Root>/RT6' */
   real32_T RT2;                        /* '<Root>/RT2' */
-  real32_T DataTypeConversion1[2];     /* '<S141>/Data Type Conversion1' */
-  real32_T DataTypeConversion1_l;      /* '<S4>/Data Type Conversion1' */
-  real32_T Idc_ref;                    /* '<S7>/abs_Idc' */
-  real32_T convertToSingle[3];         /* '<S92>/convertToSingle' */
-  real32_T DataTypeConversion[3];      /* '<S94>/Data Type Conversion' */
-  real32_T phaseSum;                   /* '<S92>/phaseSum' */
-  real32_T IDC;                        /* '<S92>/minus_Idc' */
-  real32_T Sum;                        /* '<S13>/Sum' */
-  real32_T PProdOut;                   /* '<S54>/PProd Out' */
-  real32_T Kp1;                        /* '<S13>/Kp1' */
-  real32_T Integrator;                 /* '<S49>/Integrator' */
-  real32_T Sum_e;                      /* '<S58>/Sum' */
-  real32_T rotateDirection;            /* '<S7>/rotateDirection' */
-  real32_T DeadZone;                   /* '<S42>/DeadZone' */
-  real32_T IProdOut;                   /* '<S46>/IProd Out' */
-  real32_T Switch;                     /* '<S40>/Switch' */
-  real32_T convertSwitchingPhase[6];   /* '<S7>/convertSwitchingPhase' */
-  real32_T Saturation;                 /* '<S56>/Saturation' */
-  real32_T duty[6];                    /* '<S7>/Product' */
-  real32_T DTC;                        /* '<S115>/DTC' */
-  real32_T Product;                    /* '<S98>/Product' */
-  real32_T DTC_a;                      /* '<S120>/DTC' */
-  real32_T SpeedGain;                  /* '<S99>/SpeedGain' */
-  real32_T Product_g;                  /* '<S102>/Product' */
-  real32_T UnitDelay;                  /* '<S102>/Unit Delay' */
-  real32_T Product1;                   /* '<S102>/Product1' */
-  real32_T Add1;                       /* '<S102>/Add1' */
-  real32_T Switch_f;                   /* '<S104>/Switch' */
-  real32_T Merge;                      /* '<S105>/Merge' */
-  real32_T Numberofpolepairs;          /* '<S110>/Number of pole pairs' */
-  real32_T Floor;                      /* '<S106>/Floor' */
-  real32_T Add;                        /* '<S106>/Add' */
-  int32_T convertADCto_int32[3];       /* '<S92>/convertADCto_int32' */
-  int32_T minusOffset[3];              /* '<S92>/minusOffset' */
-  int32_T Q17perunitconversion[3];     /* '<S92>/Q17 per unit conversion' */
-  int32_T SpeedCount;                  /* '<S99>/SpeedCount' */
-  uint16_T Divide;                     /* '<S130>/Divide' */
-  uint16_T Divide1;                    /* '<S130>/Divide1' */
-  uint16_T Divide2;                    /* '<S130>/Divide2' */
-  uint16_T ForIterator;                /* '<S133>/For Iterator' */
-  uint16_T IAIBMeasurement[2];         /* '<S133>/IA//IB Measurement' */
-  uint16_T ICMeasurement;              /* '<S133>/IC Measurement' */
-  uint16_T Memory;                     /* '<S140>/Memory' */
-  uint16_T Sum_eu;                     /* '<S140>/Sum' */
-  uint16_T Memory1;                    /* '<S140>/Memory1' */
-  uint16_T Sum1;                       /* '<S140>/Sum1' */
-  uint16_T Memory2;                    /* '<S140>/Memory2' */
-  uint16_T Sum2;                       /* '<S140>/Sum2' */
-  uint16_T SCIReceive[2];              /* '<S142>/SCI Receive' */
-  uint16_T IaOffset_read;              /* '<S92>/IaOffset_read' */
-  uint16_T IbOffset_read;              /* '<S92>/IbOffset_read' */
-  uint16_T IcOffset_read;              /* '<S92>/IcOffset_read' */
-  uint16_T IAIBMeasurement_o[2];       /* '<S12>/IA//IB Measurement' */
-  uint16_T ICMeasurement_o;            /* '<S12>/IC Measurement' */
-  uint16_T eQEP_o1;                    /* '<S12>/eQEP' */
-  uint16_T eQEP_o2;                    /* '<S12>/eQEP' */
-  uint16_T onOffPWM[6];                /* '<S10>/onOffPWM' */
-  uint16_T Output;                     /* '<S89>/Output' */
-  uint16_T convertTo_uint16[3];        /* '<S86>/convertTo_uint16' */
-  uint16_T SCI_Tx_Data[4];             /* '<S8>/mergeDataOut' */
-  uint16_T SCI_Tx_Iteration;           /* '<S8>/mergeInteration' */
-  uint16_T FixPtSum1;                  /* '<S90>/FixPt Sum1' */
-  uint16_T FixPtSwitch;                /* '<S91>/FixPt Switch' */
-  uint16_T IndexVector;                /* '<S121>/Index Vector' */
-  uint16_T Add_d;                      /* '<S121>/Add' */
-  uint16_T Scale_to_PWM_Counter_PRD[6];/* '<S10>/Scale_to_PWM_Counter_PRD' */
-  uint16_T Merge_g;                    /* '<S98>/Merge' */
-  uint16_T Sum3;                       /* '<S112>/Sum3' */
-  uint16_T Sum7;                       /* '<S112>/Sum7' */
-  uint16_T Data[3];                    /* '<S85>/Data' */
-  uint16_T Data_f[3];                  /* '<S87>/Data' */
-  uint16_T Data_fw[3];                 /* '<S88>/Data' */
-  int16_T DataTypeConversion2[2];      /* '<S141>/Data Type Conversion2' */
-  int16_T convertTo_sfix16_En12[3];    /* '<S86>/convertTo_sfix16_En12' */
-  int16_T WhileIterator;               /* '<S121>/While Iterator' */
-  uint16_T Merge_e;                    /* '<S66>/Merge' */
-  uint16_T ShiftArithmetic;            /* '<S82>/Shift Arithmetic' */
-  uint16_T A;                          /* '<S82>/Bitwise AND1' */
-  uint16_T ShiftArithmetic1;           /* '<S82>/Shift Arithmetic1' */
-  uint16_T B;                          /* '<S82>/Bitwise AND2' */
-  uint16_T C;                          /* '<S82>/Bitwise AND3' */
-  int16_T Switch1;                     /* '<S40>/Switch1' */
-  int16_T Switch2;                     /* '<S40>/Switch2' */
-  boolean_T NOT;                       /* '<S129>/NOT' */
-  boolean_T DataTypeConversion3;       /* '<S4>/Data Type Conversion3' */
-  boolean_T DataStoreRead1;            /* '<S13>/Data Store Read1' */
-  boolean_T LogicalOperator;           /* '<S13>/Logical Operator' */
-  boolean_T Merge_n[3];                /* '<S69>/Merge' */
-  boolean_T Merge_k[6];                /* '<S70>/Merge' */
-  boolean_T Enable;                    /* '<S10>/Enable' */
-  boolean_T RelationalOperator;        /* '<S40>/Relational Operator' */
-  boolean_T fixforDTpropagationissue; /* '<S40>/fix for DT propagation issue' */
+  real32_T DataTypeConversion1[2];     /* '<S228>/Data Type Conversion1' */
+  real32_T DataTypeConversion1_l;      /* '<S5>/Data Type Conversion1' */
+  real32_T Merge1;                     /* '<S11>/Merge1' */
+  real32_T DataTypeConversion1_n[3];   /* '<S114>/Data Type Conversion1' */
+  real32_T DataTypeConversion[3];      /* '<S117>/Data Type Conversion' */
+  real32_T Sum_o5;                     /* '<S114>/Sum' */
+  real32_T IDC;                        /* '<S114>/Unary Minus' */
+  real32_T Idc_ref;                    /* '<S9>/Abs' */
+  real32_T Sign;                       /* '<S9>/Sign' */
+  real32_T Sum_c;                      /* '<S16>/Sum' */
+  real32_T PProdOut;                   /* '<S76>/PProd Out' */
+  real32_T Kp1;                        /* '<S16>/Kp1' */
+  real32_T Integrator;                 /* '<S71>/Integrator' */
+  real32_T Sum_e;                      /* '<S80>/Sum' */
+  real32_T DeadZone;                   /* '<S64>/DeadZone' */
+  real32_T IProdOut;                   /* '<S68>/IProd Out' */
+  real32_T Switch;                     /* '<S62>/Switch' */
+  real32_T Speed_PU;                   /* '<S1>/Input Scaling' */
+  real32_T Saturation;                 /* '<S78>/Saturation' */
+  real32_T DataTypeConversion1_o[6];   /* '<S9>/Data Type Conversion1' */
+  real32_T duty[6];                    /* '<S9>/Product' */
+  real32_T DTC;                        /* '<S196>/DTC' */
+  real32_T Product;                    /* '<S179>/Product' */
+  real32_T DTC_a;                      /* '<S201>/DTC' */
+  real32_T SpeedGain;                  /* '<S180>/SpeedGain' */
+  real32_T Product_g;                  /* '<S183>/Product' */
+  real32_T UnitDelay_i;                /* '<S183>/Unit Delay' */
+  real32_T Product1;                   /* '<S183>/Product1' */
+  real32_T Add1;                       /* '<S183>/Add1' */
+  real32_T Switch_f;                   /* '<S185>/Switch' */
+  real32_T Merge;                      /* '<S186>/Merge' */
+  real32_T Numberofpolepairs;          /* '<S191>/Number of pole pairs' */
+  real32_T Floor;                      /* '<S187>/Floor' */
+  real32_T Add;                        /* '<S187>/Add' */
+  real32_T Merge_a;                    /* '<S118>/Merge' */
+  real32_T Merge1_c;                   /* '<S118>/Merge1' */
+  real32_T Product_n;                  /* '<S173>/Product' */
+  real32_T UnitDelay_iq;               /* '<S173>/Unit Delay' */
+  real32_T Product1_n;                 /* '<S173>/Product1' */
+  real32_T Add1_j;                     /* '<S173>/Add1' */
+  real32_T currentSpeedData;           /* '<S126>/currentSpeedData' */
+  real32_T Divide;                     /* '<S126>/Divide' */
+  real32_T SpeedGain_c;                /* '<S126>/SpeedGain' */
+  real32_T Merge1_k;                   /* '<S139>/Merge1' */
+  real32_T Saturation_i;               /* '<S139>/Saturation' */
+  real32_T Merge_aa;                   /* '<S139>/Merge' */
+  real32_T countData;                  /* '<S142>/countData' */
+  real32_T currentSpeedData_f;         /* '<S142>/currentSpeedData' */
+  real32_T Divide_k;                   /* '<S142>/Divide' */
+  real32_T countData_g;                /* '<S143>/countData' */
+  real32_T previousSpeedData;          /* '<S143>/previousSpeedData' */
+  real32_T Divide_ke;                  /* '<S143>/Divide' */
+  real32_T currentSpeedData_k;         /* '<S143>/currentSpeedData' */
+  real32_T Divide1;                    /* '<S143>/Divide1' */
+  real32_T Sum_b;                      /* '<S143>/Sum' */
+  real32_T Gain1;                      /* '<S143>/Gain1' */
+  real32_T Sum1;                       /* '<S143>/Sum1' */
+  real32_T Product_j;                  /* '<S143>/Product' */
+  real32_T Merge1_p;                   /* '<S140>/Merge1' */
+  real32_T Merge1_o;                   /* '<S141>/Merge1' */
+  int32_T DataTypeConversion_b[3];     /* '<S114>/Data Type Conversion' */
+  int32_T Add_g[3];                    /* '<S114>/Add' */
+  int32_T Q17perunitconversion[3];     /* '<S114>/Q17 per unit conversion' */
+  int32_T SpeedCount;                  /* '<S180>/SpeedCount' */
+  uint16_T Divide_j;                   /* '<S216>/Divide' */
+  uint16_T Divide1_m;                  /* '<S216>/Divide1' */
+  uint16_T Divide2;                    /* '<S216>/Divide2' */
+  uint16_T ForIterator;                /* '<S219>/For Iterator' */
+  uint16_T IAIBMeasurement[2];         /* '<S219>/IA//IB Measurement' */
+  uint16_T ICMeasurement;              /* '<S219>/IC Measurement' */
+  uint16_T Memory;                     /* '<S226>/Memory' */
+  uint16_T Sum_eu;                     /* '<S226>/Sum' */
+  uint16_T Memory1;                    /* '<S226>/Memory1' */
+  uint16_T Sum1_n;                     /* '<S226>/Sum1' */
+  uint16_T Memory2;                    /* '<S226>/Memory2' */
+  uint16_T Sum2;                       /* '<S226>/Sum2' */
+  uint16_T SCIReceive[2];              /* '<S230>/SCI Receive' */
+  uint16_T eQEP_o1;                    /* '<S205>/eQEP' */
+  uint16_T eQEP_o2;                    /* '<S205>/eQEP' */
+  uint16_T Output;                     /* '<S111>/Output' */
+  uint16_T DataStoreRead;              /* '<S114>/Data Store Read' */
+  uint16_T DataStoreRead1;             /* '<S114>/Data Store Read1' */
+  uint16_T DataStoreRead2;             /* '<S114>/Data Store Read2' */
+  uint16_T IAIBMeasurement_p[2];       /* '<S205>/IA//IB Measurement' */
+  uint16_T ICMeasurement_l;            /* '<S205>/IC Measurement' */
+  uint16_T convertTo_uint16[3];        /* '<S108>/convertTo_uint16' */
+  uint16_T SCI_Tx_Data[4];             /* '<S10>/mergeDataOut' */
+  uint16_T SCI_Tx_Iteration;           /* '<S10>/mergeInteration' */
+  uint16_T FixPtSum1;                  /* '<S112>/FixPt Sum1' */
+  uint16_T FixPtSwitch;                /* '<S113>/FixPt Switch' */
+  uint16_T Switch1[6];                 /* '<S202>/Switch1' */
+  uint16_T IndexVector;                /* '<S204>/Index Vector' */
+  uint16_T Add_m;                      /* '<S204>/Add' */
+  uint16_T Scale_to_PWM_Counter_PRD[6];/* '<S202>/Scale_to_PWM_Counter_PRD' */
+  uint16_T Merge_g;                    /* '<S179>/Merge' */
+  uint16_T Sum3;                       /* '<S193>/Sum3' */
+  uint16_T Sum7;                       /* '<S193>/Sum7' */
+  uint16_T DataTypeConversion1_l0;     /* '<S119>/Data Type Conversion1' */
+  uint16_T DataTypeConversion2;        /* '<S119>/Data Type Conversion2' */
+  uint16_T DataTypeConversion_a;       /* '<S158>/Data Type Conversion' */
+  uint16_T Switch_m;                   /* '<S123>/Switch' */
+  uint16_T DelayOneStep;               /* '<S124>/Delay One Step' */
+  uint16_T watchdogcheck;              /* '<S127>/watchdog check' */
+  uint16_T Sum_bk;                     /* '<S124>/Sum' */
+  uint16_T Merge_f;                    /* '<S158>/Merge' */
+  uint16_T Merge_n;                    /* '<S160>/Merge' */
+  uint16_T Merge1_n;                   /* '<S160>/Merge1' */
+  uint16_T Merge3;                     /* '<S160>/Merge3' */
+  uint16_T speedcheck;                 /* '<S127>/speed check' */
+  uint16_T Data[3];                    /* '<S107>/Data' */
+  uint16_T Data_f[3];                  /* '<S109>/Data' */
+  uint16_T Data_fw[3];                 /* '<S110>/Data' */
+  int16_T DataTypeConversion2_c[2];    /* '<S228>/Data Type Conversion2' */
+  int16_T convertTo_sfix16_En12[3];    /* '<S108>/convertTo_sfix16_En12' */
+  int16_T WhileIterator;               /* '<S204>/While Iterator' */
+  int16_T UnitDelay_n;                 /* '<S115>/Unit Delay' */
+  int16_T Merge1_f;                    /* '<S158>/Merge1' */
+  int16_T Merge2;                      /* '<S160>/Merge2' */
+  uint16_T Merge_e;                    /* '<S88>/Merge' */
+  uint16_T Merge_j;                    /* '<S18>/Merge' */
+  int16_T Switch1_b;                   /* '<S62>/Switch1' */
+  int16_T Switch2;                     /* '<S62>/Switch2' */
+  boolean_T NOT;                       /* '<S215>/NOT' */
+  boolean_T DataTypeConversion3;       /* '<S5>/Data Type Conversion3' */
+  boolean_T Merge_fv[6];               /* '<S9>/Merge' */
+  boolean_T DataStoreRead1_l;          /* '<S16>/Data Store Read1' */
+  boolean_T LogicalOperator;           /* '<S16>/Logical Operator' */
+  boolean_T RelationalOperator;        /* '<S62>/Relational Operator' */
+  boolean_T fixforDTpropagationissue; /* '<S62>/fix for DT propagation issue' */
   boolean_T fixforDTpropagationissue1;
-                                     /* '<S40>/fix for DT propagation issue1' */
-  boolean_T Equal1;                    /* '<S40>/Equal1' */
-  boolean_T AND3;                      /* '<S40>/AND3' */
-  boolean_T DataTypeConversion_j;      /* '<S82>/Data Type Conversion' */
-  boolean_T DataTypeConversion1_d;     /* '<S82>/Data Type Conversion1' */
-  boolean_T DataTypeConversion2_p;     /* '<S82>/Data Type Conversion2' */
-  rtB_Speed_Control_mcb_bldc_sixs Speed_Control;/* '<Root>/Speed_Control' */
-  rtB_SPIMasterTransfer_mcb_bldc_ SPIMasterTransfer1;/* '<S131>/SPI Master Transfer' */
-  rtB_SPIMasterTransfer_mcb_bldc_ SPIMasterTransfer;/* '<S131>/SPI Master Transfer' */
+                                     /* '<S62>/fix for DT propagation issue1' */
+  boolean_T Equal1;                    /* '<S62>/Equal1' */
+  boolean_T AND3;                      /* '<S62>/AND3' */
+  boolean_T Enable;                    /* '<S202>/Enable' */
+  boolean_T DataTypeConversion4;       /* '<S118>/Data Type Conversion4' */
+  boolean_T FixPtRelationalOperator;   /* '<S174>/FixPt Relational Operator' */
+  boolean_T Merge3_p;                  /* '<S158>/Merge3' */
+  boolean_T DataTypeConversion_j;      /* '<S123>/Data Type Conversion' */
+  boolean_T validityDelay;             /* '<S123>/validityDelay' */
+  boolean_T DelayOneStep1;             /* '<S124>/Delay One Step1' */
+  boolean_T OR;                        /* '<S124>/OR' */
+  boolean_T Compare;                   /* '<S128>/Compare' */
+  boolean_T DataStoreRead_n;           /* '<S121>/Data Store Read' */
+  boolean_T AND;                       /* '<S121>/AND' */
+  boolean_T RelationalOperator_k;      /* '<S160>/Relational Operator' */
+  boolean_T LogicalOperator_l;         /* '<S123>/Logical Operator' */
+  boolean_T Merge_ng[3];               /* '<S91>/Merge' */
+  boolean_T Merge_c[3];                /* '<S21>/Merge' */
+  rtB_To_LCD_mcb_bldc_sixstep_f28 To_LCD;/* '<Root>/To_LCD' */
+  rtB_SpeedControl_mcb_bldc_sixst SpeedControl;/* '<Root>/Speed Control' */
+  rtB_SPIMasterTransfer_mcb_bldc_ SPIMasterTransfer1;/* '<S217>/SPI Master Transfer' */
+  rtB_SPIMasterTransfer_mcb_bldc_ SPIMasterTransfer;/* '<S217>/SPI Master Transfer' */
+  rtB_BitExtract_mcb_bldc_sixstep BitExtract_i;/* '<S91>/Bit Extract' */
+  rtB_BitExtract_mcb_bldc_sixstep BitExtract;/* '<S21>/Bit Extract' */
 } BlockIO_mcb_bldc_sixstep_f28069;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real32_T Integrator_DSTATE;          /* '<S49>/Integrator' */
-  real32_T UnitDelay_DSTATE;           /* '<S102>/Unit Delay' */
-  uint32_T Delay_DSTATE[20];           /* '<S99>/Delay' */
+  real32_T Integrator_DSTATE;          /* '<S71>/Integrator' */
+  real32_T UnitDelay_DSTATE;           /* '<S183>/Unit Delay' */
+  uint32_T Delay_DSTATE[20];           /* '<S180>/Delay' */
+  uint32_T UnitDelay_DSTATE_l;         /* '<S121>/Unit Delay' */
+  uint32_T Delay_DSTATE_l;             /* '<S121>/Delay' */
+  uint32_T UnitDelay1_DSTATE;          /* '<S175>/Unit Delay1' */
   volatile real32_T RT1_Buffer[2];     /* '<Root>/RT1' */
   volatile real32_T RT6_Buffer[2];     /* '<Root>/RT6' */
   volatile real32_T RT2_Buffer[2];     /* '<Root>/RT2' */
-  int32_T blueLEDPin_FRAC_LEN;         /* '<S6>/blueLEDPin' */
-  int32_T DigitalOutput_FRAC_LEN;      /* '<S131>/Digital Output' */
-  int32_T minusOffset_DWORK1[3];       /* '<S92>/minusOffset' */
-  int32_T SpeedCount_DWORK1;           /* '<S99>/SpeedCount' */
-  uint16_T Output_DSTATE;              /* '<S89>/Output' */
+  real32_T speedSCI_B;                 /* '<Root>/Data Store Memory3' */
+  int32_T DigitalOutput1_FRAC_LEN;     /* '<S8>/Digital Output1' */
+  int32_T DigitalOutput_FRAC_LEN;      /* '<S217>/Digital Output' */
+  int32_T Add_DWORK1[3];               /* '<S114>/Add' */
+  int32_T DigitalOutput_FRAC_LEN_f;    /* '<S202>/Digital Output' */
+  int32_T SpeedCount_DWORK1;           /* '<S180>/SpeedCount' */
+  int16_T UnitDelay_DSTATE_dg;         /* '<S115>/Unit Delay' */
+  uint16_T Output_DSTATE;              /* '<S111>/Output' */
+  uint16_T DelayOneStep_DSTATE;        /* '<S124>/Delay One Step' */
   volatile int16_T RT1_ActiveBufIdx;   /* '<Root>/RT1' */
   volatile int16_T RT1_semaphoreTaken; /* '<Root>/RT1' */
   volatile int16_T RT6_ActiveBufIdx;   /* '<Root>/RT6' */
@@ -239,66 +325,78 @@ typedef struct {
   uint16_T IaOffset;                   /* '<Root>/Data Store Memory1' */
   uint16_T IbOffset;                   /* '<Root>/Data Store Memory2' */
   uint16_T IcOffset;                   /* '<Root>/Data Store Memory9' */
-  uint16_T Memory_PreviousInput;       /* '<S140>/Memory' */
-  uint16_T Memory1_PreviousInput;      /* '<S140>/Memory1' */
-  uint16_T Memory2_PreviousInput;      /* '<S140>/Memory2' */
-  uint16_T Add_DWORK1;                 /* '<S121>/Add' */
-  uint16_T CircBufIdx;                 /* '<S99>/Delay' */
-  int16_T Integrator_PrevResetState;   /* '<S49>/Integrator' */
+  uint16_T Memory_PreviousInput;       /* '<S226>/Memory' */
+  uint16_T Memory1_PreviousInput;      /* '<S226>/Memory1' */
+  uint16_T Memory2_PreviousInput;      /* '<S226>/Memory2' */
+  uint16_T Add_DWORK1_o;               /* '<S204>/Add' */
+  uint16_T CircBufIdx;                 /* '<S180>/Delay' */
+  boolean_T DelayOneStep1_DSTATE;      /* '<S124>/Delay One Step1' */
+  int16_T Integrator_PrevResetState;   /* '<S71>/Integrator' */
   boolean_T Enable;                    /* '<Root>/Data Store Memory29' */
-  rtDW_Speed_Control_mcb_bldc_six Speed_Control;/* '<Root>/Speed_Control' */
-  rtDW_SPIMasterTransfer_mcb_bldc SPIMasterTransfer1;/* '<S131>/SPI Master Transfer' */
-  rtDW_SPIMasterTransfer_mcb_bldc SPIMasterTransfer;/* '<S131>/SPI Master Transfer' */
+  rtDW_To_LCD_mcb_bldc_sixstep_f2 To_LCD;/* '<Root>/To_LCD' */
+  rtDW_SpeedControl_mcb_bldc_sixs SpeedControl;/* '<Root>/Speed Control' */
+  rtDW_SPIMasterTransfer_mcb_bldc SPIMasterTransfer1;/* '<S217>/SPI Master Transfer' */
+  rtDW_SPIMasterTransfer_mcb_bldc SPIMasterTransfer;/* '<S217>/SPI Master Transfer' */
 } D_Work_mcb_bldc_sixstep_f28069m;
+
+/* Zero-crossing (trigger) state */
+typedef struct {
+  ZCSigState Delay_Reset_ZCE;          /* '<S121>/Delay' */
+} PrevZCSigStates_mcb_bldc_sixste;
 
 /* Invariant block signals (default storage) */
 typedef struct {
-  const uint16_T dataWidth;            /* '<S8>/dataWidth' */
+  const real32_T SpeedConstData;       /* '<S126>/SpeedConstData' */
+  const uint16_T dataWidth;            /* '<S10>/dataWidth' */
 } ConstBlockIO_mcb_bldc_sixstep_f;
 
 /* Constant parameters (default storage) */
 typedef struct {
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S83>/SA1'
-   *   '<S84>/SA2'
+   *   '<S35>/SC1'
+   *   '<S36>/SC2'
+   *   '<S105>/SB1'
+   *   '<S106>/SB2'
    */
-  boolean_T pooled10[8];
+  boolean_T pooled37[8];
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S83>/SA2'
-   *   '<S84>/SA1'
+   *   '<S35>/SC2'
+   *   '<S36>/SC1'
+   *   '<S105>/SA1'
+   *   '<S106>/SA2'
    */
-  boolean_T pooled11[8];
+  boolean_T pooled38[8];
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S83>/SB1'
-   *   '<S84>/SB2'
+   *   '<S105>/SA2'
+   *   '<S106>/SA1'
    */
-  boolean_T pooled12[8];
+  boolean_T pooled39[8];
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S83>/SB2'
-   *   '<S84>/SB1'
+   *   '<S105>/SB2'
+   *   '<S106>/SB1'
    */
-  boolean_T pooled13[8];
+  boolean_T pooled40[8];
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S83>/SC1'
-   *   '<S84>/SC2'
+   *   '<S105>/SC1'
+   *   '<S106>/SC2'
    */
-  boolean_T pooled14[8];
+  boolean_T pooled41[8];
 
   /* Pooled Parameter (Mixed Expressions)
    * Referenced by:
-   *   '<S83>/SC2'
-   *   '<S84>/SC1'
+   *   '<S105>/SC2'
+   *   '<S106>/SC1'
    */
-  boolean_T pooled15[8];
+  boolean_T pooled42[8];
 } ConstParam_mcb_bldc_sixstep_f28;
 
 /* Real-time Model Data Structure */
@@ -322,6 +420,9 @@ extern BlockIO_mcb_bldc_sixstep_f28069 mcb_bldc_sixstep_f28069mLaunc_B;
 
 /* Block states (default storage) */
 extern D_Work_mcb_bldc_sixstep_f28069m mcb_bldc_sixstep_f28069mL_DWork;
+
+/* Zero-crossing (trigger) state */
+extern PrevZCSigStates_mcb_bldc_sixste mcb_bldc_sixstep_PrevZCSigState;
 extern const ConstBlockIO_mcb_bldc_sixstep_f mcb_bldc_sixstep_f28069m_ConstB;/* constant block i/o */
 
 /* Constant parameters (default storage) */
@@ -375,205 +476,302 @@ extern "C"
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'mcb_bldc_sixstep_f28069mLaunchPad'
- * '<S1>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control'
- * '<S2>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT'
- * '<S3>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init'
- * '<S4>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial_Receive'
- * '<S5>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control'
- * '<S6>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Toggle_LED'
- * '<S7>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System'
- * '<S8>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging'
- * '<S9>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling'
- * '<S10>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Inverter'
- * '<S11>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/SCI_Tx'
- * '<S12>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Sensor_driver_block'
- * '<S13>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc'
- * '<S14>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation'
- * '<S15>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset'
- * '<S16>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup'
- * '<S17>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/D Gain'
- * '<S18>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter'
- * '<S19>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter ICs'
- * '<S20>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/I Gain'
- * '<S21>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain'
- * '<S22>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk'
- * '<S23>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator'
- * '<S24>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator ICs'
- * '<S25>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Copy'
- * '<S26>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Gain'
- * '<S27>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/P Copy'
- * '<S28>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Parallel P Gain'
- * '<S29>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Reset Signal'
- * '<S30>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation'
- * '<S31>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk'
- * '<S32>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum'
- * '<S33>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum Fdbk'
- * '<S34>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode'
- * '<S35>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum'
- * '<S36>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral'
- * '<S37>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain'
- * '<S38>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/postSat Signal'
- * '<S39>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/preSat Signal'
- * '<S40>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel'
- * '<S41>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone'
- * '<S42>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone/Enabled'
- * '<S43>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/D Gain/Disabled'
- * '<S44>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter/Disabled'
- * '<S45>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter ICs/Disabled'
- * '<S46>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/I Gain/External Parameters'
- * '<S47>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain/Passthrough'
- * '<S48>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk/Disabled'
- * '<S49>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator/Discrete'
- * '<S50>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator ICs/External IC'
- * '<S51>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Copy/Disabled wSignal Specification'
- * '<S52>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Gain/Disabled'
- * '<S53>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/P Copy/Disabled'
- * '<S54>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Parallel P Gain/External Parameters'
- * '<S55>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Reset Signal/External Reset'
- * '<S56>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation/Enabled'
- * '<S57>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk/Disabled'
- * '<S58>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum/Sum_PI'
- * '<S59>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum Fdbk/Disabled'
- * '<S60>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode/Disabled'
- * '<S61>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum/Passthrough'
- * '<S62>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral/TsSignalSpecification'
- * '<S63>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain/Passthrough'
- * '<S64>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
- * '<S65>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
- * '<S66>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation'
- * '<S67>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/HALL'
- * '<S68>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position'
- * '<S69>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector'
- * '<S70>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/SwitchingSequence'
- * '<S71>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant'
- * '<S72>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120'
- * '<S73>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem'
- * '<S74>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem1'
- * '<S75>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem2'
- * '<S76>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem3'
- * '<S77>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem4'
- * '<S78>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem5'
- * '<S79>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem6'
- * '<S80>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector/Bit Extract'
- * '<S81>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector/Default '
- * '<S82>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector/Bit Extract/Extract Bits'
- * '<S83>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/SwitchingSequence/negative'
- * '<S84>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Control_System/Pos_Commutation/Six Step Commutation/SwitchingSequence/positive'
- * '<S85>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/Data'
- * '<S86>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/Data_Conditioning'
- * '<S87>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/End'
- * '<S88>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/Start'
- * '<S89>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/dataIndexCounter'
- * '<S90>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/dataIndexCounter/Increment Real World'
- * '<S91>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Data_Logging/dataIndexCounter/Wrap To Zero'
- * '<S92>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/Convert_ADC_value_to_PU'
- * '<S93>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback'
- * '<S94>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/Convert_ADC_value_to_PU/LowerSwitchCurrents'
- * '<S95>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed'
- * '<S96>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/IIR Filter'
- * '<S97>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position'
- * '<S98>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder'
- * '<S99>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Speed_Measurement'
- * '<S100>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/IIR Filter/IIR Filter'
- * '<S101>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/IIR Filter/IIR Filter/Low-pass'
- * '<S102>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/IIR Filter/IIR Filter/Low-pass/IIR Low Pass Filter'
- * '<S103>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec'
- * '<S104>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point'
- * '<S105>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point/Compensate Offset'
- * '<S106>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point/Mech To Elec'
- * '<S107>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point/Compensate Offset/If Action Subsystem'
- * '<S108>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point/Compensate Offset/If Action Subsystem1'
- * '<S109>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point/Mech To Elec/Variant Subsystem'
- * '<S110>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Mechanical_to_Electrical_Position/MechToElec/floating-point/Mech To Elec/Variant Subsystem/Dialog'
- * '<S111>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/DT_Handle'
- * '<S112>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/PositionNoReset'
- * '<S113>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/PositionResetAtIndex'
- * '<S114>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/Variant Subsystem'
- * '<S115>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/DT_Handle/floating-point'
- * '<S116>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/PositionNoReset/Variant Subsystem'
- * '<S117>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/PositionNoReset/Variant Subsystem/Dialog'
- * '<S118>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Quadrature_Decoder/Variant Subsystem/Dialog'
- * '<S119>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Speed_Measurement/DT_Handle'
- * '<S120>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/Input_scaling/QEP_Feedback/ Calculate_Position_and_Speed/Speed_Measurement/DT_Handle/floating-point'
- * '<S121>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current_Control/SCI_Tx/Tx_loop'
- * '<S122>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT/HWI_ADCINT1'
- * '<S123>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT/HWI_SCIRXINTA'
- * '<S124>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT/HWI_ADCINT1/ECSoC'
- * '<S125>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT/HWI_ADCINT1/ECSoC/ECSimCodegen'
- * '<S126>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT/HWI_SCIRXINTA/ECSoC'
- * '<S127>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_INT/HWI_SCIRXINTA/ECSoC/ECSimCodegen'
- * '<S128>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem'
- * '<S129>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation'
- * '<S130>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset '
- * '<S131>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/DRV Enable'
- * '<S132>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Default ADC Offset'
- * '<S133>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /For Iterator Subsystem'
- * '<S134>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem'
- * '<S135>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem1'
- * '<S136>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem2'
- * '<S137>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem3'
- * '<S138>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem4'
- * '<S139>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem5'
- * '<S140>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware_Init/Variant Subsystem/Code Generation/Calculate ADC Offset /For Iterator Subsystem/If Action Subsystem'
- * '<S141>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial_Receive/Data_Conditioning'
- * '<S142>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial_Receive/Subsystem'
- * '<S143>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed'
- * '<S144>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/Speed_Ref_Selector'
- * '<S145>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset'
- * '<S146>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Zero_Cancellation'
- * '<S147>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup'
- * '<S148>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain'
- * '<S149>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter'
- * '<S150>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs'
- * '<S151>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain'
- * '<S152>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain'
- * '<S153>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk'
- * '<S154>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator'
- * '<S155>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs'
- * '<S156>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy'
- * '<S157>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain'
- * '<S158>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy'
- * '<S159>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain'
- * '<S160>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal'
- * '<S161>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation'
- * '<S162>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk'
- * '<S163>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum'
- * '<S164>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk'
- * '<S165>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode'
- * '<S166>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum'
- * '<S167>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral'
- * '<S168>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain'
- * '<S169>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal'
- * '<S170>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal'
- * '<S171>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel'
- * '<S172>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone'
- * '<S173>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone/Enabled'
- * '<S174>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain/Disabled'
- * '<S175>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter/Disabled'
- * '<S176>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs/Disabled'
- * '<S177>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain/External Parameters'
- * '<S178>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain/Passthrough'
- * '<S179>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk/Disabled'
- * '<S180>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator/Discrete'
- * '<S181>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs/External IC'
- * '<S182>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy/Disabled wSignal Specification'
- * '<S183>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain/Disabled'
- * '<S184>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy/Disabled'
- * '<S185>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain/External Parameters'
- * '<S186>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal/External Reset'
- * '<S187>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation/Enabled'
- * '<S188>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk/Disabled'
- * '<S189>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum/Sum_PI'
- * '<S190>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk/Disabled'
- * '<S191>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode/Disabled'
- * '<S192>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum/Passthrough'
- * '<S193>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral/TsSignalSpecification'
- * '<S194>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain/Passthrough'
- * '<S195>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
- * '<S196>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
- * '<S197>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter'
- * '<S198>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass'
- * '<S199>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed_Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass/IIR Low Pass Filter'
+ * '<S1>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control'
+ * '<S2>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt'
+ * '<S3>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init'
+ * '<S4>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Inverter and Motor - Plant Model'
+ * '<S5>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive'
+ * '<S6>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control'
+ * '<S7>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD'
+ * '<S8>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Toggle LED'
+ * '<S9>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System'
+ * '<S10>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging'
+ * '<S11>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling'
+ * '<S12>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Inverter'
+ * '<S13>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/SCI_Tx'
+ * '<S14>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Sensor Driver Blocks'
+ * '<S15>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation'
+ * '<S16>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc'
+ * '<S17>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation'
+ * '<S18>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation'
+ * '<S19>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/HALL'
+ * '<S20>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position'
+ * '<S21>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Sector2vector'
+ * '<S22>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/SwitchingSequence'
+ * '<S23>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant'
+ * '<S24>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120'
+ * '<S25>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem'
+ * '<S26>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem1'
+ * '<S27>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem2'
+ * '<S28>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem3'
+ * '<S29>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem4'
+ * '<S30>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem5'
+ * '<S31>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem6'
+ * '<S32>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Sector2vector/Bit Extract'
+ * '<S33>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Sector2vector/Default '
+ * '<S34>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/Sector2vector/Bit Extract/Extract Bits'
+ * '<S35>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/SwitchingSequence/negative'
+ * '<S36>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Hall_Commutation/Six Step Commutation/SwitchingSequence/positive'
+ * '<S37>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset'
+ * '<S38>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup'
+ * '<S39>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/D Gain'
+ * '<S40>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter'
+ * '<S41>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter ICs'
+ * '<S42>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/I Gain'
+ * '<S43>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain'
+ * '<S44>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk'
+ * '<S45>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator'
+ * '<S46>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator ICs'
+ * '<S47>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Copy'
+ * '<S48>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Gain'
+ * '<S49>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/P Copy'
+ * '<S50>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Parallel P Gain'
+ * '<S51>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Reset Signal'
+ * '<S52>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation'
+ * '<S53>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk'
+ * '<S54>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum'
+ * '<S55>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum Fdbk'
+ * '<S56>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode'
+ * '<S57>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum'
+ * '<S58>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral'
+ * '<S59>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain'
+ * '<S60>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/postSat Signal'
+ * '<S61>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/preSat Signal'
+ * '<S62>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel'
+ * '<S63>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone'
+ * '<S64>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone/Enabled'
+ * '<S65>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/D Gain/Disabled'
+ * '<S66>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter/Disabled'
+ * '<S67>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Filter ICs/Disabled'
+ * '<S68>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/I Gain/External Parameters'
+ * '<S69>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain/Passthrough'
+ * '<S70>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk/Disabled'
+ * '<S71>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator/Discrete'
+ * '<S72>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Integrator ICs/External IC'
+ * '<S73>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Copy/Disabled wSignal Specification'
+ * '<S74>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/N Gain/Disabled'
+ * '<S75>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/P Copy/Disabled'
+ * '<S76>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Parallel P Gain/External Parameters'
+ * '<S77>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Reset Signal/External Reset'
+ * '<S78>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation/Enabled'
+ * '<S79>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk/Disabled'
+ * '<S80>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum/Sum_PI'
+ * '<S81>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Sum Fdbk/Disabled'
+ * '<S82>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode/Disabled'
+ * '<S83>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum/Passthrough'
+ * '<S84>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral/TsSignalSpecification'
+ * '<S85>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain/Passthrough'
+ * '<S86>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
+ * '<S87>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/PI_Controller_Idc/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
+ * '<S88>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation'
+ * '<S89>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/HALL'
+ * '<S90>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position'
+ * '<S91>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector'
+ * '<S92>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/SwitchingSequence'
+ * '<S93>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant'
+ * '<S94>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120'
+ * '<S95>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem'
+ * '<S96>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem1'
+ * '<S97>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem2'
+ * '<S98>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem3'
+ * '<S99>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem4'
+ * '<S100>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem5'
+ * '<S101>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Position/PositionSectorvariant/Sector120/Enabled Subsystem6'
+ * '<S102>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector/Bit Extract'
+ * '<S103>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector/Default '
+ * '<S104>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/Sector2vector/Bit Extract/Extract Bits'
+ * '<S105>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/SwitchingSequence/negative'
+ * '<S106>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System/Pos_Commutation/Six Step Commutation/SwitchingSequence/positive'
+ * '<S107>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/Data'
+ * '<S108>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/Data_Conditioning'
+ * '<S109>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/End'
+ * '<S110>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/Start'
+ * '<S111>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/dataIndexCounter'
+ * '<S112>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/dataIndexCounter/Increment Real World'
+ * '<S113>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging/dataIndexCounter/Wrap To Zero'
+ * '<S114>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Convert ADC value to PU'
+ * '<S115>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback'
+ * '<S116>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback'
+ * '<S117>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Convert ADC value to PU/LowerSwitchCurrents'
+ * '<S118>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position'
+ * '<S119>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity'
+ * '<S120>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/IIR Filter'
+ * '<S121>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Speed Counter'
+ * '<S122>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Subsystem'
+ * '<S123>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/ExtrapolationOrder'
+ * '<S124>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Software Watchdog Timer'
+ * '<S125>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant'
+ * '<S126>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position'
+ * '<S127>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/VaidityCheck'
+ * '<S128>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Software Watchdog Timer/Compare To Zero'
+ * '<S129>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction'
+ * '<S130>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 1'
+ * '<S131>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 2'
+ * '<S132>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 3'
+ * '<S133>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 4'
+ * '<S134>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 5'
+ * '<S135>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 6'
+ * '<S136>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are not valid Position will be set to the middle of the Hall quadrant/independent Direction/Hall Value of 7'
+ * '<S137>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/If Action Subsystem'
+ * '<S138>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/If Action Subsystem1'
+ * '<S139>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1'
+ * '<S140>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction'
+ * '<S141>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction'
+ * '<S142>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/first_order'
+ * '<S143>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/second_order'
+ * '<S144>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 1'
+ * '<S145>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 2'
+ * '<S146>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 3'
+ * '<S147>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 4'
+ * '<S148>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 5'
+ * '<S149>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 6'
+ * '<S150>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/+ve Direction/Hall Value of 7'
+ * '<S151>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 1'
+ * '<S152>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 2'
+ * '<S153>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 3'
+ * '<S154>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 4'
+ * '<S155>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 5'
+ * '<S156>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 6'
+ * '<S157>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Speed and Position/Speed and direction are valid Use speed to extrapolate position/Subsystem1/-ve Direction/Hall Value of 7'
+ * '<S158>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem'
+ * '<S159>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Bad hall (glitch or wrong connection)'
+ * '<S160>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls'
+ * '<S161>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem'
+ * '<S162>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem1'
+ * '<S163>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem2'
+ * '<S164>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem3'
+ * '<S165>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem4'
+ * '<S166>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem5'
+ * '<S167>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem6'
+ * '<S168>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem7'
+ * '<S169>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/If Action Subsystem8'
+ * '<S170>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Hall Validity/Subsystem/Valid Halls/Switch Case Action Subsystem'
+ * '<S171>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/IIR Filter/IIR Filter'
+ * '<S172>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/IIR Filter/IIR Filter/Low-pass'
+ * '<S173>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/IIR Filter/IIR Filter/Low-pass/IIR Low Pass Filter'
+ * '<S174>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Speed Counter/Detect Change'
+ * '<S175>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/Hall Feedback/Speed Counter/Enabled Subsystem'
+ * '<S176>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed'
+ * '<S177>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/IIR Filter'
+ * '<S178>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position'
+ * '<S179>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder'
+ * '<S180>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Speed Measurement'
+ * '<S181>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/IIR Filter/IIR Filter'
+ * '<S182>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/IIR Filter/IIR Filter/Low-pass'
+ * '<S183>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/IIR Filter/IIR Filter/Low-pass/IIR Low Pass Filter'
+ * '<S184>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec'
+ * '<S185>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point'
+ * '<S186>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point/Compensate Offset'
+ * '<S187>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point/Mech To Elec'
+ * '<S188>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point/Compensate Offset/If Action Subsystem'
+ * '<S189>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point/Compensate Offset/If Action Subsystem1'
+ * '<S190>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point/Mech To Elec/Variant Subsystem'
+ * '<S191>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Mechanical to Electrical Position/MechToElec/floating-point/Mech To Elec/Variant Subsystem/Dialog'
+ * '<S192>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/DT_Handle'
+ * '<S193>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/PositionNoReset'
+ * '<S194>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/PositionResetAtIndex'
+ * '<S195>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/Variant Subsystem'
+ * '<S196>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/DT_Handle/floating-point'
+ * '<S197>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/PositionNoReset/Variant Subsystem'
+ * '<S198>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/PositionNoReset/Variant Subsystem/Dialog'
+ * '<S199>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Quadrature Decoder/Variant Subsystem/Dialog'
+ * '<S200>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Speed Measurement/DT_Handle'
+ * '<S201>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Input Scaling/QEP Feedback/ Calculate Position and Speed/Speed Measurement/DT_Handle/floating-point'
+ * '<S202>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Inverter/ Code Generation'
+ * '<S203>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/SCI_Tx/SCI_Tx_codegen'
+ * '<S204>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/SCI_Tx/SCI_Tx_codegen/SCI_Tx_codegen'
+ * '<S205>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Sensor Driver Blocks/Sensor Driver Blocks (codegen)'
+ * '<S206>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Sensor Driver Blocks/Sensor Driver Blocks (codegen)/Read Halls'
+ * '<S207>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation'
+ * '<S208>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation/HWI_ADCINT1'
+ * '<S209>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation/HWI_SCIRXINTA'
+ * '<S210>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation/HWI_ADCINT1/ECSoC'
+ * '<S211>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation/HWI_ADCINT1/ECSoC/ECSimCodegen'
+ * '<S212>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation/HWI_SCIRXINTA/ECSoC'
+ * '<S213>' : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt/Code generation/HWI_SCIRXINTA/ECSoC/ECSimCodegen'
+ * '<S214>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem'
+ * '<S215>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation'
+ * '<S216>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset '
+ * '<S217>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/DRV Enable'
+ * '<S218>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Default ADC Offset'
+ * '<S219>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /For Iterator Subsystem'
+ * '<S220>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem'
+ * '<S221>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem1'
+ * '<S222>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem2'
+ * '<S223>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem3'
+ * '<S224>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem4'
+ * '<S225>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem5'
+ * '<S226>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /For Iterator Subsystem/If Action Subsystem'
+ * '<S227>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Inverter and Motor - Plant Model/Codegeneration'
+ * '<S228>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/Data_Conditioning'
+ * '<S229>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/SCI_Rx'
+ * '<S230>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/SCI_Rx/Code Generation'
+ * '<S231>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed'
+ * '<S232>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/Speed_Ref_Selector'
+ * '<S233>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset'
+ * '<S234>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation'
+ * '<S235>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup'
+ * '<S236>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain'
+ * '<S237>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter'
+ * '<S238>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs'
+ * '<S239>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain'
+ * '<S240>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain'
+ * '<S241>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk'
+ * '<S242>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator'
+ * '<S243>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs'
+ * '<S244>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy'
+ * '<S245>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain'
+ * '<S246>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy'
+ * '<S247>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain'
+ * '<S248>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal'
+ * '<S249>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation'
+ * '<S250>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk'
+ * '<S251>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum'
+ * '<S252>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk'
+ * '<S253>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode'
+ * '<S254>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum'
+ * '<S255>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral'
+ * '<S256>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain'
+ * '<S257>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal'
+ * '<S258>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal'
+ * '<S259>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel'
+ * '<S260>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone'
+ * '<S261>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone/Enabled'
+ * '<S262>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain/Disabled'
+ * '<S263>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter/Disabled'
+ * '<S264>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs/Disabled'
+ * '<S265>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain/External Parameters'
+ * '<S266>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain/Passthrough'
+ * '<S267>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk/Disabled'
+ * '<S268>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator/Discrete'
+ * '<S269>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs/External IC'
+ * '<S270>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy/Disabled wSignal Specification'
+ * '<S271>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain/Disabled'
+ * '<S272>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy/Disabled'
+ * '<S273>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain/External Parameters'
+ * '<S274>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal/External Reset'
+ * '<S275>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation/Enabled'
+ * '<S276>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk/Disabled'
+ * '<S277>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum/Sum_PI'
+ * '<S278>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk/Disabled'
+ * '<S279>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode/Disabled'
+ * '<S280>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum/Passthrough'
+ * '<S281>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral/TsSignalSpecification'
+ * '<S282>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain/Passthrough'
+ * '<S283>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
+ * '<S284>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
+ * '<S285>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter'
+ * '<S286>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass'
+ * '<S287>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass/IIR Low Pass Filter'
+ * '<S288>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging'
+ * '<S289>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/SCI_Tx_codegen'
+ * '<S290>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/Data'
+ * '<S291>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/Data_Conditioning'
+ * '<S292>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/End'
+ * '<S293>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/Start'
+ * '<S294>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/dataIndexCounter'
+ * '<S295>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/dataIndexCounter/Increment Real World'
+ * '<S296>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/dataIndexCounter/Wrap To Zero'
  */
 #endif                     /* RTW_HEADER_mcb_bldc_sixstep_f28069mLaunchPad_h_ */
 

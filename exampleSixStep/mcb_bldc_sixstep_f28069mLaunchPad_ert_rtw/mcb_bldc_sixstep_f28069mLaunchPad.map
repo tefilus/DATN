@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.0                     
 ******************************************************************************
->> Linked Thu May 15 17:53:18 2025
+>> Linked Fri May 16 16:57:10 2025
 
 OUTPUT FILE NAME:   <../mcb_bldc_sixstep_f28069mLaunchPad.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 003d9f28
@@ -328,7 +328,7 @@ CsmPwlFile
                   003d9819    0000012f     mcb_bldc_sixstep_f28069mLaunchPad.obj (.text:retain)
                   003d9948    0000011c     MW_c28xSPI.obj (.text)
                   003d9a64    000000cc     MW_SPI.obj (.text)
-                  003d9b30    000000c0     SCI_B.obj (.text)
+                  003d9b30    000000c0     To_LCD.obj (.text)
                   003d9bf0    000000be     MW_c28xx_adc.obj (.text)
                   003d9cae    00000096     ert_main.obj (.text)
                   003d9d44    00000092     rt_nonfinite.obj (.text)
@@ -442,7 +442,7 @@ MODULE SUMMARY
        MW_c28xSPI.obj                               284     7                  28                
        F2806x_PieVect.obj                           38      256                0                 
        MW_SPI.obj                                   204     0                  0                 
-       SCI_B.obj                                    192     0                  0                 
+       To_LCD.obj                                   192     0                  0                 
        MW_c28xx_adc.obj                             190     0                  0                 
        ert_main.obj                                 150     14                 7                 
        rt_nonfinite.obj                             146     0                  12                
@@ -965,9 +965,9 @@ abs   ffffffff  ___pinit__
 0     003d80ec  _mcb_bldc_sixst_HallValueof5                               
 0     003d80f6  _mcb_bldc_sixst_HallValueof7                               
 0     003d82eb  _mcb_bldc_sixst_SpeedControl                               
+0     003d9b30  _mcb_bldc_sixste_To_LCD_Init                               
 0     003d808c  _mcb_bldc_sixstep_BitExtract                               
 1     0000e000  _mcb_bldc_sixstep_PrevZCSigState                           
-0     003d9b30  _mcb_bldc_sixstep_SCI_B_Init                               
 1     0000e040  _mcb_bldc_sixstep_f28069mL_DWork                           
 0     003daa06  _mcb_bldc_sixstep_f28069mLaun_M                            
 1     0000e0c0  _mcb_bldc_sixstep_f28069mLaunc_B                           
@@ -980,7 +980,7 @@ abs   ffffffff  ___pinit__
 0     003d8735  _mcb_bldc_sixstep_f28069mLaunchPad_unconfigure_interrupts  
 0     003daa00  _mcb_bldc_sixstep_f28069m_ConstB                           
 0     003da9d0  _mcb_bldc_sixstep_f28069m_ConstP                           
-0     003d9b36  _mcb_bldc_sixstep_f280_SCI_B                               
+0     003d9b36  _mcb_bldc_sixstep_f28_To_LCD                               
 0     003d801a  _mcb_bldc_sixstep_f_Position                               
 0     003da31c  _memcpy                                                    
 0     003da389  _memset                                                    
@@ -1196,8 +1196,8 @@ page  address   name
 0     003d9b1f  _MW_SPI_SlaveWriteRead_8bits                               
 0     003d9b26  _MW_SPI_GetStatus                                          
 0     003d9b2b  _MW_SPI_Close                                              
-0     003d9b30  _mcb_bldc_sixstep_SCI_B_Init                               
-0     003d9b36  _mcb_bldc_sixstep_f280_SCI_B                               
+0     003d9b30  _mcb_bldc_sixste_To_LCD_Init                               
+0     003d9b36  _mcb_bldc_sixstep_f28_To_LCD                               
 0     003d9bf0  _config_ADC_SOC4_SOC5                                      
 0     003d9c1b  _config_ADC_SOC3                                           
 0     003d9c48  _config_ADC_SOC0_SOC1                                      

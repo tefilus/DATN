@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.70
+ * Model version                  : 7.72
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May 15 17:53:01 2025
+ * C/C++ source code generated on : Fri May 16 16:56:58 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -18,7 +18,7 @@
 #include "rtwtypes.h"
 #include <math.h>
 #include "rt_nonfinite.h"
-#include "SCI_B.h"
+#include "To_LCD.h"
 #include <string.h>
 
 /* Block signals (default storage) */
@@ -1950,10 +1950,10 @@ void mcb__SPIMasterTransfer_Term(rtDW_SPIMasterTransfer_mcb_bldc *localDW)
 void mcb_bldc__SpeedControl_Init(rtB_SpeedControl_mcb_bldc_sixst *localB,
   rtDW_SpeedControl_mcb_bldc_sixs *localDW)
 {
-  /* Start for Constant: '<S240>/Ki2' */
+  /* Start for Constant: '<S231>/Ki2' */
   localB->Ki2 = 0.0F;
 
-  /* InitializeConditions for DiscreteIntegrator: '<S277>/Integrator' */
+  /* InitializeConditions for DiscreteIntegrator: '<S268>/Integrator' */
   localDW->Integrator_DSTATE = 0.0F;
   localDW->Integrator_PrevResetState = 0;
 }
@@ -1966,169 +1966,169 @@ void mcb_bldc_sixst_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
 {
   real32_T u0;
 
-  /* DataStoreRead: '<S240>/Data Store Read2' */
+  /* DataStoreRead: '<S231>/Data Store Read2' */
   localB->DataStoreRead2 = *rtd_Enable;
 
-  /* DataStoreRead: '<S241>/Data Store Read1' */
+  /* DataStoreRead: '<S232>/Data Store Read1' */
   localB->DataStoreRead1 = *rtd_Enable;
 
-  /* Switch: '<S241>/Switch' */
+  /* Switch: '<S232>/Switch' */
   if (localB->DataStoreRead1) {
-    /* Switch: '<S241>/Switch' */
+    /* Switch: '<S232>/Switch' */
     localB->Switch = rtu_Speed_Ref_PU;
   } else {
-    /* Switch: '<S241>/Switch' */
+    /* Switch: '<S232>/Switch' */
     localB->Switch = rtu_Speed_Meas_PU;
   }
 
-  /* End of Switch: '<S241>/Switch' */
+  /* End of Switch: '<S232>/Switch' */
 
-  /* Product: '<S296>/Product' incorporates:
-   *  Constant: '<S296>/Filter_Constant'
+  /* Product: '<S287>/Product' incorporates:
+   *  Constant: '<S287>/Filter_Constant'
    */
   localB->Product = localB->Switch * 0.1F;
 
-  /* UnitDelay: '<S296>/Unit Delay' */
+  /* UnitDelay: '<S287>/Unit Delay' */
   localB->UnitDelay = localDW->UnitDelay_DSTATE;
 
-  /* Product: '<S296>/Product1' incorporates:
-   *  Constant: '<S296>/One'
+  /* Product: '<S287>/Product1' incorporates:
+   *  Constant: '<S287>/One'
    */
   localB->Product1 = 0.9F * localB->UnitDelay;
 
-  /* Sum: '<S296>/Add1' */
+  /* Sum: '<S287>/Add1' */
   localB->Add1 = localB->Product + localB->Product1;
 
-  /* Sum: '<S240>/Sum' */
+  /* Sum: '<S231>/Sum' */
   localB->Sum = localB->Add1 - rtu_Speed_Meas_PU;
 
-  /* Product: '<S282>/PProd Out' incorporates:
-   *  Constant: '<S240>/Kp1'
+  /* Product: '<S273>/PProd Out' incorporates:
+   *  Constant: '<S231>/Kp1'
    */
   localB->PProdOut = localB->Sum * 2.70955873F;
 
-  /* Logic: '<S240>/Logical Operator' */
+  /* Logic: '<S231>/Logical Operator' */
   localB->LogicalOperator = !localB->DataStoreRead2;
 
-  /* Constant: '<S240>/Ki2' */
+  /* Constant: '<S231>/Ki2' */
   localB->Ki2 = 0.0F;
 
-  /* DiscreteIntegrator: '<S277>/Integrator' */
+  /* DiscreteIntegrator: '<S268>/Integrator' */
   if (localB->LogicalOperator || (localDW->Integrator_PrevResetState != 0)) {
     localDW->Integrator_DSTATE = 0.0F;
   }
 
-  /* DiscreteIntegrator: '<S277>/Integrator' */
+  /* DiscreteIntegrator: '<S268>/Integrator' */
   localB->Integrator = localDW->Integrator_DSTATE;
 
-  /* Sum: '<S286>/Sum' */
+  /* Sum: '<S277>/Sum' */
   localB->Sum_j = localB->PProdOut + localB->Integrator;
 
-  /* DeadZone: '<S270>/DeadZone' */
+  /* DeadZone: '<S261>/DeadZone' */
   if (localB->Sum_j > 1.0F) {
-    /* DeadZone: '<S270>/DeadZone' */
+    /* DeadZone: '<S261>/DeadZone' */
     localB->DeadZone = localB->Sum_j - 1.0F;
   } else if (localB->Sum_j >= -1.0F) {
-    /* DeadZone: '<S270>/DeadZone' */
+    /* DeadZone: '<S261>/DeadZone' */
     localB->DeadZone = 0.0F;
   } else {
-    /* DeadZone: '<S270>/DeadZone' */
+    /* DeadZone: '<S261>/DeadZone' */
     localB->DeadZone = localB->Sum_j - -1.0F;
   }
 
-  /* End of DeadZone: '<S270>/DeadZone' */
+  /* End of DeadZone: '<S261>/DeadZone' */
 
-  /* RelationalOperator: '<S268>/Relational Operator' incorporates:
-   *  Constant: '<S268>/Clamping_zero'
+  /* RelationalOperator: '<S259>/Relational Operator' incorporates:
+   *  Constant: '<S259>/Clamping_zero'
    */
   localB->RelationalOperator = (localB->DeadZone != 0.0F);
 
-  /* RelationalOperator: '<S268>/fix for DT propagation issue' incorporates:
-   *  Constant: '<S268>/Clamping_zero'
+  /* RelationalOperator: '<S259>/fix for DT propagation issue' incorporates:
+   *  Constant: '<S259>/Clamping_zero'
    */
   localB->fixforDTpropagationissue = (localB->DeadZone > 0.0F);
 
-  /* Switch: '<S268>/Switch1' */
+  /* Switch: '<S259>/Switch1' */
   if (localB->fixforDTpropagationissue) {
-    /* Switch: '<S268>/Switch1' incorporates:
-     *  Constant: '<S268>/Constant'
+    /* Switch: '<S259>/Switch1' incorporates:
+     *  Constant: '<S259>/Constant'
      */
     localB->Switch1 = 1;
   } else {
-    /* Switch: '<S268>/Switch1' incorporates:
-     *  Constant: '<S268>/Constant2'
+    /* Switch: '<S259>/Switch1' incorporates:
+     *  Constant: '<S259>/Constant2'
      */
     localB->Switch1 = -1;
   }
 
-  /* End of Switch: '<S268>/Switch1' */
+  /* End of Switch: '<S259>/Switch1' */
 
-  /* Product: '<S274>/IProd Out' incorporates:
-   *  Constant: '<S240>/Ki1'
+  /* Product: '<S265>/IProd Out' incorporates:
+   *  Constant: '<S231>/Ki1'
    */
   localB->IProdOut = localB->Sum * 0.0197651051F;
 
-  /* RelationalOperator: '<S268>/fix for DT propagation issue1' incorporates:
-   *  Constant: '<S268>/Clamping_zero'
+  /* RelationalOperator: '<S259>/fix for DT propagation issue1' incorporates:
+   *  Constant: '<S259>/Clamping_zero'
    */
   localB->fixforDTpropagationissue1 = (localB->IProdOut > 0.0F);
 
-  /* Switch: '<S268>/Switch2' */
+  /* Switch: '<S259>/Switch2' */
   if (localB->fixforDTpropagationissue1) {
-    /* Switch: '<S268>/Switch2' incorporates:
-     *  Constant: '<S268>/Constant3'
+    /* Switch: '<S259>/Switch2' incorporates:
+     *  Constant: '<S259>/Constant3'
      */
     localB->Switch2 = 1;
   } else {
-    /* Switch: '<S268>/Switch2' incorporates:
-     *  Constant: '<S268>/Constant4'
+    /* Switch: '<S259>/Switch2' incorporates:
+     *  Constant: '<S259>/Constant4'
      */
     localB->Switch2 = -1;
   }
 
-  /* End of Switch: '<S268>/Switch2' */
+  /* End of Switch: '<S259>/Switch2' */
 
-  /* RelationalOperator: '<S268>/Equal1' incorporates:
-   *  Switch: '<S268>/Switch1'
-   *  Switch: '<S268>/Switch2'
+  /* RelationalOperator: '<S259>/Equal1' incorporates:
+   *  Switch: '<S259>/Switch1'
+   *  Switch: '<S259>/Switch2'
    */
   localB->Equal1 = (localB->Switch1 == localB->Switch2);
 
-  /* Logic: '<S268>/AND3' */
+  /* Logic: '<S259>/AND3' */
   localB->AND3 = (localB->RelationalOperator && localB->Equal1);
 
-  /* Switch: '<S268>/Switch' */
+  /* Switch: '<S259>/Switch' */
   if (localB->AND3) {
-    /* Switch: '<S268>/Switch' incorporates:
-     *  Constant: '<S268>/Constant1'
+    /* Switch: '<S259>/Switch' incorporates:
+     *  Constant: '<S259>/Constant1'
      */
     localB->Switch_a = 0.0F;
   } else {
-    /* Switch: '<S268>/Switch' */
+    /* Switch: '<S259>/Switch' */
     localB->Switch_a = localB->IProdOut;
   }
 
-  /* End of Switch: '<S268>/Switch' */
+  /* End of Switch: '<S259>/Switch' */
 
-  /* Saturate: '<S284>/Saturation' */
+  /* Saturate: '<S275>/Saturation' */
   u0 = localB->Sum_j;
   if (u0 > 1.0F) {
-    /* Saturate: '<S284>/Saturation' */
+    /* Saturate: '<S275>/Saturation' */
     localB->Saturation = 1.0F;
   } else if (u0 < -1.0F) {
-    /* Saturate: '<S284>/Saturation' */
+    /* Saturate: '<S275>/Saturation' */
     localB->Saturation = -1.0F;
   } else {
-    /* Saturate: '<S284>/Saturation' */
+    /* Saturate: '<S275>/Saturation' */
     localB->Saturation = u0;
   }
 
-  /* End of Saturate: '<S284>/Saturation' */
+  /* End of Saturate: '<S275>/Saturation' */
 
-  /* Update for UnitDelay: '<S296>/Unit Delay' */
+  /* Update for UnitDelay: '<S287>/Unit Delay' */
   localDW->UnitDelay_DSTATE = localB->Add1;
 
-  /* Update for DiscreteIntegrator: '<S277>/Integrator' */
+  /* Update for DiscreteIntegrator: '<S268>/Integrator' */
   localDW->Integrator_DSTATE += localB->Switch_a;
   localDW->Integrator_PrevResetState = (int16_T)localB->LogicalOperator;
 }
@@ -2166,12 +2166,12 @@ void mcb_bldc_sixstep_f28069mLaunchPad_step0(void) /* Sample time: [0.0005s, 0.0
   mcb_bldc_sixstep_f28069mL_DWork.RT2_ActiveBufIdx =
     (mcb_bldc_sixstep_f28069mL_DWork.RT2_ActiveBufIdx == 0);
 
-  /* Outputs for Atomic SubSystem: '<Root>/SCI_B' */
-  mcb_bldc_sixstep_f280_SCI_B(&mcb_bldc_sixstep_f28069mL_DWork.speedSCI_B,
-    &mcb_bldc_sixstep_f28069mLaunc_B.SCI_B,
-    &mcb_bldc_sixstep_f28069mL_DWork.SCI_B);
+  /* Outputs for Atomic SubSystem: '<Root>/To_LCD' */
+  mcb_bldc_sixstep_f28_To_LCD(&mcb_bldc_sixstep_f28069mL_DWork.speedSCI_B,
+    &mcb_bldc_sixstep_f28069mLaunc_B.To_LCD,
+    &mcb_bldc_sixstep_f28069mL_DWork.To_LCD);
 
-  /* End of Outputs for SubSystem: '<Root>/SCI_B' */
+  /* End of Outputs for SubSystem: '<Root>/To_LCD' */
 }
 
 /* Model step function for TID1 */
@@ -2280,6 +2280,7 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     mcb_bldc_sixstep_f28069mLaunc_B.Product_j = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Merge1_p = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.Merge1_o = 0.0F;
+    mcb_bldc_sixstep_f28069mLaunc_B.To_LCD.dataLogging_Speed = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.SpeedControl.Switch = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.SpeedControl.Product = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.SpeedControl.UnitDelay = 0.0F;
@@ -2294,7 +2295,6 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
     mcb_bldc_sixstep_f28069mLaunc_B.SpeedControl.IProdOut = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.SpeedControl.Switch_a = 0.0F;
     mcb_bldc_sixstep_f28069mLaunc_B.SpeedControl.Saturation = 0.0F;
-    mcb_bldc_sixstep_f28069mLaunc_B.SCI_B.dataLogging_Speed = 0.0F;
   }
 
   /* states (dwork) */
@@ -2344,7 +2344,7 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
      */
     /* System initialize for function-call system: '<Root>/Serial Receive' */
 
-    /* Start for S-Function (c28xsci_rx): '<S239>/SCI Receive' */
+    /* Start for S-Function (c28xsci_rx): '<S230>/SCI Receive' */
 
     /* Initialize out port */
     {
@@ -2369,10 +2369,10 @@ void mcb_bldc_sixstep_f28069mLaunchPad_initialize(void)
 
     /* End of SystemInitialize for SubSystem: '<Root>/Speed Control' */
 
-    /* SystemInitialize for Atomic SubSystem: '<Root>/SCI_B' */
-    mcb_bldc_sixstep_SCI_B_Init(&mcb_bldc_sixstep_f28069mLaunc_B.SCI_B);
+    /* SystemInitialize for Atomic SubSystem: '<Root>/To_LCD' */
+    mcb_bldc_sixste_To_LCD_Init(&mcb_bldc_sixstep_f28069mLaunc_B.To_LCD);
 
-    /* End of SystemInitialize for SubSystem: '<Root>/SCI_B' */
+    /* End of SystemInitialize for SubSystem: '<Root>/To_LCD' */
 
     /* SystemInitialize for Atomic SubSystem: '<Root>/Hardware Init' */
     /* Start for S-Function (c280xgpio_do): '<S217>/Digital Output' */
@@ -2760,7 +2760,7 @@ interrupt void SCIRXINTA(void)
       {
         int16_T DataTypeConversion2_c;
 
-        /* S-Function (c28xsci_rx): '<S239>/SCI Receive' */
+        /* S-Function (c28xsci_rx): '<S230>/SCI Receive' */
         {
           int16_T i;
           int16_T errFlg = NOERROR;
@@ -2784,39 +2784,39 @@ interrupt void SCIRXINTA(void)
           }
         }
 
-        /* DataTypeConversion: '<S237>/Data Type Conversion2' */
+        /* DataTypeConversion: '<S228>/Data Type Conversion2' */
         DataTypeConversion2_c = (int16_T)
           mcb_bldc_sixstep_f28069mLaunc_B.SCIReceive[0];
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion2_c[0] =
           DataTypeConversion2_c;
 
-        /* DataTypeConversion: '<S237>/Data Type Conversion1' incorporates:
-         *  DataTypeConversion: '<S237>/Data Type Conversion2'
+        /* DataTypeConversion: '<S228>/Data Type Conversion1' incorporates:
+         *  DataTypeConversion: '<S228>/Data Type Conversion2'
          */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[0] = (real32_T)
           DataTypeConversion2_c * 0.000244140625F;
 
-        /* DataTypeConversion: '<S237>/Data Type Conversion2' */
+        /* DataTypeConversion: '<S228>/Data Type Conversion2' */
         DataTypeConversion2_c = (int16_T)
           mcb_bldc_sixstep_f28069mLaunc_B.SCIReceive[1];
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion2_c[1] =
           DataTypeConversion2_c;
 
-        /* DataTypeConversion: '<S237>/Data Type Conversion1' incorporates:
-         *  DataTypeConversion: '<S237>/Data Type Conversion2'
+        /* DataTypeConversion: '<S228>/Data Type Conversion1' incorporates:
+         *  DataTypeConversion: '<S228>/Data Type Conversion2'
          */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[1] = (real32_T)
           DataTypeConversion2_c * 0.000244140625F;
 
-        /* DataTypeConversion: '<S6>/Data Type Conversion3' */
+        /* DataTypeConversion: '<S5>/Data Type Conversion3' */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3 =
           (mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[1] != 0.0F);
 
-        /* DataStoreWrite: '<S6>/Data Store Write' */
+        /* DataStoreWrite: '<S5>/Data Store Write' */
         mcb_bldc_sixstep_f28069mL_DWork.Enable =
           mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion3;
 
-        /* DataTypeConversion: '<S6>/Data Type Conversion1' */
+        /* DataTypeConversion: '<S5>/Data Type Conversion1' */
         mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1_l =
           mcb_bldc_sixstep_f28069mLaunc_B.DataTypeConversion1[0];
       }

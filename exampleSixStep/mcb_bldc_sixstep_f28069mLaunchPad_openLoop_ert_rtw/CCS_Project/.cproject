@@ -72,7 +72,7 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="MODEL=mcb_bldc_sixstep_f28069mLaunchPad_openLoop">
 </listOptionValue>
-<listOptionValue builtIn="false" value="NUMST=1">
+<listOptionValue builtIn="false" value="NUMST=2">
 </listOptionValue>
 <listOptionValue builtIn="false" value="NCSTATES=0">
 </listOptionValue>
@@ -96,7 +96,7 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="INTEGER_CODE=0">
 </listOptionValue>
-<listOptionValue builtIn="false" value="MT=0">
+<listOptionValue builtIn="false" value="MT=1">
 </listOptionValue>
 <listOptionValue builtIn="false" value="XCP_CUSTOM_PLATFORM">
 </listOptionValue>
@@ -248,7 +248,7 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="MODEL=mcb_bldc_sixstep_f28069mLaunchPad_openLoop">
 </listOptionValue>
-<listOptionValue builtIn="false" value="NUMST=1">
+<listOptionValue builtIn="false" value="NUMST=2">
 </listOptionValue>
 <listOptionValue builtIn="false" value="NCSTATES=0">
 </listOptionValue>
@@ -272,7 +272,7 @@
 </listOptionValue>
 <listOptionValue builtIn="false" value="INTEGER_CODE=0">
 </listOptionValue>
-<listOptionValue builtIn="false" value="MT=0">
+<listOptionValue builtIn="false" value="MT=1">
 </listOptionValue>
 <listOptionValue builtIn="false" value="XCP_CUSTOM_PLATFORM">
 </listOptionValue>

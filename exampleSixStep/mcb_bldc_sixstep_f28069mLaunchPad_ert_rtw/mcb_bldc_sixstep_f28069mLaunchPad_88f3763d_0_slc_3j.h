@@ -2,6 +2,7 @@
  * This file is generated for the Simscape network associated with the solver block 'mcb_bldc_sixstep_f28069mLaunchPad/Inverter and Motor/Inverter and Motor/Solver Configuration'.
  */
 /* mcb_bldc_sixstep_f28069mLaunchPad_88f3763d_0_slc_3j.h - header for method mcb_bldc_sixstep_f28069mLaunchPad_88f3763d_0_slc_3j */
+
 #ifdef __cplusplus
 
 extern "C"

@@ -1,12 +1,12 @@
 MW_SPI.obj: C:/Program\ Files/MATLAB/R2023b/toolbox/c2b/tic2000/src/MW_SPI.c
 MW_SPI.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000/inc/MW_c28xSPI.h
 MW_SPI.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/inc/MW_c28xGPIO.h
-MW_SPI.obj: E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
+MW_SPI.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
 MW_SPI.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000BoardSupport.h
 MW_SPI.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stdbool.h
 MW_SPI.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/_ti_config.h
 MW_SPI.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/linkage.h
-MW_SPI.obj: E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h
+MW_SPI.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h
 MW_SPI.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/device_support/f2806x/v151/F2806x_headers/include/F2806x_Device.h
 MW_SPI.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_Adc.h
 MW_SPI.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_BootVars.h
@@ -40,7 +40,7 @@ MW_SPI.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v
 MW_SPI.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_DefaultISR.h
 MW_SPI.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/utilities/hrcap_hccal/type0/v110/include/HCCal_Type0_V1.h
 MW_SPI.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000SchedulerTimer.h
-MW_SPI.obj: E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
+MW_SPI.obj: E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h
 MW_SPI.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SPI.h
 MW_SPI.obj: C:\PROGRA~1\MATLAB\R2023b\toolbox\target\shared\svd\common\include\MW_digitalIO.h
 MW_SPI.obj: C:\PROGRA~1\MATLAB\R2023b\toolbox\target\shared\svd\common\include\MW_SVD.h
@@ -48,12 +48,12 @@ MW_SPI.obj: C:\PROGRA~1\MATLAB\R2023b\toolbox\target\shared\svd\common\include\M
 C:/Program\ Files/MATLAB/R2023b/toolbox/c2b/tic2000/src/MW_SPI.c:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000/inc/MW_c28xSPI.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/inc/MW_c28xGPIO.h:
-E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
+E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000BoardSupport.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stdbool.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/_ti_config.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/linkage.h:
-E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h:
+E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/rtwtypes.h:
 D:/TiC2000_Install/ControlSUITE/controlSUITE/device_support/f2806x/v151/F2806x_headers/include/F2806x_Device.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_Adc.h:
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_headers\include\F2806x_BootVars.h:
@@ -87,7 +87,7 @@ D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_c
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_DefaultISR.h:
 D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/utilities/hrcap_hccal/type0/v110/include/HCCal_Type0_V1.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/c2b/tic2000_shared/src/c2000SchedulerTimer.h:
-E:/GiaotrinhDH/DATN/FINAL/simulink/codeGeneration/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
+E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_target_hardware_resources.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SPI.h:
 C:\PROGRA~1\MATLAB\R2023b\toolbox\target\shared\svd\common\include\MW_digitalIO.h:
 C:\PROGRA~1\MATLAB\R2023b\toolbox\target\shared\svd\common\include\MW_SVD.h:

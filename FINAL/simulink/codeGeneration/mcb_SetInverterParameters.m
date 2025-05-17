@@ -93,8 +93,8 @@ switch inverter_type
         inverter.Rds_on        = 10.3e-3;     				%Ohms   // Rds ON
         inverter.Rshunt        = 2e-3;    				    %Ohms   // Rshunt
         inverter.CtSensAOffset = 3309;        		    	%Counts // ADC Offset for phase-A
-        inverter.CtSensBOffset = 3003;        		    	%Counts // ADC Offset for phase-B
-        inverter.CtSensCOffset = 3318;        		    	%Counts // ADC Offset for phase-C
+        inverter.CtSensBOffset = 3304;        		    	%Counts // ADC Offset for phase-B
+        inverter.CtSensCOffset = 3020;        		    	%Counts // ADC Offset for phase-C
         inverter.ADCGain       = 1;                         %       // ADC Gain factor scaled by SPI
         inverter.EnableLogic   = 1;    				    	% 		// Active high for enable pin (EN_GATE)
         inverter.invertingAmp  = 1;   			    		% 		// Currents entering motor phases are read as positive values in this hardware

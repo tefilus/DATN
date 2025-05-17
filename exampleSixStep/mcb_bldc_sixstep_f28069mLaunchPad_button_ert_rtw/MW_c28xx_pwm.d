@@ -37,9 +37,6 @@ MW_c28xx_pwm.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2
 MW_c28xx_pwm.obj: D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_DefaultISR.h
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_button.h
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\DSP28xx_SciUtil.h
-MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h
-MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h
-MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 MW_c28xx_pwm.obj: D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/math/IQmath/v160/include/IQmathLib.h
 MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/limits.h
 MW_c28xx_pwm.obj: C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SPI.h
@@ -59,6 +56,9 @@ MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLau
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rt_nonfinite.h
 MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rtGetNaN.h
+MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h
+MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h
+MW_c28xx_pwm.obj: C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\zero_crossing_types.h
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\MW_target_hardware_resources.h
 MW_c28xx_pwm.obj: E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_button_private.h
@@ -102,9 +102,6 @@ D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_c
 D:\TiC2000_Install\ControlSUITE\controlSUITE\device_support\f2806x\v151\F2806x_common\include\F2806x_DefaultISR.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_button.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\DSP28xx_SciUtil.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h:
-C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h:
 D:/TiC2000_Install/ControlSUITE/controlSUITE/libs/math/IQmath/v160/include/IQmathLib.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/limits.h:
 C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SPI.h:
@@ -124,6 +121,9 @@ E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rt_nonfinite.h:
 C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/stddef.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\rtGetNaN.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/string.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/sys/cdefs.h:
+C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/include/xlocale/_string.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\zero_crossing_types.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\MW_target_hardware_resources.h:
 E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_button_ert_rtw\mcb_bldc_sixstep_f28069mLaunchPad_button_private.h:

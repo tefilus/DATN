@@ -5,7 +5,7 @@
  *
  * Model version                  : 8.11
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May 15 15:49:20 2025
+ * C/C++ source code generated on : Fri May 16 16:46:44 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -861,7 +861,7 @@ void mcb_pmsm_foc_CurrentControl(void)
     mcb_pmsm_foc_qep_f28069Launch_B.SpeedCount;
 
   /* Gain: '<S189>/SpeedGain' */
-  mcb_pmsm_foc_qep_f28069Launch_B.SpeedGain = 2.74187206E-9F *
+  mcb_pmsm_foc_qep_f28069Launch_B.SpeedGain = 2.70785794E-9F *
     mcb_pmsm_foc_qep_f28069Launch_B.DTC_i;
 
   /* Product: '<S192>/Product' incorporates:
@@ -1383,7 +1383,7 @@ void mcb_pmsm_foc_CurrentControl(void)
      *  Constant: '<S27>/Kp'
      */
     mcb_pmsm_foc_qep_f28069Launch_B.PProdOut =
-      mcb_pmsm_foc_qep_f28069Launch_B.Sum_f * 0.123889744F;
+      mcb_pmsm_foc_qep_f28069Launch_B.Sum_f * 0.0619448721F;
 
     /* DataStoreRead: '<S27>/Data Store Read1' */
     mcb_pmsm_foc_qep_f28069Launch_B.DataStoreRead1_e =
@@ -1435,7 +1435,7 @@ void mcb_pmsm_foc_CurrentControl(void)
      *  Constant: '<S26>/Kp'
      */
     mcb_pmsm_foc_qep_f28069Launch_B.PProdOut_k =
-      mcb_pmsm_foc_qep_f28069Launch_B.Sum_p * 0.123889744F;
+      mcb_pmsm_foc_qep_f28069Launch_B.Sum_p * 0.0619448721F;
 
     /* DataStoreRead: '<S26>/Data Store Read1' */
     mcb_pmsm_foc_qep_f28069Launch_B.DataStoreRead1_cr =
@@ -1624,7 +1624,7 @@ void mcb_pmsm_foc_CurrentControl(void)
      *  Constant: '<S26>/Ki'
      */
     mcb_pmsm_foc_qep_f28069Launch_B.IProdOut =
-      mcb_pmsm_foc_qep_f28069Launch_B.Sum_p * 0.00021874909F;
+      mcb_pmsm_foc_qep_f28069Launch_B.Sum_p * 0.000109374545F;
 
     /* RelationalOperator: '<S67>/fix for DT propagation issue1' incorporates:
      *  Constant: '<S67>/Clamping_zero'
@@ -1721,7 +1721,7 @@ void mcb_pmsm_foc_CurrentControl(void)
      *  Constant: '<S27>/Ki'
      */
     mcb_pmsm_foc_qep_f28069Launch_B.IProdOut_p =
-      mcb_pmsm_foc_qep_f28069Launch_B.Sum_f * 0.00021874909F;
+      mcb_pmsm_foc_qep_f28069Launch_B.Sum_f * 0.000109374545F;
 
     /* RelationalOperator: '<S118>/fix for DT propagation issue1' incorporates:
      *  Constant: '<S118>/Clamping_zero'
@@ -1886,7 +1886,7 @@ void mcb_pmsm_foc_CurrentControl(void)
     /* Gain: '<S16>/rpm2freq' incorporates:
      *  Constant: '<S16>/Speed_ref(rpm)'
      */
-    mcb_pmsm_foc_qep_f28069Launch_B.rpm2freq = 84.9166718F;
+    mcb_pmsm_foc_qep_f28069Launch_B.rpm2freq = 85.9833374F;
 
     /* DataStoreRead: '<S16>/Data Store Read1' */
     mcb_pmsm_foc_qep_f28069Launch_B.DataStoreRead1_c =
@@ -1906,7 +1906,7 @@ void mcb_pmsm_foc_CurrentControl(void)
       mcb_pmsm_foc_qep_f28069La_DWork.RampGenerator_DSTATE;
 
     /* Product: '<S16>/Product' */
-    mcb_pmsm_foc_qep_f28069Launch_B.Product_b = 84.9166718F *
+    mcb_pmsm_foc_qep_f28069Launch_B.Product_b = 85.9833374F *
       mcb_pmsm_foc_qep_f28069Launch_B.Eps;
 
     /* Abs: '<S16>/Abs' */
@@ -1914,7 +1914,7 @@ void mcb_pmsm_foc_CurrentControl(void)
       (mcb_pmsm_foc_qep_f28069Launch_B.Product_b);
 
     /* Gain: '<S16>/V-by-f' */
-    mcb_pmsm_foc_qep_f28069Launch_B.Vbyf = 0.0023552503F *
+    mcb_pmsm_foc_qep_f28069Launch_B.Vbyf = 0.00232603215F *
       mcb_pmsm_foc_qep_f28069Launch_B.Frequency;
 
     /* Gain: '<S16>/Correction_Factor_sinePWM' */
@@ -2514,7 +2514,7 @@ void mcb_pmsm_foc_q_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
   /* Product: '<S283>/PProd Out' incorporates:
    *  Constant: '<S241>/Kp1'
    */
-  localB->PProdOut = localB->Sum * 4.84315586F;
+  localB->PProdOut = localB->Sum * 4.90399218F;
 
   /* Logic: '<S241>/Logical Operator' */
   localB->LogicalOperator = !localB->DataStoreRead;
@@ -2575,7 +2575,7 @@ void mcb_pmsm_foc_q_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
   /* Product: '<S275>/IProd Out' incorporates:
    *  Constant: '<S241>/Ki1'
    */
-  localB->IProdOut = localB->Sum * 0.0639411137F;
+  localB->IProdOut = localB->Sum * 0.0647443F;
 
   /* RelationalOperator: '<S269>/fix for DT propagation issue1' incorporates:
    *  Constant: '<S269>/Clamping_zero'
@@ -3005,7 +3005,7 @@ void mcb_pmsm_foc_qep_f28069LaunchPad_initialize(void)
       &mcb_pmsm_foc_qep_f28069La_DWork.SPIMasterTransfer);
 
     /* Constant: '<S3>/ADC_Gain_Setting' */
-    mcb_pmsm__SPIMasterTransfer(20501U,
+    mcb_pmsm__SPIMasterTransfer(20522U,
       &mcb_pmsm_foc_qep_f28069Launch_B.SPIMasterTransfer1,
       &mcb_pmsm_foc_qep_f28069La_DWork.SPIMasterTransfer1);
 

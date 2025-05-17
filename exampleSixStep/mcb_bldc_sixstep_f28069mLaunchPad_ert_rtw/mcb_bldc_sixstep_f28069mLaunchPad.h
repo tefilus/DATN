@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad'.
  *
- * Model version                  : 7.70
+ * Model version                  : 7.72
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May 15 17:53:01 2025
+ * C/C++ source code generated on : Fri May 16 16:56:58 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -29,7 +29,7 @@
 
 #include "MW_c2000ISR.h"
 #include "mcb_bldc_sixstep_f28069mLaunchPad_types.h"
-#include "SCI_B.h"
+#include "To_LCD.h"
 #include "rt_nonfinite.h"
 #include "rtGetNaN.h"
 #include <string.h>
@@ -87,38 +87,38 @@ typedef struct {
 
 /* Block signals for system '<Root>/Speed Control' */
 typedef struct {
-  real32_T Switch;                     /* '<S241>/Switch' */
-  real32_T Product;                    /* '<S296>/Product' */
-  real32_T UnitDelay;                  /* '<S296>/Unit Delay' */
-  real32_T Product1;                   /* '<S296>/Product1' */
-  real32_T Add1;                       /* '<S296>/Add1' */
-  real32_T Sum;                        /* '<S240>/Sum' */
-  real32_T PProdOut;                   /* '<S282>/PProd Out' */
-  real32_T Ki2;                        /* '<S240>/Ki2' */
-  real32_T Integrator;                 /* '<S277>/Integrator' */
-  real32_T Sum_j;                      /* '<S286>/Sum' */
-  real32_T DeadZone;                   /* '<S270>/DeadZone' */
-  real32_T IProdOut;                   /* '<S274>/IProd Out' */
-  real32_T Switch_a;                   /* '<S268>/Switch' */
-  real32_T Saturation;                 /* '<S284>/Saturation' */
-  int16_T Switch1;                     /* '<S268>/Switch1' */
-  int16_T Switch2;                     /* '<S268>/Switch2' */
-  boolean_T DataStoreRead2;            /* '<S240>/Data Store Read2' */
-  boolean_T DataStoreRead1;            /* '<S241>/Data Store Read1' */
-  boolean_T LogicalOperator;           /* '<S240>/Logical Operator' */
-  boolean_T RelationalOperator;        /* '<S268>/Relational Operator' */
-  boolean_T fixforDTpropagationissue;/* '<S268>/fix for DT propagation issue' */
+  real32_T Switch;                     /* '<S232>/Switch' */
+  real32_T Product;                    /* '<S287>/Product' */
+  real32_T UnitDelay;                  /* '<S287>/Unit Delay' */
+  real32_T Product1;                   /* '<S287>/Product1' */
+  real32_T Add1;                       /* '<S287>/Add1' */
+  real32_T Sum;                        /* '<S231>/Sum' */
+  real32_T PProdOut;                   /* '<S273>/PProd Out' */
+  real32_T Ki2;                        /* '<S231>/Ki2' */
+  real32_T Integrator;                 /* '<S268>/Integrator' */
+  real32_T Sum_j;                      /* '<S277>/Sum' */
+  real32_T DeadZone;                   /* '<S261>/DeadZone' */
+  real32_T IProdOut;                   /* '<S265>/IProd Out' */
+  real32_T Switch_a;                   /* '<S259>/Switch' */
+  real32_T Saturation;                 /* '<S275>/Saturation' */
+  int16_T Switch1;                     /* '<S259>/Switch1' */
+  int16_T Switch2;                     /* '<S259>/Switch2' */
+  boolean_T DataStoreRead2;            /* '<S231>/Data Store Read2' */
+  boolean_T DataStoreRead1;            /* '<S232>/Data Store Read1' */
+  boolean_T LogicalOperator;           /* '<S231>/Logical Operator' */
+  boolean_T RelationalOperator;        /* '<S259>/Relational Operator' */
+  boolean_T fixforDTpropagationissue;/* '<S259>/fix for DT propagation issue' */
   boolean_T fixforDTpropagationissue1;
-                                    /* '<S268>/fix for DT propagation issue1' */
-  boolean_T Equal1;                    /* '<S268>/Equal1' */
-  boolean_T AND3;                      /* '<S268>/AND3' */
+                                    /* '<S259>/fix for DT propagation issue1' */
+  boolean_T Equal1;                    /* '<S259>/Equal1' */
+  boolean_T AND3;                      /* '<S259>/AND3' */
 } rtB_SpeedControl_mcb_bldc_sixst;
 
 /* Block states (default storage) for system '<Root>/Speed Control' */
 typedef struct {
-  real32_T UnitDelay_DSTATE;           /* '<S296>/Unit Delay' */
-  real32_T Integrator_DSTATE;          /* '<S277>/Integrator' */
-  int16_T Integrator_PrevResetState;   /* '<S277>/Integrator' */
+  real32_T UnitDelay_DSTATE;           /* '<S287>/Unit Delay' */
+  real32_T Integrator_DSTATE;          /* '<S268>/Integrator' */
+  int16_T Integrator_PrevResetState;   /* '<S268>/Integrator' */
 } rtDW_SpeedControl_mcb_bldc_sixs;
 
 /* Block signals (default storage) */
@@ -142,8 +142,8 @@ typedef struct {
   real32_T RT1;                        /* '<Root>/RT1' */
   real32_T RT6;                        /* '<Root>/RT6' */
   real32_T RT2;                        /* '<Root>/RT2' */
-  real32_T DataTypeConversion1[2];     /* '<S237>/Data Type Conversion1' */
-  real32_T DataTypeConversion1_l;      /* '<S6>/Data Type Conversion1' */
+  real32_T DataTypeConversion1[2];     /* '<S228>/Data Type Conversion1' */
+  real32_T DataTypeConversion1_l;      /* '<S5>/Data Type Conversion1' */
   real32_T Merge1;                     /* '<S11>/Merge1' */
   real32_T DataTypeConversion1_n[3];   /* '<S114>/Data Type Conversion1' */
   real32_T DataTypeConversion[3];      /* '<S117>/Data Type Conversion' */
@@ -218,7 +218,7 @@ typedef struct {
   uint16_T Sum1_n;                     /* '<S226>/Sum1' */
   uint16_T Memory2;                    /* '<S226>/Memory2' */
   uint16_T Sum2;                       /* '<S226>/Sum2' */
-  uint16_T SCIReceive[2];              /* '<S239>/SCI Receive' */
+  uint16_T SCIReceive[2];              /* '<S230>/SCI Receive' */
   uint16_T eQEP_o1;                    /* '<S205>/eQEP' */
   uint16_T eQEP_o2;                    /* '<S205>/eQEP' */
   uint16_T Output;                     /* '<S111>/Output' */
@@ -254,7 +254,7 @@ typedef struct {
   uint16_T Data[3];                    /* '<S107>/Data' */
   uint16_T Data_f[3];                  /* '<S109>/Data' */
   uint16_T Data_fw[3];                 /* '<S110>/Data' */
-  int16_T DataTypeConversion2_c[2];    /* '<S237>/Data Type Conversion2' */
+  int16_T DataTypeConversion2_c[2];    /* '<S228>/Data Type Conversion2' */
   int16_T convertTo_sfix16_En12[3];    /* '<S108>/convertTo_sfix16_En12' */
   int16_T WhileIterator;               /* '<S204>/While Iterator' */
   int16_T UnitDelay_n;                 /* '<S115>/Unit Delay' */
@@ -265,7 +265,7 @@ typedef struct {
   int16_T Switch1_b;                   /* '<S62>/Switch1' */
   int16_T Switch2;                     /* '<S62>/Switch2' */
   boolean_T NOT;                       /* '<S215>/NOT' */
-  boolean_T DataTypeConversion3;       /* '<S6>/Data Type Conversion3' */
+  boolean_T DataTypeConversion3;       /* '<S5>/Data Type Conversion3' */
   boolean_T Merge_fv[6];               /* '<S9>/Merge' */
   boolean_T DataStoreRead1_l;          /* '<S16>/Data Store Read1' */
   boolean_T LogicalOperator;           /* '<S16>/Logical Operator' */
@@ -290,8 +290,8 @@ typedef struct {
   boolean_T LogicalOperator_l;         /* '<S123>/Logical Operator' */
   boolean_T Merge_ng[3];               /* '<S91>/Merge' */
   boolean_T Merge_c[3];                /* '<S21>/Merge' */
+  rtB_To_LCD_mcb_bldc_sixstep_f28 To_LCD;/* '<Root>/To_LCD' */
   rtB_SpeedControl_mcb_bldc_sixst SpeedControl;/* '<Root>/Speed Control' */
-  rtB_SCI_B_mcb_bldc_sixstep_f280 SCI_B;/* '<Root>/SCI_B' */
   rtB_SPIMasterTransfer_mcb_bldc_ SPIMasterTransfer1;/* '<S217>/SPI Master Transfer' */
   rtB_SPIMasterTransfer_mcb_bldc_ SPIMasterTransfer;/* '<S217>/SPI Master Transfer' */
   rtB_BitExtract_mcb_bldc_sixstep BitExtract_i;/* '<S91>/Bit Extract' */
@@ -333,8 +333,8 @@ typedef struct {
   boolean_T DelayOneStep1_DSTATE;      /* '<S124>/Delay One Step1' */
   int16_T Integrator_PrevResetState;   /* '<S71>/Integrator' */
   boolean_T Enable;                    /* '<Root>/Data Store Memory29' */
+  rtDW_To_LCD_mcb_bldc_sixstep_f2 To_LCD;/* '<Root>/To_LCD' */
   rtDW_SpeedControl_mcb_bldc_sixs SpeedControl;/* '<Root>/Speed Control' */
-  rtDW_SCI_B_mcb_bldc_sixstep_f28 SCI_B;/* '<Root>/SCI_B' */
   rtDW_SPIMasterTransfer_mcb_bldc SPIMasterTransfer1;/* '<S217>/SPI Master Transfer' */
   rtDW_SPIMasterTransfer_mcb_bldc SPIMasterTransfer;/* '<S217>/SPI Master Transfer' */
 } D_Work_mcb_bldc_sixstep_f28069m;
@@ -480,9 +480,9 @@ extern "C"
  * '<S2>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/HW_Interrupt'
  * '<S3>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init'
  * '<S4>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Inverter and Motor - Plant Model'
- * '<S5>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B'
- * '<S6>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive'
- * '<S7>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control'
+ * '<S5>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive'
+ * '<S6>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control'
+ * '<S7>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD'
  * '<S8>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Toggle LED'
  * '<S9>'   : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Control_System'
  * '<S10>'  : 'mcb_bldc_sixstep_f28069mLaunchPad/Current Control/Data_Logging'
@@ -703,75 +703,75 @@ extern "C"
  * '<S225>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /If Action Subsystem5'
  * '<S226>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Hardware Init/Variant Subsystem/Code Generation/Calculate ADC Offset /For Iterator Subsystem/If Action Subsystem'
  * '<S227>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Inverter and Motor - Plant Model/Codegeneration'
- * '<S228>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging'
- * '<S229>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/SCI_Tx_codegen'
- * '<S230>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/Data'
- * '<S231>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/Data_Conditioning'
- * '<S232>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/End'
- * '<S233>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/Start'
- * '<S234>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/dataIndexCounter'
- * '<S235>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/dataIndexCounter/Increment Real World'
- * '<S236>' : 'mcb_bldc_sixstep_f28069mLaunchPad/SCI_B/Data_Logging/dataIndexCounter/Wrap To Zero'
- * '<S237>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/Data_Conditioning'
- * '<S238>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/SCI_Rx'
- * '<S239>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/SCI_Rx/Code Generation'
- * '<S240>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed'
- * '<S241>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/Speed_Ref_Selector'
- * '<S242>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset'
- * '<S243>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation'
- * '<S244>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup'
- * '<S245>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain'
- * '<S246>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter'
- * '<S247>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs'
- * '<S248>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain'
- * '<S249>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain'
- * '<S250>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk'
- * '<S251>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator'
- * '<S252>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs'
- * '<S253>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy'
- * '<S254>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain'
- * '<S255>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy'
- * '<S256>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain'
- * '<S257>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal'
- * '<S258>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation'
- * '<S259>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk'
- * '<S260>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum'
- * '<S261>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk'
- * '<S262>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode'
- * '<S263>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum'
- * '<S264>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral'
- * '<S265>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain'
- * '<S266>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal'
- * '<S267>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal'
- * '<S268>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel'
- * '<S269>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone'
- * '<S270>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone/Enabled'
- * '<S271>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain/Disabled'
- * '<S272>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter/Disabled'
- * '<S273>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs/Disabled'
- * '<S274>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain/External Parameters'
- * '<S275>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain/Passthrough'
- * '<S276>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk/Disabled'
- * '<S277>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator/Discrete'
- * '<S278>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs/External IC'
- * '<S279>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy/Disabled wSignal Specification'
- * '<S280>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain/Disabled'
- * '<S281>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy/Disabled'
- * '<S282>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain/External Parameters'
- * '<S283>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal/External Reset'
- * '<S284>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation/Enabled'
- * '<S285>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk/Disabled'
- * '<S286>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum/Sum_PI'
- * '<S287>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk/Disabled'
- * '<S288>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode/Disabled'
- * '<S289>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum/Passthrough'
- * '<S290>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral/TsSignalSpecification'
- * '<S291>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain/Passthrough'
- * '<S292>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
- * '<S293>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
- * '<S294>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter'
- * '<S295>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass'
- * '<S296>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass/IIR Low Pass Filter'
+ * '<S228>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/Data_Conditioning'
+ * '<S229>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/SCI_Rx'
+ * '<S230>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Serial Receive/SCI_Rx/Code Generation'
+ * '<S231>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed'
+ * '<S232>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/Speed_Ref_Selector'
+ * '<S233>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset'
+ * '<S234>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation'
+ * '<S235>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup'
+ * '<S236>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain'
+ * '<S237>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter'
+ * '<S238>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs'
+ * '<S239>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain'
+ * '<S240>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain'
+ * '<S241>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk'
+ * '<S242>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator'
+ * '<S243>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs'
+ * '<S244>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy'
+ * '<S245>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain'
+ * '<S246>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy'
+ * '<S247>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain'
+ * '<S248>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal'
+ * '<S249>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation'
+ * '<S250>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk'
+ * '<S251>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum'
+ * '<S252>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk'
+ * '<S253>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode'
+ * '<S254>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum'
+ * '<S255>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral'
+ * '<S256>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain'
+ * '<S257>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal'
+ * '<S258>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal'
+ * '<S259>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel'
+ * '<S260>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone'
+ * '<S261>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup/Disc. Clamping Parallel/Dead Zone/Enabled'
+ * '<S262>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain/Disabled'
+ * '<S263>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter/Disabled'
+ * '<S264>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Filter ICs/Disabled'
+ * '<S265>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/I Gain/External Parameters'
+ * '<S266>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain/Passthrough'
+ * '<S267>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Ideal P Gain Fdbk/Disabled'
+ * '<S268>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator/Discrete'
+ * '<S269>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Integrator ICs/External IC'
+ * '<S270>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Copy/Disabled wSignal Specification'
+ * '<S271>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/N Gain/Disabled'
+ * '<S272>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/P Copy/Disabled'
+ * '<S273>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Parallel P Gain/External Parameters'
+ * '<S274>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Reset Signal/External Reset'
+ * '<S275>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation/Enabled'
+ * '<S276>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Saturation Fdbk/Disabled'
+ * '<S277>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum/Sum_PI'
+ * '<S278>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Sum Fdbk/Disabled'
+ * '<S279>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode/Disabled'
+ * '<S280>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tracking Mode Sum/Passthrough'
+ * '<S281>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Integral/TsSignalSpecification'
+ * '<S282>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Tsamp - Ngain/Passthrough'
+ * '<S283>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
+ * '<S284>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
+ * '<S285>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter'
+ * '<S286>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass'
+ * '<S287>' : 'mcb_bldc_sixstep_f28069mLaunchPad/Speed Control/PI_Controller_Speed/Zero_Cancellation/IIR Filter/Low-pass/IIR Low Pass Filter'
+ * '<S288>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging'
+ * '<S289>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/SCI_Tx_codegen'
+ * '<S290>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/Data'
+ * '<S291>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/Data_Conditioning'
+ * '<S292>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/End'
+ * '<S293>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/Start'
+ * '<S294>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/dataIndexCounter'
+ * '<S295>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/dataIndexCounter/Increment Real World'
+ * '<S296>' : 'mcb_bldc_sixstep_f28069mLaunchPad/To_LCD/Data_Logging/dataIndexCounter/Wrap To Zero'
  */
 #endif                     /* RTW_HEADER_mcb_bldc_sixstep_f28069mLaunchPad_h_ */
 

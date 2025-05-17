@@ -28,13 +28,13 @@
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.INCLUDE_PATH.1515724014" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include">
 </listOptionValue>
-<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\FINAL\simulink\codeGeneration">
+<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\target\shared\svd\common\include">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\inc">
 </listOptionValue>
-<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\FINAL\simulink\codeGeneration\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw">
+<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\include">
 </listOptionValue>
@@ -210,13 +210,13 @@
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.INCLUDE_PATH.899964030" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.4.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include">
 </listOptionValue>
-<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\FINAL\simulink\codeGeneration">
+<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\target\shared\svd\common\include">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\toolbox\c2b\tic2000\inc">
 </listOptionValue>
-<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\FINAL\simulink\codeGeneration\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw">
+<listOptionValue builtIn="false" value="E:\GiaotrinhDH\DATN\exampleSixStep\mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw">
 </listOptionValue>
 <listOptionValue builtIn="false" value="C:\Program Files\MATLAB\R2023b\extern\include">
 </listOptionValue>

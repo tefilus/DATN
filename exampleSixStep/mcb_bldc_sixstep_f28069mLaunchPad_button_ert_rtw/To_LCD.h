@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad_button'.
  *
- * Model version                  : 7.51
+ * Model version                  : 7.70
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri May 16 15:38:07 2025
+ * C/C++ source code generated on : Sat May 17 15:01:12 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -29,27 +29,27 @@
 
 /* Block signals for system '<Root>/To_LCD' */
 typedef struct {
-  real32_T dataLogging_Speed;          /* '<S292>/dataLogging_Speed' */
-  uint16_T Output;                     /* '<S298>/Output' */
-  uint16_T convertTo_uint16;           /* '<S295>/convertTo_uint16' */
-  uint16_T dataWidth;                  /* '<S292>/dataWidth' */
-  uint16_T SCI_Tx_Data[2];             /* '<S292>/mergeDataOut' */
-  uint16_T SCI_Tx_Iteration;           /* '<S292>/mergeInteration' */
-  uint16_T FixPtSum1;                  /* '<S299>/FixPt Sum1' */
-  uint16_T FixPtSwitch;                /* '<S300>/FixPt Switch' */
-  uint16_T IndexVector;                /* '<S293>/Index Vector' */
-  uint16_T Add;                        /* '<S293>/Add' */
-  uint16_T Data;                       /* '<S294>/Data' */
-  uint16_T Data_f;                     /* '<S296>/Data' */
-  uint16_T Data_fw;                    /* '<S297>/Data' */
-  int16_T convertTo_sfix16_En12;       /* '<S295>/convertTo_sfix16_En12' */
-  int16_T WhileIterator;               /* '<S293>/While Iterator' */
+  real32_T dataLogging_Speed;          /* '<S289>/dataLogging_Speed' */
+  uint16_T Output;                     /* '<S295>/Output' */
+  uint16_T convertTo_uint16;           /* '<S292>/convertTo_uint16' */
+  uint16_T dataWidth;                  /* '<S289>/dataWidth' */
+  uint16_T SCI_Tx_Data[2];             /* '<S289>/mergeDataOut' */
+  uint16_T SCI_Tx_Iteration;           /* '<S289>/mergeInteration' */
+  uint16_T FixPtSum1;                  /* '<S296>/FixPt Sum1' */
+  uint16_T FixPtSwitch;                /* '<S297>/FixPt Switch' */
+  uint16_T IndexVector;                /* '<S290>/Index Vector' */
+  uint16_T Add;                        /* '<S290>/Add' */
+  uint16_T Data;                       /* '<S291>/Data' */
+  uint16_T Data_f;                     /* '<S293>/Data' */
+  uint16_T Data_fw;                    /* '<S294>/Data' */
+  int16_T convertTo_sfix16_En12;       /* '<S292>/convertTo_sfix16_En12' */
+  int16_T WhileIterator;               /* '<S290>/While Iterator' */
 } rtB_To_LCD_mcb_bldc_sixstep_f28;
 
 /* Block states (default storage) for system '<Root>/To_LCD' */
 typedef struct {
-  uint16_T Output_DSTATE;              /* '<S298>/Output' */
-  uint16_T Add_DWORK1;                 /* '<S293>/Add' */
+  uint16_T Output_DSTATE;              /* '<S295>/Output' */
+  uint16_T Add_DWORK1;                 /* '<S290>/Add' */
 } rtDW_To_LCD_mcb_bldc_sixstep_f2;
 
 extern void mcb_bldc_sixste_To_LCD_Init(rtB_To_LCD_mcb_bldc_sixstep_f28 *localB);

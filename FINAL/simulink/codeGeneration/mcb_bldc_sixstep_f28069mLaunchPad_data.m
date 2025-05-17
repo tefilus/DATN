@@ -83,6 +83,7 @@ inverter.CtSensOffsetMin = 2500; % Minimum permitted ADC counts for current sens
 
 %% Derive Characteristics
 bldc.N_base = mcb_getBaseSpeed(bldc,inverter); %rpm // Base speed of motor at given Vdc
+speedRefADCOffset = 44;
 % mcb_getCharacteristics(bldc,inverter);
 
 %% PU System details // Set base values for pu conversion

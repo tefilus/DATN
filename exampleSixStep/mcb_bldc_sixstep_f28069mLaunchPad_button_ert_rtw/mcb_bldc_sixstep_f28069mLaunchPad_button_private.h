@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad_button'.
  *
- * Model version                  : 7.51
+ * Model version                  : 7.70
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri May 16 15:38:07 2025
+ * C/C++ source code generated on : Sat May 17 15:01:12 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -75,9 +75,9 @@ preprocessor word size checks.
 
 /* Skipping ulong_long/long_long check: insufficient preprocessor integer range. */
 void InitAdc (void);
+void config_ADC_SOC15 (void);
 void config_ADC_SOC0_SOC1 (void);
 void config_ADC_SOC2 (void);
-void config_ADC_SOC15 (void);
 void config_ADC_SOC4_SOC5 (void);
 void config_ADC_SOC3 (void);
 extern uint16_T MW_adcInitFlag;
@@ -97,12 +97,10 @@ extern void mcb_bldc__SPIMasterTransfer(uint16_T rtu_0,
   *localDW);
 extern void mcb_bldc__SpeedControl_Init(rtB_SpeedControl_mcb_bldc_sixst *localB,
   rtDW_SpeedControl_mcb_bldc_sixs *localDW);
-extern void mcb_bld_SpeedControl_Update(real32_T rtu_Speed_Ref_PU,
+extern void mcb_bldc_sixst_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
+  rtu_Speed_Meas_PU, const boolean_T *rtd_Enable,
   rtB_SpeedControl_mcb_bldc_sixst *localB, rtDW_SpeedControl_mcb_bldc_sixs
   *localDW);
-extern void mcb_bldc_sixst_SpeedControl(real32_T rtu_Speed_Meas_PU, const
-  boolean_T *rtd_Enable, rtB_SpeedControl_mcb_bldc_sixst *localB,
-  rtDW_SpeedControl_mcb_bldc_sixs *localDW);
 extern void mcb_bld_CurrentControl_Init(void);
 extern void mcb_bl_CurrentControl_Reset(void);
 

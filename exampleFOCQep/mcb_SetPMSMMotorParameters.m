@@ -108,8 +108,7 @@ switch pmsm_type
         pmsm.B        = 2.636875217824e-6;      %Kg-m2/s    // Friction Co-efficient
         pmsm.Ke       = 7.5;                    %Bemf Const	// Vpk_LL/krpm
         pmsm.Kt       = 0.12;                   %Nm/A       // Torque constant
-        pmsm.I_rated  = 5.10;                   %A      	// Rated current (phase-peak)
-        % pmsm.N_base   = 3000;                   %rpm        // Base speed 
+        pmsm.I_rated  = 4.90;                   %A      	// Rated current (phase-peak)
         pmsm.N_max    = 3200;                   %rpm        // Max speed
         pmsm.PositionOffset = 0.1995;	        %PU position// Position Offset
         pmsm.QEPSlits = 2500;                   %           // QEP Encoder Slits

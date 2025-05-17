@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'mcb_bldc_sixstep_f28069mLaunchPad_button'.
  *
- * Model version                  : 7.51
+ * Model version                  : 7.70
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri May 16 15:38:07 2025
+ * C/C++ source code generated on : Sat May 17 15:01:12 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -20,7 +20,7 @@
 /* System initialize for atomic system: '<Root>/To_LCD' */
 void mcb_bldc_sixste_To_LCD_Init(rtB_To_LCD_mcb_bldc_sixstep_f28 *localB)
 {
-  /* Start for Width: '<S292>/dataWidth' */
+  /* Start for Width: '<S289>/dataWidth' */
   localB->dataWidth = 1U;
 }
 
@@ -29,93 +29,93 @@ void mcb_bldc_sixstep_f28_To_LCD(const real32_T *rtd_speedSCI_B,
   rtB_To_LCD_mcb_bldc_sixstep_f28 *localB, rtDW_To_LCD_mcb_bldc_sixstep_f2
   *localDW)
 {
-  int16_T s293_iter;
+  int16_T s290_iter;
 
-  /* UnitDelay: '<S298>/Output' */
+  /* UnitDelay: '<S295>/Output' */
   localB->Output = localDW->Output_DSTATE;
 
-  /* DataStoreRead: '<S292>/dataLogging_Speed' */
+  /* DataStoreRead: '<S289>/dataLogging_Speed' */
   localB->dataLogging_Speed = *rtd_speedSCI_B;
 
-  /* DataTypeConversion: '<S295>/convertTo_sfix16_En12' */
+  /* DataTypeConversion: '<S292>/convertTo_sfix16_En12' */
   localB->convertTo_sfix16_En12 = (int16_T)(localB->dataLogging_Speed * 4096.0F);
 
-  /* DataTypeConversion: '<S295>/convertTo_uint16' incorporates:
-   *  DataTypeConversion: '<S295>/convertTo_sfix16_En12'
+  /* DataTypeConversion: '<S292>/convertTo_uint16' incorporates:
+   *  DataTypeConversion: '<S292>/convertTo_sfix16_En12'
    */
   localB->convertTo_uint16 = (uint16_T)localB->convertTo_sfix16_En12;
 
-  /* If: '<S292>/indexCondition' */
+  /* If: '<S289>/indexCondition' */
   if (localB->Output == 0U) {
-    /* Outputs for IfAction SubSystem: '<S292>/Start' incorporates:
-     *  ActionPort: '<S297>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S289>/Start' incorporates:
+     *  ActionPort: '<S294>/Action Port'
      */
-    /* SignalConversion generated from: '<S297>/Data' */
+    /* SignalConversion generated from: '<S294>/Data' */
     localB->Data_fw = localB->convertTo_uint16;
 
-    /* Merge: '<S292>/mergeDataOut' incorporates:
-     *  Constant: '<S297>/End'
-     *  SignalConversion generated from: '<S297>/Data_out'
+    /* Merge: '<S289>/mergeDataOut' incorporates:
+     *  Constant: '<S294>/End'
+     *  SignalConversion generated from: '<S294>/Data_out'
      */
     localB->SCI_Tx_Data[0] = 21331U;
     localB->SCI_Tx_Data[1] = localB->Data_fw;
 
-    /* Merge: '<S292>/mergeInteration' incorporates:
-     *  Bias: '<S297>/Bias'
+    /* Merge: '<S289>/mergeInteration' incorporates:
+     *  Bias: '<S294>/Bias'
      */
     localB->SCI_Tx_Iteration = localB->dataWidth + 1U;
 
-    /* End of Outputs for SubSystem: '<S292>/Start' */
+    /* End of Outputs for SubSystem: '<S289>/Start' */
   } else if (localB->Output == 599U) {
-    /* Outputs for IfAction SubSystem: '<S292>/End' incorporates:
-     *  ActionPort: '<S296>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S289>/End' incorporates:
+     *  ActionPort: '<S293>/Action Port'
      */
-    /* SignalConversion generated from: '<S296>/Data' */
+    /* SignalConversion generated from: '<S293>/Data' */
     localB->Data_f = localB->convertTo_uint16;
 
-    /* Merge: '<S292>/mergeDataOut' incorporates:
-     *  Constant: '<S296>/Start'
-     *  SignalConversion generated from: '<S296>/Data_out'
+    /* Merge: '<S289>/mergeDataOut' incorporates:
+     *  Constant: '<S293>/Start'
+     *  SignalConversion generated from: '<S293>/Data_out'
      */
     localB->SCI_Tx_Data[0] = localB->Data_f;
     localB->SCI_Tx_Data[1] = 17733U;
 
-    /* Merge: '<S292>/mergeInteration' incorporates:
-     *  Bias: '<S296>/Bias'
+    /* Merge: '<S289>/mergeInteration' incorporates:
+     *  Bias: '<S293>/Bias'
      */
     localB->SCI_Tx_Iteration = localB->dataWidth + 1U;
 
-    /* End of Outputs for SubSystem: '<S292>/End' */
+    /* End of Outputs for SubSystem: '<S289>/End' */
   } else {
-    /* Outputs for IfAction SubSystem: '<S292>/Data' incorporates:
-     *  ActionPort: '<S294>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S289>/Data' incorporates:
+     *  ActionPort: '<S291>/Action Port'
      */
-    /* SignalConversion generated from: '<S294>/Data' */
+    /* SignalConversion generated from: '<S291>/Data' */
     localB->Data = localB->convertTo_uint16;
 
-    /* Merge: '<S292>/mergeDataOut' incorporates:
-     *  Constant: '<S294>/Start'
-     *  SignalConversion generated from: '<S294>/Data_out'
+    /* Merge: '<S289>/mergeDataOut' incorporates:
+     *  Constant: '<S291>/Start'
+     *  SignalConversion generated from: '<S291>/Data_out'
      */
     localB->SCI_Tx_Data[0] = localB->Data;
     localB->SCI_Tx_Data[1] = 0U;
 
-    /* Merge: '<S292>/mergeInteration' incorporates:
-     *  SignalConversion generated from: '<S294>/Data_width'
+    /* Merge: '<S289>/mergeInteration' incorporates:
+     *  SignalConversion generated from: '<S291>/Data_width'
      */
     localB->SCI_Tx_Iteration = localB->dataWidth;
 
-    /* End of Outputs for SubSystem: '<S292>/Data' */
+    /* End of Outputs for SubSystem: '<S289>/Data' */
   }
 
-  /* End of If: '<S292>/indexCondition' */
+  /* End of If: '<S289>/indexCondition' */
 
-  /* Outputs for Iterator SubSystem: '<S7>/SCI_Tx_codegen' incorporates:
-   *  WhileIterator: '<S293>/While Iterator'
+  /* Outputs for Iterator SubSystem: '<S6>/SCI_Tx_codegen' incorporates:
+   *  WhileIterator: '<S290>/While Iterator'
    */
-  s293_iter = 1;
+  s290_iter = 1;
   do {
-    localB->WhileIterator = s293_iter;
+    localB->WhileIterator = s290_iter;
     localB->IndexVector = localB->SCI_Tx_Data[localB->WhileIterator - 1];
 
     {
@@ -130,30 +130,30 @@ void mcb_bldc_sixstep_f28_To_LCD(const real32_T *rtd_speedSCI_B,
     }
 
     localB->Add = localB->SCI_Tx_Iteration - (uint16_T)localB->WhileIterator;
-    s293_iter++;
+    s290_iter++;
   } while (localB->Add != 0U);
 
-  /* End of Outputs for SubSystem: '<S7>/SCI_Tx_codegen' */
+  /* End of Outputs for SubSystem: '<S6>/SCI_Tx_codegen' */
 
-  /* Sum: '<S299>/FixPt Sum1' incorporates:
-   *  Constant: '<S299>/FixPt Constant'
+  /* Sum: '<S296>/FixPt Sum1' incorporates:
+   *  Constant: '<S296>/FixPt Constant'
    */
   localB->FixPtSum1 = localB->Output + 1U;
 
-  /* Switch: '<S300>/FixPt Switch' */
+  /* Switch: '<S297>/FixPt Switch' */
   if (localB->FixPtSum1 > 600U) {
-    /* Switch: '<S300>/FixPt Switch' incorporates:
-     *  Constant: '<S300>/Constant'
+    /* Switch: '<S297>/FixPt Switch' incorporates:
+     *  Constant: '<S297>/Constant'
      */
     localB->FixPtSwitch = 0U;
   } else {
-    /* Switch: '<S300>/FixPt Switch' */
+    /* Switch: '<S297>/FixPt Switch' */
     localB->FixPtSwitch = localB->FixPtSum1;
   }
 
-  /* End of Switch: '<S300>/FixPt Switch' */
+  /* End of Switch: '<S297>/FixPt Switch' */
 
-  /* Update for UnitDelay: '<S298>/Output' */
+  /* Update for UnitDelay: '<S295>/Output' */
   localDW->Output_DSTATE = localB->FixPtSwitch;
 }
 

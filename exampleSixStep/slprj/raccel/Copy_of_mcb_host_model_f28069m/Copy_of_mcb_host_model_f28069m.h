@@ -36,7 +36,7 @@
 #ifndef NCSTATES
 #define NCSTATES (0)   
 #elif NCSTATES != 0
-#error Invalid specification of NCSTATES defined in compiler command
+#error Invalid specification of NCSTATES defined in compiler command
 #endif
 #ifndef rtmGetDataMapInfo
 #define rtmGetDataMapInfo(rtm) (*rt_dataMapInfoPtr)

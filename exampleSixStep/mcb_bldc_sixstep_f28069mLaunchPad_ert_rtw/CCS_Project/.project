@@ -73,9 +73,9 @@
 <location>E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/MW_c28xx_qep.c</location>
 </link>
 <link>
-<name>SCI_B.c</name>
+<name>To_LCD.c</name>
 <type>1</type>
-<location>E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/SCI_B.c</location>
+<location>E:/GiaotrinhDH/DATN/exampleSixStep/mcb_bldc_sixstep_f28069mLaunchPad_ert_rtw/To_LCD.c</location>
 </link>
 <link>
 <name>ert_main.c</name>
